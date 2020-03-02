@@ -1,6 +1,6 @@
 # Algoritmi e linguaggi di programmazione
 
-Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. 
+Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti, processi, filesystem, comandi principali, e scripting Bash.
 
 ## Come usare il materiale
 
