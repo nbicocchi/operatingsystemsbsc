@@ -29,23 +29,23 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Gestione filesystem (mount, umount, mkfs)
 * Gestione pacchetti (apt-get)
 
-[M4] Gestione dei flussi
+[M4] Comandi composti
 * Escaping
 * Globbing
-* Ridirezione (>, <)
-* Pipe (|)
+* Redirection (>, <)
+* Pipes (|)
 
 [M5] Comandi principali
 * Filesystem (ls, cp, mv, rm, mkdir, rmdir, locate, which, find, cat, touch)
 * Processi (ps, top, kill, esecuzione foreground/background, &)
 * Operazioni aritmetiche (expr)
-* Trattamento flussi (echo, cat, grep, sort, head, tail, cut)
+* Flussi dati (echo, cat, grep, sort, head, tail, cut)
 
 [M6-8] Scripting Bash
-* shebang
-* variabili linea di comando ($#, $n) 
-* variabili locali
-* variabili d'ambiente
-* variabile PATH
+* Shebang
+* Variabili linea di comando ($#, $n) 
+* Variabili locali
+* Variabili d'ambiente
+* Variabile PATH
 * Strutture di controllo (if, test, for, case)
 * Ricerca ricorsiva
