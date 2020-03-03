@@ -21,7 +21,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Filesystem (struttura interna, file, directory, devices)
 * Processi (sequenza di boot, init, stdin/stdout/stderr)
 
-[M3] Gestione sistema
+[M2] Gestione sistema
 * Bash (builtins, auto-completamento)
 * Manuale di sistema (man)
 * Editor di testo (vim, nano)
@@ -29,23 +29,25 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Gestione filesystem (mount, umount, mkfs)
 * Gestione pacchetti (apt-get)
 
-[M4] Comandi composti
+[M3] Comandi composti
 * Escaping
 * Globbing
 * Redirection (>, <)
 * Pipes (|)
 
-[M5] Comandi principali
+[M4] Comandi principali
 * Filesystem (ls, cp, mv, rm, mkdir, rmdir, locate, which, find, cat, touch)
 * Processi (ps, top, kill, esecuzione foreground/background, &)
 * Operazioni aritmetiche (expr)
 * Flussi dati (echo, cat, grep, sort, head, tail, cut)
 
-[M6-8] Scripting Bash
+[M5] Scripting Bash I
 * Shebang
 * Variabili linea di comando ($#, $n) 
 * Variabili locali
 * Variabili d'ambiente
 * Variabile PATH
+
+[M6] Scripting Bash II
 * Strutture di controllo (if, test, for, case)
 * Ricerca ricorsiva
