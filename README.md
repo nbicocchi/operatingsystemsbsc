@@ -62,5 +62,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 ## Risorse Web
 
+* https://explainshell.com/
+* https://www.unixtutorial.org/commands
 * https://wiki.ubuntu-it.org/Programmazione/LinguaggioBash
 * https://seankross.com/the-unix-workbench/
