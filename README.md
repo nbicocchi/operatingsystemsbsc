@@ -52,6 +52,10 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Strutture di controllo (if, test, for, case)
 * Ricerca ricorsiva
 
+## Esame
+
+L'esame consisterà di tre esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 2 più semplici supera la soglia della sufficienza. Esempi di esercizi di difficoltà intermedia  completi di soluzioni si trovano nella cartella code/bash/lab02.
+
 ## Testi Consigliati
 
 * Jason Bacon, Lars Olson - Unix User's Guide
