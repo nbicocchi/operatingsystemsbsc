@@ -36,18 +36,31 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Pipes (|)
 
 [M4] Comandi principali
-* Filesystem (ls, cp, mv, rm, mkdir, rmdir, locate, which, find, cat, touch)
+* Filesystem (ls, cp, mv, ln, rm, mkdir, rmdir, locate, which, find, cat, touch)
 * Processi (ps, top, kill, esecuzione foreground/background, &)
 * Operazioni aritmetiche (expr)
 * Flussi dati (echo, cat, grep, sort, head, tail, cut)
 
 [M5] Scripting Bash I
 * Shebang
-* Variabili linea di comando ($#, $n) 
 * Variabili locali
 * Variabili d'ambiente
+* Variabili speciali ($#, $N, $\*, $@, $?, $$) 
 * Variabile PATH
 
 [M6] Scripting Bash II
 * Strutture di controllo (if, test, for, case)
 * Ricerca ricorsiva
+
+## Testi Consigliati
+
+* Jason Bacon, Lars Olson - Unix User's Guide
+* Machtelt Garrels - La guida di Bash per principianti
+* Marco Liverani - Programmazione della Shell Bash
+* Marco Liverani - Unix introduzione elementare
+* Chet Ramey, Brian Fox - Bash Reference Manual
+
+## Risorse Web
+
+* https://wiki.ubuntu-it.org/Programmazione/LinguaggioBash
+* https://seankross.com/the-unix-workbench/
