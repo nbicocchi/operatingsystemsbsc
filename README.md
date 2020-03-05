@@ -14,41 +14,39 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 ## Moduli 
 
-[M1] Organizzazione OS
+[M1] Concetti base
 * Installazione OS virtualizzato (VirtualBox)
 * Kernelspace/Userspace
 * Utenti (gruppi, permessi)
+* Gestione utenti (adduser, rmuser, whoami, id, sudo, chmod, chown)
 * Filesystem (struttura interna, file, directory, devices)
-* Processi (sequenza di boot, init, stdin/stdout/stderr)
-
-[M2] Gestione sistema
-* Bash (builtins, auto-completamento)
+* Gestione filesystem (mount, umount, mkfs)
+* Processi (sequenza di boot, processo init, stdin/stdout/stderr)
 * Manuale di sistema (man)
 * Editor di testo (vim, nano)
-* Gestione utenti (adduser, rmuser, whoami, id, su, sudo, chmod, chown)
-* Gestione filesystem (mount, umount, mkfs)
 * Gestione pacchetti (apt-get)
 
-[M3] Comandi composti
+[M2] Shell Bash
+* Bash (builtins, auto-completamento)
 * Escaping
 * Globbing
 * Redirection (>, <)
 * Pipes (|)
 
-[M4] Comandi principali
+[M3] Comandi principali
 * Filesystem (ls, cp, mv, ln, rm, mkdir, rmdir, locate, which, find, cat, touch)
 * Processi (ps, top, kill, esecuzione foreground/background, &)
 * Operazioni aritmetiche (expr)
 * Flussi dati (echo, cat, grep, sort, head, tail, cut)
 
-[M5] Scripting Bash I
+[M4] Scripting Bash I
 * Shebang
 * Variabili locali
 * Variabili d'ambiente
 * Variabili speciali ($#, $N, $\*, $@, $?, $$) 
 * Variabile PATH
 
-[M6] Scripting Bash II
+[M5] Scripting Bash II
 * Strutture di controllo (if, test, for, case)
 * Ricerca ricorsiva
 
@@ -68,5 +66,4 @@ L'esame consisterà di tre esercizi al calcolatore di difficoltà crescente. La 
 
 * https://explainshell.com/
 * https://www.unixtutorial.org/commands
-* https://wiki.ubuntu-it.org/Programmazione/LinguaggioBash
 * https://seankross.com/the-unix-workbench/
