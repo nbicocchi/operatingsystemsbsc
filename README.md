@@ -60,12 +60,12 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Shebang
 * Variabili locali
 * Variabili d'ambiente
-* Variabili speciali ($#, $N, $\*, $@, $?, $$) 
+* Variabili speciali ($#, $N, $\*, shift, $@, $?, $$) 
 * Variabile PATH
 
 [M5] Scripting Bash II
 * Strutture di controllo (if, test, for, case)
-* Funzioni Bash
+* Funzioni
 * Ricerca ricorsiva
 
 ## Esame
