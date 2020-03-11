@@ -1,6 +1,6 @@
 # Algoritmi e linguaggi di programmazione
 
-Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti, processi, filesystem, comandi principali, e scripting Bash.
+Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti, processi, filesystem, comandi principali, e scripting Bash. Si rivolge a studenti senza esperienza precedente.
 
 ## Software
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
