@@ -44,11 +44,15 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Gestione pacchetti (apt-get)
 
 [M2] Shell Bash
-* Bash (builtins, auto-completamento)
-* Escaping
-* Globbing
-* Redirection (>, <)
-* Pipes (|)
+* Bash (builtins, auto-completamento, ricerca comandi)
+* Flussi dati standard (input, output, error)
+* Ridirezione flussi dati (>, <)
+* Composizione comandi (|)
+* Variabili locali
+* Variabili d'ambiente
+* Variabile PATH
+* Metacaratteri
+* Espansione ed inibizione
 
 [M3] Comandi principali
 * Filesystem (ls, cp, mv, ln, rm, mkdir, rmdir, locate, which, find, cat, touch)
@@ -58,15 +62,11 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 [M4] Scripting Bash I
 * Shebang
-* Variabili locali
-* Variabili d'ambiente
-* Variabili speciali ($#, $N, $\*, shift, $@, $?, $$) 
-* Variabile PATH
+* Variabili speciali ($#, $N, $\*, shift, $@, $?, $$)
+* Strutture di controllo (if, test, for, case) 
 
 [M5] Scripting Bash II
-* Strutture di controllo (if, test, for, case)
 * Funzioni
-* Ricerca ricorsiva
 
 ## Esame
 L'esame consisterà di tre esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 2 più semplici supera la soglia della sufficienza. Esempi di esercizi di difficoltà intermedia  completi di soluzioni si trovano nella cartella code/bash/lab02.
