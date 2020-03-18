@@ -43,7 +43,8 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Editor di testo (vim, nano)
 * Gestione pacchetti (apt-get)
 
-[M2] Shell Bash
+[M2] Bash Basics
+* Posix
 * Bash (builtins, auto-completamento, ricerca comandi)
 * Flussi dati standard (input, output, error)
 * Ridirezione flussi dati (>, <)
@@ -54,19 +55,18 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Metacaratteri
 * Espansione ed inibizione
 
-[M3] Comandi principali
+[M3] Bash Scripting
+* Shebang
+* Variabili speciali ($#, $N, $\*, shift, $@, $?, $$)
+* Strutture di controllo (if, test, for, case) 
+* Funzioni
+* Buone pratiche
+
+[M4] Comandi principali
 * Filesystem (ls, cp, mv, ln, rm, mkdir, rmdir, locate, which, find, cat, touch)
 * Processi (ps, top, kill, esecuzione foreground/background, &)
 * Operazioni aritmetiche (expr)
 * Flussi dati (echo, cat, grep, sort, head, tail, cut, tr, sed)
-
-[M4] Scripting Bash I
-* Shebang
-* Variabili speciali ($#, $N, $\*, shift, $@, $?, $$)
-* Strutture di controllo (if, test, for, case) 
-
-[M5] Scripting Bash II
-* Funzioni
 
 ## Esame
 L'esame consisterà di tre esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 2 più semplici supera la soglia della sufficienza. Esempi di esercizi di difficoltà intermedia  completi di soluzioni si trovano nella cartella code/bash/lab02.
