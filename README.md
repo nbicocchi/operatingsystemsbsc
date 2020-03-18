@@ -58,7 +58,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Filesystem (ls, cp, mv, ln, rm, mkdir, rmdir, locate, which, find, cat, touch)
 * Processi (ps, top, kill, esecuzione foreground/background, &)
 * Operazioni aritmetiche (expr)
-* Flussi dati (echo, cat, grep, sort, head, tail, cut)
+* Flussi dati (echo, cat, grep, sort, head, tail, cut, tr, sed)
 
 [M4] Scripting Bash I
 * Shebang
