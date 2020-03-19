@@ -8,8 +8,8 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 
 ## Risorse Web
 * https://explainshell.com/
-* https://www.unixtutorial.org/commands
 * https://seankross.com/the-unix-workbench/
+* https://www.tutorialspoint.com/unix/
 
 ## Testi Consigliati
 * Jason Bacon, Lars Olson - Unix User's Guide
