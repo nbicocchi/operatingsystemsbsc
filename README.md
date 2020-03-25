@@ -63,10 +63,11 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Buone pratiche
 
 [M4] Comandi principali
-* Filesystem (ls, cp, mv, ln, rm, mkdir, rmdir, locate, which, find, cat, touch)
-* Processi (ps, top, kill, esecuzione foreground/background, &)
-* Operazioni aritmetiche (expr)
-* Flussi dati (echo, cat, grep, sort, head, tail, cut, tr, sed)
+* Filesystem (ls, pwd, basename, dirname, cp, mv, ln, rm, mkdir, rmdir, locate, which, touch, chmod, chown, find, cmp, diff)
+* Filtri (cat, grep, sort, head, tail, cut, wc, tr, uniq, sed)
+* Processi (ps, top, kill, fg, bg, &)
+* Operazioni varie (echo, expr, date, dd)
+* Compressione (tar, gzip, bzip2)
 
 ## Esame
 L'esame consisterà di tre esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 2 più semplici supera la soglia della sufficienza. Esempi di esercizi di difficoltà intermedia  completi di soluzioni si trovano nella cartella code/bash/lab02.
