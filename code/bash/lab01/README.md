@@ -3,7 +3,9 @@
 Per utilizzare questa guida con vim utilizzare i seguenti due comandi 
 
 >:set wrap 
+>
 >:set linebreak
+>
 >:set number
 
 ## Esercizi 
