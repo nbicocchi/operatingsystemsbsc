@@ -66,7 +66,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Filesystem (ls, pwd, basename, dirname, cp, mv, ln, rm, mkdir, rmdir, locate, which, touch, chmod, chown, find, cmp, diff)
 * Filtri (cat, grep, sort, head, tail, cut, wc, tr, uniq, sed)
 * Processi (ps, top, kill, fg, bg, &)
-* Operazioni varie (echo, expr, date, dd)
+* Operazioni varie (echo, read, more, less, expr, date, dd)
 * Compressione (tar, gzip, bzip2)
 
 ## Esame
