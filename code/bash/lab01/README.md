@@ -1,253 +1,179 @@
-# Operating System Course - DIEF UNIMORE #
-Guida all'installazione di Ubuntu Linux. Introduzione a vim (vimtutor). Uso della shell: console grafica e testuale. Comandi cd, pwd, ls, ln, cp, mv, rm, mkdir, rmdir, echo, cat, grep, true, false, expr; variabili d'ambiente; permessi di accesso ai file usando chmod e chown; man e la documentazione in linea.
 
-Note: per utilizzare questa guida con vim utilizzare i seguenti due comandi 
-```
-:set wrap 
-:set linebreak
-:set number
-```
+# Esercitazione UNIX 1 - DIEF UNIMORE 
+Per utilizzare questa guida con vim utilizzare i seguenti due comandi 
+
+>:set wrap 
+>:set linebreak
+>:set number
+
+## Esercizi 
+1. Elencare i file nella directory corrente
+2. Elencare i file nella directory corrente visualizzando i permessi associati, comprendendo anche i file nascosti (che iniziano con punto)
+3. Visualizzare il percorso assoluto della directory corrente
+4. Spostarsi alla radice del filesystem
+5. Ritornare alla propria home indicandone il nome in modo assoluto
+6. Spostarsi alla radice del filesystem
+7. Ritornare alla propria home utilizzando il comando cd senza argomenti
+8. Copiare il file /etc/passwd nella directory corrente
+9. Copiare il file /etc/passwd nella directory corrente attribuendo al nuovo file il nome passwd.alt
+10. Verificare che i file passwd e passwd.alt siano identici utilizzando il comando diff
+11. Cancellare i file passwd e passwd.alt con un'unica istruzione
+12. Utilizzare cat e la ridirezione in input per visualizzare il contenuto di /etc/passwd
+13. Utilizzare echo e la ridirezione della shell per creare un file test contenente la linea "GNU is Not Unix" 
+14. Invocare cat per visualizzare il contenuto del file test
+15. Rendere il file test leggibile da tutti gli utenti
+16. Rendere il file test leggibile e scrivibile dal solo proprietario
+17. Costruire un link hard da test a test2
+18. Costruire un link soft (simbolico) da test a test3. Qual'e' la differenza fra la copia di un file e la creazione di link hard e link soft?
+19. Creare una directory nella propria home di nome testdir
+20. Invocare ls per visualizzare il contenuto di testdir
+21. Creare un file vuoto all'interno di testdir senza cambiare directory
+22. Eliminare la directory testdir
+23. Combinare il comando ps aux con il comando grep usando un file temporaneo per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
+24. Combinare il comando ps aux con il comando grep usando una pipe per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
+25. Cosa e' cambiato? Il sistema operativo ha creato un file temporaneo oppure no?
+26. Utilizzare i comandi ps, grep e wc per contare i processi che eseguono con i diritti del nostro utente e salvare risultato all'interno di un file di log
+27. Invocare i comandi true e false e visualizzarne il valore di uscita
+28. Utilizzare il comando expr per sommare e moltiplicare 3 e 7
+29. Creare la variabile d'ambiente LOGFILE ed assegnarle il valore "service.log"
+30. Visualizzare il contenuto della variabile LOGFILE
+31. Verificare che LOGFILE sia una variabile d'ambiente
+32. Visualizzare PID della shell correntemente in esecuzione
+33. Visualizzare il nome del proprio utente
+34. Creare lo script test.sh contenente la sola linea #!/bin/bash. A cosa serve questa linea?
+35. Aggiungere a test.sh la linee "echo Hello World!" e "exit 0"
+36. Rendere eseguibile test.sh
+37. Eseguire test.sh
+38. Spostare test.sh all'interno della cartella /tmp
+39. Eseguire test.sh rimanendo nella propria home directory
+40. Aprire la pagina di manuale del comando apropos ed utilizzare apropos per cercare le pagine di manuale del comando basename
+
+## Soluzioni 
+1. Elencare i file nella directory corrente
+>$ ls
+
+2. Elencare i file nella directory corrente visualizzando i permessi associati, comprendendo anche i file nascosti (che iniziano con punto)
+>$ ls -al
+
+3. Visualizzare il percorso assoluto della directory corrente
+>$ pwd
+
+4. Spostarsi alla radice del filesystem
+>$ cd /
+
+5. Ritornare alla propria home indicandone il nome in modo assoluto
+>$ cd /home/nicola
+
+6. Spostarsi alla radice del filesystem
+>$ cd /
+
+7. Ritornare alla propria home utilizzando il comando cd senza argomenti
+> $ cd
+
+8. Copiare il file /etc/passwd nella directory corrente
+> $ cp /etc/passwd .
+
+9. Copiare il file /etc/passwd nella directory corrente attribuendo al nuovo file il nome passwd.alt
+> $ cp /etc/passwd passwd.alt
+
+10. Verificare che i file passwd e passwd.alt siano identici utilizzando il comando diff
+>$ diff passwd passwd.alt; echo $?
+
+11. Cancellare i file passwd e passwd.alt con un'unica istruzione
+> $ rm passwd*
+
+12. Utilizzare cat e la ridirezione in input per visualizzare il contenuto di /etc/passwd
+> cat < /etc/passwd 
+
+13. Utilizzare echo e la ridirezione della shell per creare un file test contenente la linea "GNU is Not Unix" 
+>$ echo "GNU is Not Unix" > test
+
+14. Invocare cat per visualizzare il contenuto del file test
+> $ cat test
+
+15. Rendere il file test leggibile da tutti gli utenti
+> $ chmod a+r prova
+
+16. Rendere il file test leggibile e scrivibile dal solo proprietario
+> $ chmod 600 test
+
+17. Costruire un link hard da test a test2
+> ln test test2
 
-## Riferimenti ##
-http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
+18. Costruire un link soft (simbolico) da test a test3. Qual'e' la differenza fra la copia di un file e la creazione di link hard e link soft?
+> $ ln -s test test3
+> La differenza sostanziale fra copia, link hard e link soft consiste nel modo 
+in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp duplica i dati, (b) ln crea un riferimento a dati esistenti, (c) ln -s crea un piccolo file che contiene il percorso di un secondo file (e.g., collegamenti di windows)
 
-## Esercizi ##
-01. Elencare i file nella directory corrente
+19. Creare una directory nella propria home di nome testdir
+>$ mkdir testdir
 
-02. Elencare i file nella directory corrente visualizzando i permessi associati, comprendendo anche i file che iniziano con il punto
+20. Invocare ls per visualizzare il contenuto di testdir
+>$ ls testdir
 
-03. Visualizzare il nome assoluto della directory corrente
+21. Creare un file vuoto all'interno di testdir senza cambiare directory
+>$ touch testdir/empty
 
-04. Spostarsi alla radice del filesystem
+22. Eliminare la directory testdir
+>$ rm -rf testdir
 
-05. Ritornare alla propria home indicandone il nome in modo assoluto
+23. Combinare il comando ps aux con il comando grep usando un file temporaneo per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
+>$ ps aux > tempfile; grep bash tempfile 
 
-06. Spostarsi alla radice del filesystem
+24. Combinare il comando ps aux con il comando grep usando una pipe per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
+>ps aux | grep bash
 
-07. Ritornare alla propria home utilizzando il comando cd senza argomenti
+25. Cosa e' cambiato? Il sistema operativo ha creato un file temporaneo oppure no?
+>La pipe e' utile proprio per consentire a processi differenti di comunicare SENZA utilizzare il filesystem, ma collegando lo stdout del primo processo 
 
-08. Copiare il file "/etc/passwd" nella directory corrente
+26. Utilizzare i comandi ps, grep e wc per contare i processi che eseguono con i diritti del nostro utente e salvare risultato all'interno di un file di log
+>ps aux | grep nicola | wc -l > log
 
-09. Copiare il file "/etc/passwd" nella directory corrente attribuendo al nuovo file il nome "passwd.bak"
+27. Invocare i comandi true e false e visualizzarne il valore di uscita
+>$ true; echo $?
+>$ false; echo $?
 
-10. Cancellare i file "passwd" e "passwd.bak" dalla propria home con un'unica istruzione
+28. Utilizzare il comando expr per sommare e moltiplicare 3 e 7
+>$ expr 3 + 7; expr 3 \* 7
 
-11. Utilizzare echo e la ridirezione della shell per creare un file "prova" contenente la linea "GNU is Not Unix" 
+29. Creare la variabile d'ambiente LOGFILE ed assegnarle il valore "service.log"
+>$ export LOGFILE="service.log"
 
-12. Cosa avviene se si esegue la ridirezione con due maggiori affiancati?
+30. Visualizzare il contenuto della variabile LOGFILE
+>$ echo "$NOMEFILE"
 
-13. Invocare cat per visualizzare il contenuto del file
+31. Verificare che LOGFILE sia una variabile d'ambiente
+>$ bash # apertura di una sotto shell
+>$ echo "$LOGFILE"
 
-14. Rendere il file "prova" leggibile da tutti
+32. Visualizzare PID della shell correntemente in esecuzione
+>$ ps # leggere il pid associato al processo bash
 
-15. Rendere il file "prova" leggibile dal solo proprietario
+33. Visualizzare il nome del proprio utente
+>$ whoami
 
-16. Costruire un link hard da prova a prova2
+34. Creare lo script test.sh contenente la sola linea #!/bin/bash. A cosa serve questa linea?
+>$ echo '#!/bin/sh' > test.sh
+>La linea #!/bin/sh definisce il percorso dell'interprete dei comandi da utilizzare per eseguire cio' che segue. Ad esempio, per uno script python, si può usare #!/usr/bin/python3
 
-17. Costruire un link soft (simbolico) da prova a prova3. Qual'e' la differenza fra link hard, soft, e copia di un file?
+35. Aggiungere a test.sh la linee "echo Hello World!" e "exit 0"
+>$ echo "Hello World!" >> test.sh
+>$ echo "exit 0" >> test.sh
 
-18. Creare una directory nella propria home di nome "miadir"
+36. Rendere eseguibile test.sh
+>$ chmod 755 test.sh
 
-19. Invocare ls per visualizzare il contenuto di miadir
+37. Eseguire test.sh
+>$ ./test.sh
 
-20. Invocare ls per visualizzare il nome e gli attributi della directory miadir
+38. Spostare test.sh all'interno della cartella /tmp
+>$ mv test.sh /tmp/
 
-21. Eliminare la directory miadir
+39. Eseguire test.sh rimanendo nella propria home directory
+>$ /tmp/test.sh
 
-22. Combinare il comando "ps -efl" con il comando "grep" usando un file temporaneo per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
+40. Aprire la pagina di manuale del comando apropos ed utilizzare apropos per cercare le pagine di manuale del comando basename
+>$ man apropos
+>$ apropos basename
 
-23. Combinare il comando "ps -efl" con il comando "grep" usando una pipe per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
-
-24. Cosa e' cambiato? Il sistema operativo ha creato un file temporaneo oppure no?
-
-25. Invocare i comandi true e false e visualizzarne l'exit value
-
-26. Utilizzare il comando expr per sommare e moltiplicare i numeri 10 e 12
-
-27. Creare la variabile d'ambiente NOMEFILE ed assegnarle il valore "data.csv"
-
-28. Visualizzare il contenuto di NOMEFILE utilizzando il comando echo
-
-29. Creare lo script test.sh contenente la sola linea #!/bin/bash. A cosa serve questa linea?
-
-## Soluzioni ##
-01. Elencare i file nella directory corrente
-
-	```
-	$ ls
-	```
-
-02. Elencare i file nella directory corrente visualizzando i permessi associati, comprendendo anche i file che iniziano con il punto
-	
-	```
-	$ ls -al
-	```
-
-03. Visualizzare il nome assoluto della directory corrente
-
-	```
-	$ pwd
-	```
-
-04. Spostarsi alla radice del filesystem
-
-	```
-	$ cd /
-	```
-
-05. Ritornare alla propria home indicandone il nome in modo assoluto
-
-	```
-	$ cd /home/...
-	```
-
-06. Spostarsi alla radice del filesystem
-
-	```
-	$ cd /
-	```
-
-07. Ritornare alla propria home utilizzando il comando cd senza argomenti
-
-	```
-	$ cd
-	```
-
-08. Copiare il file "/etc/passwd" nella directory corrente
-
-	```
-	$ cp /etc/passwd .
-	```
-
-09. Copiare il file "/etc/passwd" nella directory corrente attribuendo al nuovo file il nome "passwd.bak"
-
-	```
-	$ cp /etc/passwd passwd.bak
-	```
-
-10. Cancellare i file "passwd" e "passwd.bak" dalla propria home con un'unica istruzione
-	
-	```
-	$ rm passwd*
-	```
-
-11. Utilizzare echo e la ridirezione della shell per creare un file "prova" contenente la linea "GNU is Not Unix" 
-	
-	```
-	$ echo "GNU is Not Unix" > prova
-	```
-
-12. Cosa avviene se si esegue la ridirezione con due maggiori affiancati?
-
-	Approfondimento: I nuovi contenuti vengono aggiungi agli esistenti (scrittura in append)
-
-13. Invocare cat per visualizzare il contenuto del file
-
-	```
-	$ cat prova
-	```
-
-14. Rendere il file "prova" leggibile da tutti
-
-	```
-	$ chmod 444 prova ($ chmod a+r prova)
-	```
-
-15. Rendere il file "prova" leggibile dal solo proprietario
-
-	```
-	$ chmod 400 
-	```
-
-16. Costruire un link hard da prova a prova2
-
-	```
-	ln prova prova2
-	```
-
-17. Costruire un link soft (simbolico) da prova a prova3. Qual'e' la differenza fra copia di un file, link hard, e link soft?
-	
-	```
-	$ ln -s prova prova3
-	```
-	
-	Approfondimento: la differenza sostanziale fra copia, link hard e link soft consiste nel modo 
-	in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp duplica i dati, (b) 
-	ln crea un riferimento a dati esistenti, (c) ln -s crea un piccolo file che contiene il percorso 
-	di un secondo file (e.g., collegamenti di windows)
-
-18. Creare una directory nella propria home di nome "miadir"
-
-	```
-	$ mkdir miadir
-	```
-
-19. Invocare ls per visualizzare il contenuto di miadir
-
-	```
-	$ ls miadir
-	```
-
-20. Invocare ls per visualizzare il nome e gli attributi della directory miadir
-
-	```
-	$ ls -ld miadir
-	```
-
-21. Eliminare la directory miadir
-
-	```
-	$ rmdir miadir (oppure rm -rf miadir)
-	```
-
-22. Combinare il comando "ps -efl" con il comando "grep" usando un file temporaneo per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
-
-	```
-	$ ps -efl > temp; grep bash temp 
-	```
-
-23. Combinare il comando "ps -efl" con il comando "grep" usando una pipe per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
-
-	```
-	ps -efl | grep bash
-	```
-
-24. Cosa e' cambiato? Il sistema operativo ha creato un file temporaneo oppure no?
-
-	Approfondimento: La pipe e' utile proprio per consentire a processi differenti di 
-	comunicare SENZA utilizzare il filesystem, ma collegando lo stdout del primo processo 
-
-25. Invocare i comandi true e false e visualizzarne l'exit value
-	
-	```
-	$ true; echo $?; false; echo $?
-	```
-
-26. Utilizzare il comando expr per sommare e moltiplicare i numeri 10 e 12
-	
-	```
-	$ expr 10 + 12; expr 10 '*' 12 (in alternativa expr 10 \* 12)
-	```
-
-27. Creare la variabile d'ambiente NOMEFILE ed assegnarle il valore "data.csv"
-	
-	```
-	$ export NOMEFILE="data.csv"
-	```
-
-28. Visualizzare il contenuto di NOMEFILE utilizzando il comando echo
-
-	```
-	$ echo $NOMEFILE
-	```
-
-29. Creare lo script test.sh contenente la sola linea #!/bin/bash. A cosa serve questa linea?
-
-	```
-	$ echo '#!/bin/sh' > script.sh
-	```
-
-	Approfondimento: La linea #!/bin/sh definisce il percorso dell'interprete dei comandi 
-	da utilizzare per eseguire cio' che segue. Ad esempio, per uno script python, posso 
-	usare #!/usr/bin/python
 
