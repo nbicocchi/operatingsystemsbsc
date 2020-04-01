@@ -104,6 +104,7 @@ Per utilizzare questa guida con vim utilizzare i seguenti due comandi
 
 18. Costruire un link soft (simbolico) da test a test3. Qual'e' la differenza fra la copia di un file e la creazione di link hard e link soft?
 > $ ln -s test test3
+>
 > La differenza sostanziale fra copia, link hard e link soft consiste nel modo 
 in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp duplica i dati, (b) ln crea un riferimento a dati esistenti, (c) ln -s crea un piccolo file che contiene il percorso di un secondo file (e.g., collegamenti di windows)
 
@@ -133,6 +134,7 @@ in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp dupli
 
 27. Invocare i comandi true e false e visualizzarne il valore di uscita
 >$ true; echo $?
+>
 >$ false; echo $?
 
 28. Utilizzare il comando expr per sommare e moltiplicare 3 e 7
@@ -156,10 +158,12 @@ in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp dupli
 
 34. Creare lo script test.sh contenente la sola linea #!/bin/bash. A cosa serve questa linea?
 >$ echo '#!/bin/sh' > test.sh
+>
 >La linea #!/bin/sh definisce il percorso dell'interprete dei comandi da utilizzare per eseguire cio' che segue. Ad esempio, per uno script python, si può usare #!/usr/bin/python3
 
 35. Aggiungere a test.sh la linee "echo Hello World!" e "exit 0"
 >$ echo "Hello World!" >> test.sh
+>
 >$ echo "exit 0" >> test.sh
 
 36. Rendere eseguibile test.sh
@@ -176,6 +180,7 @@ in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp dupli
 
 40. Aprire la pagina di manuale del comando apropos ed utilizzare apropos per cercare le pagine di manuale del comando basename
 >$ man apropos
+>
 >$ apropos basename
 
 
