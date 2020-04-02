@@ -10,11 +10,11 @@ Per utilizzare questa guida con vim utilizzare i seguenti due comandi
 ## Esercizi
 01. (es21.sh) Scrivere uno script che accetta 2 argomenti. Lo script crea un file regolare vuoto il cui nome è specificato dal primo argomento ed i cui permessi (notazione ottale) sono specificati dal secondo parametro.
 
-02. (es22.sh) Scrivere uno script che accetta 1 argomento. Lo script crea un file regolare il cui nome è specificato dal primo argomento. Il file creato dal primo script deve a sua volta essere uno script che, quando eseguito, stampa la stringa "Hello World!".
+02. (es22.sh) Scrivere uno script che accetta 1 argomento. Lo script crea un file regolare il cui nome è specificato dal primo argomento. Il file creato deve a sua volta essere uno script che, quando eseguito, stampa la stringa "Hello World!".
 
 03. (es23.sh) Scrivere uno script che controlla di essere invocato con 1 argomento che rappresenta un nome di directory esistente e leggibile nel filesystem.
 
-04. (es24.sh) Scrivere uno script che controlla di essere invocato con 2 argomenti. Il primo argomento deve rappresentare una directory esistente e scrivibile. Se la condizione è verificata, lo script crea all'interno della directory indicata un file. Il file deve contenere il suo percorso assoluto.
+04. (es24.sh) Scrivere uno script che controlla di essere invocato con 2 argomenti. Il primo argomento deve rappresentare una directory esistente e scrivibile (D), il secondo un nome di file (F). Lo script crea all'interno della directory D un file di nome F contenente il suo percorso assoluto.
 
 05. (es25.sh) Scrivere uno script che riporta su stdout il primo e l'ultimo argomento con cui è stato invocato.
 

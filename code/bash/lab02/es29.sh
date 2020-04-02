@@ -1,12 +1,14 @@
 #!/bin/bash
 
+USAGE="usage: $0 dirname"
+
 if [ $# -ne 1 ]; then 
-  echo "usage: $0 dirname"
+  echo "$USAGE"
   exit 1
 fi
 
 if [ ! -d "$1" -o ! -x "$1" ]; then
-  echo "usage: $0 dirname"
+  echo "$USAGE"
   exit 1
 fi
 
@@ -26,4 +28,5 @@ done
 
 echo "#files =" $F
 echo "#directories =" $D
+
 exit 0
