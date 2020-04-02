@@ -94,7 +94,7 @@ Per utilizzare questa guida con vim utilizzare i seguenti due comandi
 > $ cat test
 
 15. Rendere il file test leggibile da tutti gli utenti
-> $ chmod a+r prova
+> $ chmod a+r test
 
 16. Rendere il file test leggibile e scrivibile dal solo proprietario
 > $ chmod 600 test
@@ -144,7 +144,7 @@ in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp dupli
 >$ export LOGFILE="service.log"
 
 30. Visualizzare il contenuto della variabile LOGFILE
->$ echo "$NOMEFILE"
+>$ echo "$LOGFILE"
 
 31. Verificare che LOGFILE sia una variabile d'ambiente
 >$ bash # apertura di una sotto shell
