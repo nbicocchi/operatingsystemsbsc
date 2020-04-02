@@ -1,4 +1,3 @@
-
 # Esercitazione UNIX #1 - ALP DIEF UNIMORE 
 Per utilizzare questa guida con vim utilizzare i seguenti due comandi 
 
