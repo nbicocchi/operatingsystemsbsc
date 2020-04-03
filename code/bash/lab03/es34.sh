@@ -20,14 +20,9 @@ if [ ! -d "$1" -o ! -x "$1" ]; then
   exit 1
 fi
 
-expr "$2" + 0 > /dev/null 2>&1
-if [ $? -gt 1 ]; then
+expr "$2" + 0 1>/dev/null 2>&1
+if [ $? -gt 1 -o "$2" -lt 0 ]; then
   echo "$USAGE"; 
-  exit 1
-fi
-
-if [ "$2" -le 0 ]; then
-  echo "$USAGE"
   exit 1
 fi
 
