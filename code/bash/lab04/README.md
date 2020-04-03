@@ -1,18 +1,13 @@
-# Operating System Course - DIEF UNIMORE #
-Esercizi avanzati (ricerche ricorsive) risolti mediante l'utilizzo di funzioni. 
-Introduzione all'utilizzo di una semplice libreria.
+# Esercitazione UNIX #4 - ALP DIEF UNIMORE 
+Per utilizzare questa guida con vim utilizzare i seguenti due comandi 
 
-Note: per utilizzare questa guida con vim utilizzare i seguenti due comandi 
-```
-:set wrap 
-:set linebreak
-:set number
-```
+>:set wrap 
+>
+>:set linebreak
+>
+>:set number
 
-## Riferimenti ##
-http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
-
-## Esercizi ##
+## Esercizi
 01. (es41.sh) La parte in Shell deve prevedere due parametri: il primo deve essere il nome assoluto di un direttorio che identifica una gerarchia (G) all'interno del file system, mentre il secondo parametro deve essere un nome relativo semplice (D). Il programma deve cercare nella gerarchia G specificata tutti i direttori che contengono un sotto-direttorio con nome relativo D (esclusa la radice). Si riporti il nome assoluto di tali direttori sullo standard output (Fase A). Al termine dell'intera esplorazione ricorsiva di G, si deve chiedere all'utente se re-invocare il file comandi ricorsivo FCR per creare un sotto-direttorio con nome relativo D in tutti i direttori in cui  non esiste (Fase B). Quindi si deve verificare la situazione risultante invocando nuovamente FCR (Fase A). 
 
 02. (es42.sh) La parte in Shell deve prevedere tre parametri: il primo deve essere il nome assoluto di un direttorio che identifica una gerarchia (G) all'interno del file system, il secondo deve essere il nome relativo semplice di un direttorio (D), mentre il terzo parametro deve essere considerato un numero intero (N) strettamente positivo. Il programma deve cercare nella gerarchia G specificata tutti i direttori di nome D che contengono almeno un file (F) con dimensione in byte strettamente maggiore di N. Si riporti il nome assoluto di tali direttori sullo standard output e si contino globalmente i file F che soddisfano la condizione precedente. In ogni direttorio trovato, si deve creare un file di nome SOMMA avente come contenuto la concatenazione dei contenuti di tutti i file F del direttorio che soddisfano la condizione precedente. 
