@@ -147,6 +147,7 @@ in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp dupli
 
 31. Verificare che LOGFILE sia una variabile d'ambiente
 >$ bash # apertura di una sotto shell
+>
 >$ echo "$LOGFILE"
 
 32. Visualizzare PID della shell correntemente in esecuzione
