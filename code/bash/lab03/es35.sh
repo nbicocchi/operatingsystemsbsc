@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Da invocare nel seguente modo per rispettare la specifica
+# Da invocare nel seguente modo per rispettare la specifica riguardo l'ordinamento
 # $ ./es35.sh D N | sort -rn | cut -d ':' -f 2
 
-USAGE="usage: $0 dirname(abs) n(>0)"
+USAGE="usage: $0 dirname(abs) n"
 
 # Check arguments
 if [ $# -ne 2 ]; then

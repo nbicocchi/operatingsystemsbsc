@@ -1,9 +1,9 @@
 #!/bin/bash
 
-USAGE="usage: $0 dir(abs) str"
+USAGE="usage: $0 dir(abs) str n1 n2"
 
 # Check arguments
-if [ $# -ne 2 ]; then
+if [ $# -ne 4 ]; then
   echo "$USAGE"
   exit 1
 fi

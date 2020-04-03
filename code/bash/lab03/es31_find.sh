@@ -1,5 +1,7 @@
 #!/bin/bash
 
+USAGE="usage: $0 dirname(abs)"
+
 # Check arguments
 if [ $# -ne 1 ]; then
   echo "$USAGE"

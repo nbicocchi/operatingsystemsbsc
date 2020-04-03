@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USAGE="usage: $0 dirname(abs) N"
+USAGE="usage: $0 dirname(abs) n"
 
 # Check arguments
 if [ $# -ne 2 ]; then
