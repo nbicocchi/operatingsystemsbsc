@@ -1,39 +1,44 @@
 #!/bin/bash
 
-USAGE="usage: $0 dirname(abs) EQ|NE"
+USAGE="usage: $0 filename d1 .. dn"
 
 # Check arguments
-if [ $# -ne 2 ]; then
+if [ $# -lt 2 ]; then
   echo "$USAGE"
   exit 1
 fi
 
-case "$1" in 
-  /*) ;;
-  *) echo "$USAGE"
-     exit 1
-     ;;
-esac
+F="$1"
+shift
 
-if [ ! -d "$1" -o ! -x "$1" ]; then
-  echo "$USAGE"
-  exit 1
-fi
+for dname in $*; do
+  case "$dname" in 
+    /*) ;;
+    *)  echo "$USAGE"
+        exit 1
+        ;;
+  esac
 
-case "$2" in 
-  EQ|NE) ;;
-  *)  echo "$USAGE"
-      exit 1
-      ;;
-esac
+  if [ ! -d "$dname" -o ! -x "$dname" ]; then
+    echo "$USAGE"
+    exit 1
+  fi
+done
 
 # Main body
-list=$(find "$1" -type d -executable 2>/dev/null)
-for item in $list; do
-  ndirs=$(find "$item" -maxdepth 1 -type d | wc -l 2>/dev/null)
-  nfiles=$(find "$item" -maxdepth 1 -type f | wc -l 2>/dev/null)
-  [ "$2" == "EQ" -a "$ndirs" -eq "$nfiles" ] && echo "$item" ["$ndirs" dirs, "$nfiles" files]
-  [ "$2" == "NE" -a "$ndirs" -ne "$nfiles" ] && echo "$item" ["$ndirs" dirs, "$nfiles" files]
+tsize=0
+for dname in $*; do
+  dsize=0
+  list=$(find "$dname" -type f -readable -name "$F" 2>/dev/null)
+  for item in $list; do
+    size=$(cat "$item" | wc -c)
+    dsize=$(expr "$dsize" + "$size")
+    echo "$item" ["$size" bytes]
+  done
+  tsize=$(expr "$tsize" + "$dsize")
+  echo ["$dname": "$dsize" bytes]
 done
+
+echo [total: "$tsize" bytes]
 
 exit 0

@@ -1,16 +1,13 @@
 #!/bin/bash
 
-USAGE="usage: $0 filename d1 .. dn"
-LOG="/tmp/script.log"
+USAGE="usage: $0 d1 .. dn"
+LINKDIR="/tmp/links"
 
 # Check arguments
-if [ $# -lt 2 ]; then
+if [ $# -lt 1 ]; then
   echo "$USAGE"
   exit 1
 fi
-
-F="$1"
-shift
 
 for dname in $*; do
   case "$dname" in 
@@ -27,14 +24,15 @@ for dname in $*; do
 done
 
 # Main body
-rm -rf "$LOG"
+rm -rf "$LINKDIR"
+mkdir -p "$LINKDIR"
+count=0
 for dname in $*; do
-  list=$(find "$dname" -type f -readable -name "$F" 2>/dev/null)
+  list=$(find "$dname" -type f -readable -mtime -1 2>/dev/null)
   for item in $list; do
-    bytes=$(cat "$item" | wc -c)
-    lines=$(cat "$item" | wc -l)
-    echo "$item"
-    echo "$item":"$bytes":"$lines" >> "$LOG"
+  	echo "$item"
+  	ln -s "$item" "$LINKDIR"/$(basename "$item")."$count"
+  	count=$(expr "$count" + 1)
   done
 done
 

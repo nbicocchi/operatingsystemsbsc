@@ -31,10 +31,10 @@ rm -rf "$LOG"
 for dname in $*; do
   list=$(find "$dname" -type f -readable -name "$F" 2>/dev/null)
   for item in $list; do
-    if [ $(cat "$item" | wc -l) -ge 10 ]; then
-      echo "$item"
-      tail -n 2 "$item" | head -n 1 >> "$LOG"
-    fi
+    bytes=$(cat "$item" | wc -c)
+    lines=$(cat "$item" | wc -l)
+    echo "$item"
+    echo "$item":"$bytes":"$lines" >> "$LOG"
   done
 done
 

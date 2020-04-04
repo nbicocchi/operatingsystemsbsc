@@ -1,6 +1,7 @@
 #!/bin/bash
 
 USAGE="usage: $0 filename d1 .. dn"
+LOG="/tmp/script.log"
 
 # Check arguments
 if [ $# -lt 2 ]; then
@@ -26,19 +27,15 @@ for dname in $*; do
 done
 
 # Main body
-tsize=0
+rm -rf "$LOG"
 for dname in $*; do
-  dsize=0
   list=$(find "$dname" -type f -readable -name "$F" 2>/dev/null)
   for item in $list; do
-    size=$(cat "$item" | wc -c)
-    dsize=$(expr "$dsize" + "$size")
-    echo "$item" ["$size" bytes]
+    if [ $(cat "$item" | wc -l) -ge 10 ]; then
+      echo "$item"
+      tail -n 2 "$item" | head -n 1 >> "$LOG"
+    fi
   done
-  tsize=$(expr "$tsize" + "$dsize")
-  echo ["$dname": "$dsize" bytes]
 done
-
-echo [total: "$tsize" bytes]
 
 exit 0
