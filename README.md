@@ -44,7 +44,6 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Gestione pacchetti (apt-get)
 
 [M2] Bash Basics
-* Posix
 * Bash (builtins, auto-completamento, ricerca comandi)
 * Flussi dati standard (input, output, error)
 * Ridirezione flussi dati (>, <)
@@ -63,11 +62,12 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Buone pratiche
 
 [M4] Comandi principali
-* Filesystem (ls, pwd, basename, dirname, cp, mv, ln, rm, mkdir, rmdir, locate, which, touch, chmod, chown, find, cmp, diff)
+* Filesystem (ls, pwd, basename, dirname, cp, mv, ln, stat, rm, mkdir, rmdir, which, locate, touch, chmod, chown, cmp, diff, find)
 * Filtri (cat, grep, sort, head, tail, cut, wc, tr, uniq, sed)
 * Processi (ps, top, kill, fg, bg, &)
-* Operazioni varie (echo, read, more, less, expr, date, dd)
+* Utenti (adduser, deluser, su, sudo)
 * Compressione (tar, gzip, bzip2)
+* Varie (dd, echo, read, true, false, expr, date, man, apropos)
 
 ## Esame
 L'esame consisterà di tre esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 2 più semplici supera la soglia della sufficienza. Esempi di esercizi di difficoltà intermedia  completi di soluzioni si trovano nella cartella code/bash/lab02.
