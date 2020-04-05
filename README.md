@@ -59,6 +59,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Variabili speciali ($#, $N, $\*, shift, $@, $?, $$)
 * Strutture di controllo (if, test, for, case) 
 * Funzioni
+* Arrays
 * Buone pratiche
 
 [M4] Comandi principali
