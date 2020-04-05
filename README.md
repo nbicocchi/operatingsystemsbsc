@@ -71,6 +71,10 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Varie (dd, echo, read, true, false, expr, date, man, apropos)
 
 ## Esame
-L'esame consisterà di tre esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 2 più semplici supera la soglia della sufficienza. Esempi di esercizi di difficoltà intermedia  completi di soluzioni si trovano nella cartella code/bash/lab02.
+L'esame consisterà di tre esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 2 più semplici supera la soglia della sufficienza. Esempi di esercizi si trovano nella cartella code/bash/ suddivisi per livello di difficoltà.
 
+1. lab01/ intro
+1. lab02/ easy
+1. lab03/ medium
+1. lab04/ hard
 
