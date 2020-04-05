@@ -60,6 +60,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Strutture di controllo (if, test, for, case) 
 * Funzioni
 * Arrays
+* Gestione argomenti linea di comando con getopts
 * Buone pratiche
 
 [M4] Comandi principali
