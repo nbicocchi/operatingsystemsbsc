@@ -162,7 +162,7 @@ in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp dupli
 >La linea #!/bin/sh definisce il percorso dell'interprete dei comandi da utilizzare per eseguire cio' che segue. Ad esempio, per uno script python, si può usare #!/usr/bin/python3
 
 35. Aggiungere a test.sh la linee "echo Hello World!" e "exit 0"
->$ echo "Hello World!" >> test.sh
+>$ echo "echo \"Hello World!\"" >> test.sh
 >
 >$ echo "exit 0" >> test.sh
 
