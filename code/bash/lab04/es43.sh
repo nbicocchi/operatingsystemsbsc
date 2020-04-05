@@ -1,29 +1,51 @@
 #!/bin/bash
 
-USAGE="usage: $0 filename d1 .. dn"
 LOG="/tmp/script.log"
+LINES=10
 
-# Check arguments
-if [ $# -lt 2 ]; then
-  echo "$USAGE"
-  exit 1
-fi
+usage() { 
+    echo "usage: $0 [-h] [-l lines] -f filename d1 .. dn" 1>&2; 
+    exit 1; 
+}
 
-F="$1"
-shift
+# Process arguments
+while getopts "f:l:h" o; do
+    case "$o" in
+        f)  F="$OPTARG"
+            case "$F" in 
+                */*)  usage
+                      ;;
+                *)    ;;
+            esac
+            ;;
+        l)  LINES="$OPTARG"
+            expr "$LINES" + 0 1>/dev/null 2>&1 || usage
+            [ "$LINES" -ge 2 ] || usage
+            ;;
+        h)  usage
+            ;;
+        *)  usage
+            ;;
+    esac
+done
 
+# Shift parameters away. $1 become first directory
+shift $(expr $OPTIND - 1)
+
+# Check parameters
+[ $# -lt 1 ] && usage
+[ -z "$F" ] && usage
+
+# Check dirs
 for dname in $*; do
   case "$dname" in 
     /*) ;;
-    *)  echo "$USAGE"
-        exit 1
+    *)  usage
         ;;
   esac
 
-  if [ ! -d "$dname" -o ! -x "$dname" ]; then
-    echo "$USAGE"
-    exit 1
-  fi
+  [ ! -d "$dname" ] && usage
+  [ ! -x "$dname" ] && usage
 done
 
 # Main body
@@ -31,7 +53,7 @@ rm -rf "$LOG"
 for dname in $*; do
   list=$(find "$dname" -type f -readable -name "$F" 2>/dev/null)
   for item in $list; do
-    if [ $(cat "$item" | wc -l) -ge 10 ]; then
+    if [ $(cat "$item" | wc -l) -ge "$LINES" ]; then
       echo "$item"
       tail -n 2 "$item" | head -n 1 >> "$LOG"
     fi

@@ -1,39 +1,49 @@
 #!/bin/bash
 
-USAGE="usage: $0 dirname(abs) EQ|NE"
+usage() { 
+    echo "usage: $0 [-h] -d dirname -m EQ|NE" 1>&2; 
+    exit 1; 
+}
 
-# Check arguments
-if [ $# -ne 2 ]; then
-  echo "$USAGE"
-  exit 1
-fi
+while getopts "d:m:h" o; do
+    case "$o" in
+        d)  D="$OPTARG"
+            case "$D" in 
+                /*) [ ! -d "$D" ] && usage
+                    [ ! -x "$D" ] && usage
+                    ;;
+                *)  usage
+                    ;;
+            esac
+            ;;
+        m)  M="$OPTARG"
+            case "$M" in
+                EQ|NE) ;;
+                *)     usage
+                       ;;
+            esac
+            ;;
+        h)  usage
+            ;;
+        *)  usage
+            ;;
+    esac
+done
 
-case "$1" in 
-  /*) ;;
-  *) echo "$USAGE"
-     exit 1
-     ;;
-esac
+# Shift parameters away. In this case, useless.
+shift $(expr $OPTIND - 1)
 
-if [ ! -d "$1" -o ! -x "$1" ]; then
-  echo "$USAGE"
-  exit 1
-fi
-
-case "$2" in 
-  EQ|NE) ;;
-  *)  echo "$USAGE"
-      exit 1
-      ;;
-esac
+# Check if parameters have been acquired
+[ -z "$D" ] && usage
+[ -z "$M" ] && usage
 
 # Main body
-list=$(find "$1" -type d -executable 2>/dev/null)
+list=$(find "$D" -type d -executable 2>/dev/null)
 for item in $list; do
   ndirs=$(find "$item" -maxdepth 1 -type d | wc -l 2>/dev/null)
   nfiles=$(find "$item" -maxdepth 1 -type f | wc -l 2>/dev/null)
-  [ "$2" == "EQ" -a "$ndirs" -eq "$nfiles" ] && echo "$item" ["$ndirs" dirs, "$nfiles" files]
-  [ "$2" == "NE" -a "$ndirs" -ne "$nfiles" ] && echo "$item" ["$ndirs" dirs, "$nfiles" files]
+  [ "$M" == "EQ" -a "$ndirs" -eq "$nfiles" ] && echo "$item" ["$ndirs" dirs, "$nfiles" files]
+  [ "$M" == "NE" -a "$ndirs" -ne "$nfiles" ] && echo "$item" ["$ndirs" dirs, "$nfiles" files]
 done
 
 exit 0
