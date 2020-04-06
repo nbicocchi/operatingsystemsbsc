@@ -47,7 +47,7 @@ Per utilizzare questa guida con vim utilizzare i seguenti due comandi
 37. Eseguire test.sh
 38. Spostare test.sh all'interno della cartella /tmp
 39. Eseguire test.sh rimanendo nella propria home directory
-40. Aprire la pagina di manuale del comando apropos ed utilizzare apropos per cercare le pagine di manuale del comando basename
+40. Aprire la pagina di manuale del comando apropos. Successivamente, utilizzare apropos per cercare le pagine di manuale del comando basename
 
 ## Soluzioni 
 1. Elencare i file nella directory corrente
@@ -63,7 +63,9 @@ Per utilizzare questa guida con vim utilizzare i seguenti due comandi
 >$ cd /
 
 5. Ritornare alla propria home indicandone il nome in modo assoluto
->$ cd /home/nicola
+>$ cd /home/nicola # oppure
+>
+> cd "$HOME"
 
 6. Spostarsi alla radice del filesystem
 >$ cd /
@@ -117,7 +119,9 @@ in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp dupli
 >$ touch testdir/empty
 
 22. Eliminare la directory testdir
->$ rm -rf testdir
+>$ rm -r testdir # oppure
+>
+> $ rm -rf testdir
 
 23. Combinare il comando ps aux con il comando grep usando un file temporaneo per individuare i processi che eseguono una shell (e.g., bash, mosh, dash, sh)
 >$ ps aux > tempfile; grep bash tempfile 
@@ -178,7 +182,7 @@ in cui viene utilizzato lo spazio fisico sul disco. In particolare: (a) cp dupli
 39. Eseguire test.sh rimanendo nella propria home directory
 >$ /tmp/test.sh
 
-40. Aprire la pagina di manuale del comando apropos ed utilizzare apropos per cercare le pagine di manuale del comando basename
+40. Aprire la pagina di manuale del comando apropos. Successivamente, utilizzare apropos per cercare le pagine di manuale del comando basename
 >$ man apropos
 >
 >$ apropos basename

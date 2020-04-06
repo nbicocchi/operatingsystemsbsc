@@ -14,17 +14,21 @@ count() {
   done
 }
 
+# Check the number of parameters
 if [ $# -ne 2 ]; then 
   echo "$USAGE"
   exit 1
 fi
 
+# Check if "$1" is a directory and explorable
 if [ ! -d "$1" -o ! -x "$1" ]; then
   echo "$USAGE"
   exit 1
 fi
 
-# checks if $2 actually contains a number
+# checks if "$2" actually contains a number
+# if "$2" is not a number, expr returns 2 or 3 (see man)
+# output is discarded because we are looking for $?
 expr $2 + 0 >/dev/null 2>&1
 if [ $? -gt 1 ]; then
   echo "$USAGE"

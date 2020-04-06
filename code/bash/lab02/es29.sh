@@ -2,16 +2,19 @@
 
 USAGE="usage: $0 dirname"
 
+# Check the number of parameters
 if [ $# -ne 1 ]; then 
   echo "$USAGE"
   exit 1
 fi
 
+# Check if "$1" is a directory and explorable
 if [ ! -d "$1" -o ! -x "$1" ]; then
   echo "$USAGE"
   exit 1
 fi
 
+# Main body
 F=0
 D=0
 for fname in "$1"/*; do
