@@ -65,7 +65,7 @@ Per utilizzare questa guida con vim utilizzare i seguenti due comandi
 5. Ritornare alla propria home indicandone il nome in modo assoluto
 >$ cd /home/nicola # oppure
 >
-> cd "$HOME"
+>$ cd "$HOME"
 
 6. Spostarsi alla radice del filesystem
 >$ cd /
