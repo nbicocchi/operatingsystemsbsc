@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# For testing: ./es27.sh 2>/dev/null
+# Both stdout and stderr are attached to the same terminal
+# For testing try the following commands:
+# $ ./es27.sh 1>/dev/null  (shows only stderr) 
+# $ ./es27.sh 2>/dev/null  (shows only stout)
 
 for fname in *; do
   case "$fname" in
