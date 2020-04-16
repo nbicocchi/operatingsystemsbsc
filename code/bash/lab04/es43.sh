@@ -4,8 +4,8 @@ LOG="/tmp/script.log"
 LINES=10
 
 usage() { 
-    echo "usage: $0 [-h] [-l lines] -f filename d1 .. dn" 1>&2; 
-    exit 1; 
+    echo "usage: $0 [-h] [-l lines] -f filename d1 .. dn" 1>&2
+    exit 1
 }
 
 # Process arguments

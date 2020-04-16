@@ -3,8 +3,8 @@
 LINKDIR="/tmp/links"
 
 usage() { 
-    echo "usage: $0 d1 .. dn" 1>&2; 
-    exit 1; 
+    echo "usage: $0 d1 .. dn" 1>&2
+    exit 1
 }
 
 # Process arguments

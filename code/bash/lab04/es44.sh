@@ -3,8 +3,8 @@
 LOG="/tmp/script.log"
 
 usage() { 
-    echo "usage: $0 [-h] -f filename d1 .. dn" 1>&2; 
-    exit 1; 
+    echo "usage: $0 [-h] -f filename d1 .. dn" 1>&2
+    exit 1
 }
 
 # Process arguments

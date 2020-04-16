@@ -1,8 +1,8 @@
 #!/bin/bash
 
 usage() { 
-    echo "usage: $0 [-h] -d dirname -m EQ|NE" 1>&2; 
-    exit 1; 
+    echo "usage: $0 [-h] -d dirname -m EQ|NE" 1>&2 
+    exit 1
 }
 
 while getopts "d:m:h" o; do
