@@ -1,6 +1,6 @@
 # Algoritmi e linguaggi di programmazione
 
-Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti, processi, filesystem, comandi principali, e scripting Bash. Si rivolge a studenti senza esperienza precedente.
+Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti, processi, filesystem, comandi principali, ed utilizzo della shell Bash. Inoltre introduce il linguaggio C, frequentemente utilizzato nella programmazione di sistema. Il corso si rivolge a studenti senza esperienza precedente.
 
 ## Software, Tutorial, Esercizi
 
@@ -15,16 +15,14 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 * https://www.tutorialspoint.com/unix/
 * http://en.wikipedia.org/wiki/C_(programming_language)
 * http://en.wikipedia.org/wiki/C_syntax
-* http://it.wikibooks.org/wiki/C
 * http://en.wikibooks.org/wiki/C_Programming
-* http://cppreference.com http://cplusplus.com
-* http://cppreference.com http://cplusplus.com
+* http://cppreference.com 
+* http://cplusplus.com
 
 ## Libri
-* Jason Bacon, Lars Olson - Unix User's Guide
-* Machtelt Garrels - La guida di Bash per principianti
-* Marco Liverani - Programmazione della Shell Bash
 * Marco Liverani - Unix introduzione elementare
+* Marco Liverani - Programmazione della Shell Bash
+* Jason Bacon, Lars Olson - Unix User's Guide
 * Chet Ramey, Brian Fox - Bash Reference Manual
 * Facchinetti, Larizza, Rubini - Programmare in C
 * BlackLight - Il Linguaggio C
@@ -102,9 +100,4 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 [M8] La libreria standard del C
 
 ## Esame
-L'esame consisterà di sei esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 4 più semplici supera la soglia della sufficienza. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
-
-* lab01/ introduttivi
-* lab02/ semplici
-* lab03/ intermedi
-* lab04/ difficili
+L'esame consisterà di 6 esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 4 più semplici supera la soglia della sufficienza. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
