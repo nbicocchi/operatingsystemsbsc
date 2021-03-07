@@ -30,7 +30,7 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 * Burgess - The GNU C Programming Tutorial
 
 ## Video
-* [YouTube Bash](https://www.youtube.com/watch?v=mWjhPDmyV-w&list=PLhlcRDRHVUzR-5TKDC1VPMtyhEyyQ5uwy)
+* [YouTube Bash](https://www.youtube.com/watch?v=62-hJarauK4&list=PLhlcRDRHVUzR-5TKDC1VPMtyhEyyQ5uwy)
 * [YouTube C]()
 
 ## Slack channel
