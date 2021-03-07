@@ -46,7 +46,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 > $ git pull (in caso di errori: git reset --hard; git pull)
 
 ## Moduli Bash
-[M1] Concetti base
+[M1] Introduzione a Unix
 * Installazione OS virtualizzato (VirtualBox)
 * Kernelspace/Userspace
 * Utenti (gruppi, permessi)
@@ -58,7 +58,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Editor di testo (vim, nano)
 * Gestione pacchetti (apt-get)
 
-[M2] Bash Basics
+[M2] Bash Shell
 * Bash (builtins, auto-completamento, ricerca comandi)
 * Flussi dati standard (input, output, error)
 * Ridirezione flussi dati (>, <)
@@ -78,7 +78,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Gestione argomenti linea di comando con getopts
 * Buone pratiche
 
-[M4] Comandi principali
+[M4] Comandi Unix
 * Filesystem (ls, pwd, basename, dirname, cp, mv, ln, stat, rm, mkdir, rmdir, which, locate, touch, chmod, chown, cmp, diff, find)
 * Filtri (cat, grep, sort, head, tail, cut, wc, tr, uniq, sed)
 * Processi (ps, top, kill, fg, bg, &)
