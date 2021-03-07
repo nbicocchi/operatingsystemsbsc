@@ -30,7 +30,11 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 * Burgess - The GNU C Programming Tutorial
 
 ## Video
-* [YouTube](https://www.youtube.com/watch?v=mWjhPDmyV-w&list=PLhlcRDRHVUzR-5TKDC1VPMtyhEyyQ5uwy)
+* [YouTube Bash](https://www.youtube.com/watch?v=mWjhPDmyV-w&list=PLhlcRDRHVUzR-5TKDC1VPMtyhEyyQ5uwy)
+* [YouTube C]()
+
+## Slack channel
+Slack is a simpler way to talk, share files, and work together. During the course, please use this tool instead of emails for asking questions and discuss exercises and home projects. Click [here](https://join.slack.com/t/dief-pds/shared_invite/zt-niz30yi9-IjZFCmhcQhycAd4aRThtTQ) for joining the course workspace on Slack.
 
 ## Slides, esempi, esercizi
 L'intero materiale puo' essere scaricato con il comando seguente:
