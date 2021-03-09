@@ -34,7 +34,7 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 * [YouTube C]()
 
 ## Slack channel
-Slack is a simpler way to talk, share files, and work together. During the course, please use this tool instead of emails for asking questions and discuss exercises and home projects. Click [here](https://join.slack.com/t/dief-pds/shared_invite/zt-niz30yi9-IjZFCmhcQhycAd4aRThtTQ) for joining the course workspace on Slack.
+Slack è un'applicazione per condividere idee, files, e lavorare in gruppo. Durante il corso utilizzeremo questo strumento per tenerci in contatto, discutere esercizi e lo sviluppo dei progetti. Questo [link](https://join.slack.com/t/dief-pds/shared_invite/zt-niz30yi9-IjZFCmhcQhycAd4aRThtTQ) consente di unirsi al gruppo.
 
 ## Slides, esempi, esercizi
 L'intero materiale puo' essere scaricato con il comando seguente:
