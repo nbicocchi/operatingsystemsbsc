@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25.c
+es25_lib.h
+/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.h
+stdio.h
+-
+
+/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.c
+es25_lib.h
+/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.h
+stdio.h
+-
+assert.h
+-
+
+/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.h
+

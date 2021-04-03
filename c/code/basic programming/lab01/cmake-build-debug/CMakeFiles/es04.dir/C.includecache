@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es04.c
+stdio.h
+-
+math.h
+-
+
