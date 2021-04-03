@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01"
+CMAKE_SOURCE_DIR = "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"
+CMAKE_BINARY_DIR = "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/es25.dir/depend.make
@@ -79,29 +79,29 @@ include CMakeFiles/es25.dir/flags.make
 
 CMakeFiles/es25.dir/es25.c.o: CMakeFiles/es25.dir/flags.make
 CMakeFiles/es25.dir/es25.c.o: ../es25.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/es25.dir/es25.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/es25.dir/es25.c.o   -c "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/es25.dir/es25.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/es25.dir/es25.c.o   -c "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25.c"
 
 CMakeFiles/es25.dir/es25.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/es25.dir/es25.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25.c" > CMakeFiles/es25.dir/es25.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25.c" > CMakeFiles/es25.dir/es25.c.i
 
 CMakeFiles/es25.dir/es25.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/es25.dir/es25.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25.c" -o CMakeFiles/es25.dir/es25.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25.c" -o CMakeFiles/es25.dir/es25.c.s
 
 CMakeFiles/es25.dir/es25_lib.c.o: CMakeFiles/es25.dir/flags.make
 CMakeFiles/es25.dir/es25_lib.c.o: ../es25_lib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/es25.dir/es25_lib.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/es25.dir/es25_lib.c.o   -c "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/es25.dir/es25_lib.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/es25.dir/es25_lib.c.o   -c "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25_lib.c"
 
 CMakeFiles/es25.dir/es25_lib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/es25.dir/es25_lib.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.c" > CMakeFiles/es25.dir/es25_lib.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25_lib.c" > CMakeFiles/es25.dir/es25_lib.c.i
 
 CMakeFiles/es25.dir/es25_lib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/es25.dir/es25_lib.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.c" -o CMakeFiles/es25.dir/es25_lib.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25_lib.c" -o CMakeFiles/es25.dir/es25_lib.c.s
 
 # Object files for target es25
 es25_OBJECTS = \
@@ -115,7 +115,7 @@ es25: CMakeFiles/es25.dir/es25.c.o
 es25: CMakeFiles/es25.dir/es25_lib.c.o
 es25: CMakeFiles/es25.dir/build.make
 es25: CMakeFiles/es25.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable es25"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable es25"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/es25.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -128,6 +128,6 @@ CMakeFiles/es25.dir/clean:
 .PHONY : CMakeFiles/es25.dir/clean
 
 CMakeFiles/es25.dir/depend:
-	cd "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01" "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01" "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug" "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug" "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/CMakeFiles/es25.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01" "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01" "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug" "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug" "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/CMakeFiles/es25.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/es25.dir/depend
 

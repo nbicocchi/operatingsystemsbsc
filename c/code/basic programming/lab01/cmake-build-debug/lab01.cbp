@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es22">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es22" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es22" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -41,15 +41,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es22"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es22"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es22/fast">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es22" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es22" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -61,15 +61,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es22/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es22/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es21">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es21" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es21" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -81,15 +81,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es21"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es21"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es21/fast">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es21" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es21" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -101,15 +101,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es21/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es21/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es20">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es20" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es20" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -121,15 +121,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es20"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es20"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es20/fast">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es20" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es20" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -141,15 +141,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es20/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es20/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es13">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es13" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es13" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -161,15 +161,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es13"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es13"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es13/fast">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es13" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es13" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -181,15 +181,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es13/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es13/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es08">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es08" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es08" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -201,15 +201,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es08"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es08"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es08/fast">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es08" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es08" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -221,15 +221,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es08/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es08/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es25">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es25" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es25" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -241,15 +241,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es25"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es25"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es25/fast">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es25" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es25" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -261,15 +261,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es25/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es25/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es07">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es07" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es07" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -281,15 +281,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es07"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es07"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es07/fast">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es07" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es07" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -301,25 +301,25 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es07/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es07/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es04">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es04" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es04" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -331,15 +331,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es04"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es04"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="es04/fast">
-				<Option output="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/es04" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug"/>
+				<Option output="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/es04" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -351,44 +351,44 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es04/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/Google\ Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 es04/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic\ programming/lab01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es04.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es04.c">
 			<Option target="es04"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es07.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es07.c">
 			<Option target="es07"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es08.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es08.c">
 			<Option target="es08"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es13.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es13.c">
 			<Option target="es13"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es20.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es20.c">
 			<Option target="es20"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es21.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es21.c">
 			<Option target="es21"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es22.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es22.c">
 			<Option target="es22"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25.c">
 			<Option target="es25"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.c">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25_lib.c">
 			<Option target="es25"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.h">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25_lib.h">
 			<Option target="es25"/>
 		</Unit>
-		<Unit filename="/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/CMakeLists.txt">
+		<Unit filename="/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

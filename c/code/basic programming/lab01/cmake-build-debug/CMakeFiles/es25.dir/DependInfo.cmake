@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25.c" "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/CMakeFiles/es25.dir/es25.c.o"
-  "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/es25_lib.c" "/Users/nicola/Google Drive/Unimore/Didattica/misc/C/C/esercizi/lab01/cmake-build-debug/CMakeFiles/es25.dir/es25_lib.c.o"
+  "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25.c" "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/CMakeFiles/es25.dir/es25.c.o"
+  "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/es25_lib.c" "/Users/nicola/CLionProjects/operatingsystemsbsc/c/code/basic programming/lab01/cmake-build-debug/CMakeFiles/es25.dir/es25_lib.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
