@@ -7,7 +7,7 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 ### Bash/C
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Ubuntu Linux](https://www.ubuntu-it.org/download)
-* [Sublime Text](https://www.sublimetext.com/)
+* [CLion](https://www.jetbrains.com/clion/)
 
 ### Misc
 * https://explainshell.com/
@@ -30,6 +30,7 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 * Burgess - The GNU C Programming Tutorial
 
 ## Video
+* [YouTube CLion](https://www.youtube.com/playlist?list=PLQ176FUIyIUb_J7ZEi2IDe9132-dq_vQL)
 * [YouTube Bash](https://www.youtube.com/watch?v=62-hJarauK4&list=PLhlcRDRHVUzR-5TKDC1VPMtyhEyyQ5uwy)
 * [YouTube C]()
 
@@ -104,4 +105,4 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 [M8] La libreria standard del C
 
 ## Esame
-L'esame consisterà di 6 esercizi al calcolatore di difficoltà crescente. La scrittura corretta dei 4 più semplici supera la soglia della sufficienza. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
+L'esame consisterà di 2 esercizi al calcolatore di difficoltà crescente. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
