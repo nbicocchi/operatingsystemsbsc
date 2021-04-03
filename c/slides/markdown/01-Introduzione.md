@@ -21,30 +21,13 @@ Libro di testo “Programmare in C”
 * Cap. 10 (Makefile)
 
 
-# Panoramica: in origine
+# Il linguaggio C
 
-* Linguaggi di programmazione di *alto livello*
-  * Indipendenti dalle architetture
-  * Esempio: C, Rust
-
-* Linguaggi di programmazione di *basso livello*
-  * Dipendenti dalle architetture
-  * Esempio: assembly
-
-
-# Panoramica: attuale
-
-* Linguaggi di programmazione di *alto livello*
-  * Gestione della memoria, astrazioni di alto livello (oggetti, stream, iteratori, ...).
-  * Esempi: Python, Javascript, Java, Go, C++
-
-* Linguaggi di programmazione di *basso livello*
-  * Gestione della memoria e astrazioni basilari (tipi di dati, funzioni, strutture dati, file).
-  * Esempi: C, Rust
-
-* Linguaggi di programmazione di *bassissimo livello*
-  * Programmi scritti specificamente per un tipo di architettura hardware.
-  * Esempi: assembly, VHDL
+* È un linguaggio di programmazione general-purpose progettato inizialmente da Dennis Ritchie dei Bell Laboratories e implementato nel 1972. Inventato per sopperire ai limiti del linguaggio B e BCPL
+* Nel 1983, National Standard Institute (ANSI) sviluppò il cosiddetto ANSI C o C standard
+* Lo standard è stato poi aggiornato nel 1999 con l’introduzione di alcune varianti e chiarificazioni. Ulteriori aggiornamenti nel 2011 (C11) e nel 2018 (C18).
+* Il linguaggio è di *alto livello* perché non ha una traduzione «diretta», ovvero 1 a 1, ovvero biunivoca, in linguaggio macchina, a differenza dell’assembly.
+* Il linguaggio è di *basso livello* perché lo si può utilizzare come una specie di assembly poco più evoluto. Questo modo di usarlo è però poco lungimirante e decisamente sconsigliato.
 
 
 # Ambito di utilizzo del C
