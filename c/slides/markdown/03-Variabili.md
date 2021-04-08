@@ -8,28 +8,11 @@ colortheme: crane
 aspectratio: 169
 ---
 
-# I tipi di dati numerici interi (IEEE 754-1985)
+# Risorse di riferimento
 
-  | **Nome** | **Dimensione** | **Descrizione** |
-  | -------- | -------------- | --------------- |
-  |    char      | 1 byte | intero con segno 8bit |
-  | unsigned char | 1 byte | intero senza segno 8bit |
-  | short | 2 byte | intero con segno 16bit |
-  | unsigned short | 2 byte | intero senza segno 16bit |
-  | int | 4 byte | intero con segno 32bit |
-  | unsigned int | 4 byte | intero senza segno 32bit |
-  | long long | 8 byte | intero con segno 64bit |
-  | unsigned long long | 8 byte | intero senza segno 64bit |
-
-
-# I tipi di dati numerici in virgola mobile (IEEE 754-1985)
-
-| **Nome** | **Dimensione** | **Descrizione** |
-  | -------- | -------------- | --------------- |
-| float | 4 byte | numero in virgola mobile a 32 bit |
-| double | 8 byte | numero in virgola mobile a 64 bit |
-
-
+* Libro di testo “Programmare in C”
+  * Cap. 5 (tutte le sezioni tranne 5.8, 5.9, 5.11)
+  
 # Definizione di variabili
 
 * Con definizione di variabile, si intende il modo con cui in un file che segue la sintassi del linguaggio C viene richiesto di riservare memoria per contenere un certo dato e gli viene assegnato un nome simbolico.
@@ -69,6 +52,119 @@ double radice;
     * ottali: cominciano con 0 e proseguono con altre cifre da 0 a 7.
     * esadecimali: cominciano con «0x» o «0X» e proseguono con altre cifre da 0 a 9 e con le lettere (maiuscole o minuscole) da «A» a «F».
 
+  
+# Inizializzazione di variabili
+
+* Di default, le variabili non hanno un valore predefinito, quindi bisognerà successivamente eseguire comandi per assegnargli qualcosa.
+* È possibile anche inizializzare una variabile, in modo che all’avvio del programma (o meglio all’inizio della loro vita) abbia un valore preciso:
+
+```c
+<tipo> <nome-varibile> = <espressione> ;
+```
+
+# Esempi di definizioni con inizializzazione
+
+```c
+char c = 21;
+short s = 0xffff;
+int i = '7';
+long long numero = 1234567890123;
+float f = 3.141592f;
+double radice = 1.4142135623730950488016887242097;
+```
+
+* In questo modo la memoria allocata per la variabile viene anche riempita con un valore iniziale durante la sua creazione (detta anche allocazione). Notate che per ora abbiamo utilizzato solo espressioni composte da letterali.
+
+
+# Variabili di sola lettura
+
+```c
+const <tipo> <nome-varibile> = <espressione> ;
+const double pi_greco = 3.1415926535897932384;
+```
+
+* È possibile specificare che la variabile in memoria potrà essere solo letta, ovvero che è una variabile read-only, tramite la parola riservata *const*.
+* Questa variabile è identica alle altre (ha un tipo, una locazione di memoria e viene inizializzata), se non per il fatto che nessun comando successivo potrà modificarne il valore.
+* Tecnicamente la parola chiave const potrebbe anche essere posta dopo il tipo, ma è molto inusuale e sconsigliabile per gli studenti.
+
+
+# Definizione di più variabili nella stessa linea
+
+```c
+<tipo> <nome-var-1>, <nome-var-2>, ... , <nome-var-N> ;
+int i, j, k;
+char a = 9, b = 23, c = 12; 
+short s1, s2 = 33, s3;
+```
+
+* È possibile definire più variabili assieme per avere una scrittura più compatta. In pratica, si scrive il tipo una sola volta e si elencano di seguito le variabili che si intende definire.
+* È inoltre possibile aggiungere o meno una inizializzazione ad ogni variabile.
+
+# Memoria
+
+Le variabili locali:
+
+* sono variabili definite all’interno di una funzione (e.g., funziona main).
+* sono allocate in una parte di memoria chiamata *stack*. 
+* il processo in esecuzione alloca automaticamente la memoria necessaria a contenerle nel momento in cui esegue la funzione.
+* ogni variabile occupa uno spazio di memoria contiguo. le variabili, fra di loro, possono non essere contigue.
+
+# Tipi di variabili
+
+* Il tipo che associamo a una variabile identifica due caratteristiche principali:
+  * la modalità di rappresentazione
+  * la quantità di memoria occupata
+
+# I tipi di dati numerici interi (IEEE 754-1985)
+
+| **Nome** | **Dimensione** | **Descrizione** |
+  | -------- | -------------- | --------------- |
+|    char      | 1 byte | intero con segno 8bit |
+| unsigned char | 1 byte | intero senza segno 8bit |
+| short | 2 byte | intero con segno 16bit |
+| unsigned short | 2 byte | intero senza segno 16bit |
+| int | 4 byte | intero con segno 32bit |
+| unsigned int | 4 byte | intero senza segno 32bit |
+| long long | 8 byte | intero con segno 64bit |
+| unsigned long long | 8 byte | intero senza segno 64bit |
+
+
+# I tipi di dati numerici in virgola mobile (IEEE 754-1985)
+
+| **Nome** | **Dimensione** | **Descrizione** |
+  | -------- | -------------- | --------------- |
+| float | 4 byte | numero in virgola mobile a 32 bit |
+| double | 8 byte | numero in virgola mobile a 64 bit |
+
+
+# Dimensione dei tipi
+* La dimensione delle variabili numeriche intere possono variare a seconda delle architetture
+* In alcuni contesti si può preferire utilizzare tipi di variabili non nativi, ma che ci danno indicazioni precise sulle dimensioni a prescindere dall’architettura impiegata (int8_t, int16_t, uint8_t, uint16_t, ..., definiti all'interno di stdint.h)
+
+# sizeof
+
+```c
+printf(“Size of:\n”);
+printf(“\tchar=%lu\n”, sizeof(char));
+printf(“\tshort=%lu\n”, sizeof(short));
+printf(“\tint=%lu\n”, sizeof(int));
+printf(“\tlong=%lu\n”, sizeof(long));
+printf(“\tlonglong=%lu\n”, sizeof(long long));
+```
+
+# Rappresentazione del dato
+* In base alla rappresentazione, l’implementazione delle operazioni cambia completamente
+(e anche la loro complessità e le performance)
+  * Numeri interi
+    * Con segno [-2^b-1 : +2^b-1 - 1] b = 4 [-8, 7]
+    * Senza segno [ 0 : +2^b - 1] b = 4 [0, 15]
+  * Numeri virgola mobile
+  
+# Range dei tipi di dato
+
+* Variabili intere (limits.h) CHAR_MIN, CHAR_MAX, INT_MIN , INT_MAX, LONG_MIN, LONG_MAX , LLONG_MIN, LLONG_MAX, ...
+* Variabili virgola mobile (float.h) FLT_MIN, FLT_MAX, DBL_MIN, DBL_MAX, ...
+
 
 # Letterali numerici
 * Col termine letterale si intende un valore costante del C.
@@ -96,43 +192,10 @@ double radice;
 | \\num | - | Il numero num interpretato come ottale |
 | \\xnum | - | Il numero num interpretato come esadecimale |
 
+# printf
 
-# Inizializzazione di variabili
+...
 
-* Di default, le variabili non hanno un valore predefinito, quindi bisognerà successivamente eseguire comandi per assegnargli qualcosa.
-* È possibile anche inizializzare una variabile, in modo che all’avvio del programma (o meglio all’inizio della loro vita) abbia un valore preciso:
+# variabili costanti
 
-```c
-<tipo> <nome-varibile> = <espressione> ;
-```
-
-
-# Variabili
-
-```c
-#include<stdio.h>
-
-int main() {
-	int base = 5; int altezza = 4; int area;
-
-	area = base * altezza / 2;
-	printf("Area: %d", area);
-	
-	return 0;
-}
-```
-**int base = 5; int altezza = 4; int area = 0;**
-
-* È una dichiarazione. base, altezza, area sono nomi di variabili. Le variabili
-rappresentano simbolicamente i dati all’interno dei programmi.
-* Una variabile identifica una locazione (posizione) della memoria in cui può essere memorizzato un dato a cui il programma può accedere.
-
-
-# Proprietà delle Variabili
-
-**int area = 0;**
-
-* **Nome**: identifica la variabile. E’ un identificatore C: sequenza di lettere, cifre, _ che non inizia con una cifra (es. a123b e _as_231 lo sono, 1ab no).
-* **Tipo**: specifica il tipo del dato. Esempio: int area specifica il fatto che area rappresenta un valore intero.
-* **Indirizzo**: della cella di memoria che contiene il dato. Se il dato occupa più celle, questo è memorizzato in celle consecutive e l’indirizzo è quello della prima cella.
-* **Valore**: dato rappresentato dalla variabile in certo momento dell’esecuzione. Può cambiare (variabile) durante l’esecuzione.
+...

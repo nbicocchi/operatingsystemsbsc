@@ -136,3 +136,12 @@ int main(){
   * -g mantiene i simboli (debug)
   * -o specifica il nome del file compilato (default=a.out)
 * Se generato nella directory corrente, è possibile eseguire il programma con il comando ./helloworld
+
+# Ambienti di sviluppo
+
+* CLion
+* Microsoft Visual Studio
+* Eclipse
+* Visual Studio Code
+* Sublime text, vim
+
