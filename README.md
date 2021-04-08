@@ -10,9 +10,11 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 * [CLion](https://www.jetbrains.com/clion/)
 
 ### Misc
-* https://explainshell.com/
-* https://seankross.com/the-unix-workbench/
+* https://www.hackerrank.com/domains/shell
 * https://www.tutorialspoint.com/unix/
+* https://seankross.com/the-unix-workbench/
+* https://explainshell.com/
+* https://www.hackerrank.com/domains/c
 * http://en.wikipedia.org/wiki/C_(programming_language)
 * http://en.wikipedia.org/wiki/C_syntax
 * http://en.wikibooks.org/wiki/C_Programming
