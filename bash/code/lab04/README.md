@@ -1,4 +1,4 @@
-# Esercitazione UNIX #4 - ALP DIEF UNIMORE 
+# Esercitazione UNIX #4
 Per utilizzare questa guida con vim utilizzare i seguenti due comandi 
 
 >:set wrap 
