@@ -2,14 +2,12 @@
 
 Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti, processi, filesystem, comandi principali, ed utilizzo della shell Bash. Il corso inoltre introduce il linguaggio C, frequentemente utilizzato nella programmazione di sistema. Il corso si rivolge a studenti senza esperienze precedenti di programmazione.
 
-## Software, Tutorial, Esercizi
-
-### Bash/C
+## Software
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Ubuntu Linux](https://www.ubuntu-it.org/download)
 * [CLion](https://www.jetbrains.com/clion/)
 
-### Misc
+## Tutorial, Esercizi Online
 * https://www.hackerrank.com/domains/shell
 * https://www.tutorialspoint.com/unix/
 * https://seankross.com/the-unix-workbench/
@@ -19,7 +17,6 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 * http://en.wikipedia.org/wiki/C_syntax
 * http://en.wikibooks.org/wiki/C_Programming
 * http://cppreference.com 
-* http://cplusplus.com
 
 ## Libri
 * Marco Liverani - Unix introduzione elementare
@@ -39,7 +36,7 @@ Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti
 ## Slack channel
 Slack è un'applicazione per condividere idee, files, e lavorare in gruppo. Durante il corso utilizzeremo questo strumento per tenerci in contatto, discutere esercizi e lo sviluppo dei progetti. Questo [link](https://join.slack.com/t/dief-pds/shared_invite/zt-niz30yi9-IjZFCmhcQhycAd4aRThtTQ) consente di unirsi al gruppo.
 
-## Slides, esempi, esercizi
+## Materiale didattico
 L'intero materiale puo' essere scaricato con il comando seguente:
 
 > git clone https://github.com/nbicocchi/operatingsystemsbsc.git
