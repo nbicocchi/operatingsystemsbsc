@@ -32,6 +32,14 @@ Per utilizzare questa guida con vim utilizzare i seguenti due comandi
 
 **usage: $0 [-h] -a A -b B -d dirname**
 
-07. (es47.sh) Lo script prevede un numero variabile di parametri che rappresentano nomi semplici di file (f1, ..., fn). Lo script cerca ricorsivamente nella directory indicata da -d, tutte le directory che contengono almeno un file fra quelli indicati. Tutte le directory trovate, vanno salvate all'interno del file /tmp/script.log e ordinate per il numero di file trovati.
+07. (es47.sh) Lo script prevede un numero variabile di parametri che rappresentano nomi semplici di file (f1, ..., fn). Lo script cerca ricorsivamente nella directory indicata da -d, tutte le directory che contengono almeno un file fra quelli indicati. Tutte le directory trovate, vanno salvate all'interno del file /tmp/script.log e ordinate per il numero di file trovati fra quelli indicati.
 
 **usage: $0 [-h] -d dirname f1 .. fn**
+
+08. (es48.sh) Lo script prevede un numero variabile di parametri che rappresentano nomi semplici di file (f1, ..., fn). Lo script verifica che *globalmente* nella directory indicata da -d, esistano i files f1 .. fn. In caso non siano tutti presenti, lo script mostra i nomi dei files non trovati.
+
+**usage: $0 [-h] -d dirname f1 .. fn**
+
+09. (es49.sh) Lo script prevede un numero variabile di parametri che rappresentano nomi assoluti di directory (d1, ..., dn). Lo script prevede inoltre l'utilizzo del parametro -t per specificare un'estensione di file. Lo script calcola la dimensione media (in bytes) dei file che terminano con l'estensione indicata per ogni directory indicata e mostra il risultato ordinato in modo decrescente.
+
+**usage: $0 [-h] -t extension d1 .. dn**
