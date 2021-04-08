@@ -22,3 +22,6 @@ Per utilizzare questa guida con vim utilizzare i seguenti due comandi
 
 05. (es45.sh) Lo script prevede un numero variabile di parametri che rappresentano nomi assoluti di directory (d1, ..., dn). Per ognuna delle n directory, lo script cerca al suo interno tutti i file leggibili modificati nelle ultime 24h (vedi opzioni del comando find). Per ogni file trovato, lo script ne riporta il nome su stdout e ne crea un link simbolico all'interno della cartella /tmp/links. Per evitare omonimie i link terminano con un intero crescente. Ad esempio, fa.1, fb.2, .. , fxyz.n
 **usage: $0 [-h] d1 .. dn**
+
+06. (es46.sh) Lo script prevede 3 parametri. Il parametro -d specifica il nome assoluto di una directory. I parametri -a, -b rappresentano numeri positivo (A, B). Lo script cerca ricorsivamente nella directory indicata da -d, tutte le directory in cui la somma delle dimensioni dei file leggibili presenti è compresa fra A e B. Tutte le directory trovate, vanno salvate all'interno del file /tmp/script.log ordinate per la somma delle dimensioni dei file contenuti.
+**usage: $0 [-h] -a A -b B -d dirname**
