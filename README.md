@@ -87,21 +87,58 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Varie (dd, echo, read, true, false, expr, date, man, apropos)
 
 ## Moduli C
-[M1] Variabili, costanti, tipi fondamentali
+[M1] Introduzione al linguaggio C
+* Processo di compilazione
+* Identificatori
+* Parole chiave 
+* Variabili
+* Espressioni
 
-[M2] Funzioni
+[M2] Preprocessore
+* Introduzione, utilizzo, invocazione
+* \#define
+* \#include
+* \#if
+* \#ifdef
 
-[M3] Il processo di compilazione
+[M3] Istruzioni e strutture di controllo
+* Costrutto condizionale *if-else*
+* Costrutto iterativo *for*
+* Costrutto iterativo *while*
+* Costrutto iterativo *do-while*
+* Costrutto di selezione *switch-case*
+* *break, continue*
 
-[M4] Istruzioni di controllo
+[M4] Tipi di dati
+* Organizzazione in memoria
+* Tipi interi
+* Tipi in virgola mobile
+* Puntatori
+* Array
+* Stringhe 
+* Conversione di tipo (casting)
 
-[M5] Puntatori
+[M5] Funzioni
+* Dichiarazione, definizione, chiamata a funzione
+* Passaggio dei parametri (per valore, per riferimento)
+* Ricorsione
 
-[M6] Array
+[M6] Tipi di dati derivati
+* Array multi-dimensionali
+* Strutture dati
 
-[M7] Strutture
+[M7] File
+* File binari e file di testo
+* Apertura, chiusura, posizione corrente
+* Lettura e scrittura
+* I flussi standard (stdin, stdout, stderr)
+* Utilizzo di buffer e *buffer overflow*
 
-[M8] La libreria standard del C
+[M8] Puntatori 
+* Puntatori a void
+* Puntatori e vettori
+* Allocazione dinamica della memoria
+
 
 ## Esame
 L'esame consisterà di 2 esercizi al calcolatore di difficoltà crescente. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.

@@ -1,4 +1,4 @@
-# Esercitazione UNIX #4
+# Esercitazione Bash #4
 Per utilizzare questa guida con vim utilizzare i seguenti due comandi 
 
 >:set wrap 
