@@ -107,7 +107,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Costrutto iterativo *while*
 * Costrutto iterativo *do-while*
 * Costrutto di selezione *switch-case*
-* *break, continue*
+* Istruzioni *break, continue*
 
 [M4] Tipi di dati
 * Organizzazione in memoria
@@ -120,7 +120,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 [M5] Funzioni
 * Dichiarazione, definizione, chiamata a funzione
-* Passaggio dei parametri (per valore, per riferimento)
+* Passaggio di parametri (per valore, per riferimento)
 * Ricorsione
 
 [M6] Tipi di dati derivati
