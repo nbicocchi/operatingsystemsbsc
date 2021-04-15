@@ -8,12 +8,6 @@ colortheme: crane
 aspectratio: 169
 ---
 
-# Risorse di riferimento
-
-* Libro di testo “Programmare in C”
-  * Cap. 6 (sezioni 6.1 – 6.5) – Funzioni
-  * Cap. 12 (sezioni 12.3, 12.7) – Visibilità e tempo di vita delle variabili
-    
 # Definizione
 
 * Il C è un *linguaggio procedurale*, basato su procedure o funzioni.

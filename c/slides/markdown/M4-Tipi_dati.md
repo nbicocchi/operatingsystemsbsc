@@ -1,6 +1,6 @@
 ---
 author: Nicola Bicocchi
-title: Variabili
+title: Tipi di dati
 institute: DIEF - UNIMORE
 theme: Madrid
 fontsize: 10pt
@@ -8,15 +8,10 @@ colortheme: crane
 aspectratio: 169
 ---
 
-# Risorse di riferimento
-
-* Libro di testo “Programmare in C”
-  * Cap. 5 (tutte le sezioni tranne 5.8, 5.9, 5.11)
-  
 # Definizione di variabili
 
 * Con definizione di variabile, si intende il modo con cui in un file che segue la sintassi del linguaggio C viene richiesto di riservare memoria per contenere un certo dato e gli viene assegnato un nome simbolico.
-* La sintassi per definire una variabile in C è: 
+* La sintassi per definire una variabile in C è:
 
 ```c
 <tipo> <nome variabile> ;
@@ -43,16 +38,16 @@ double radice;
 # Identificatori
 
 * In C gli identificatori utilizzabili per dare un *nome* a qualcosa possono contenere qualsiasi combinazione di:
-  * lettere maiuscole e minuscole
-  * numeri
-  * il carattere underscore (_)
+    * lettere maiuscole e minuscole
+    * numeri
+    * il carattere underscore (_)
 * L’unico ulteriore vincolo è che non possono cominciare con un numero.
 * Le sequenze che iniziano con un numero sono costanti o letterali numeriche.
-    * decimali: cominciano con una cifra da 1 a 9 e proseguono con altre cifre da 0 a 9. 
+    * decimali: cominciano con una cifra da 1 a 9 e proseguono con altre cifre da 0 a 9.
     * ottali: cominciano con 0 e proseguono con altre cifre da 0 a 7.
     * esadecimali: cominciano con «0x» o «0X» e proseguono con altre cifre da 0 a 9 e con le lettere (maiuscole o minuscole) da «A» a «F».
 
-  
+
 # Inizializzazione di variabili
 
 * Di default, le variabili non hanno un valore predefinito, quindi bisognerà successivamente eseguire comandi per assegnargli qualcosa.
@@ -105,15 +100,15 @@ short s1, s2 = 33, s3;
 Le variabili locali:
 
 * sono variabili definite all’interno di una funzione (e.g., funziona main).
-* sono allocate in una parte di memoria chiamata *stack*. 
+* sono allocate in una parte di memoria chiamata *stack*.
 * il processo in esecuzione alloca automaticamente la memoria necessaria a contenerle nel momento in cui esegue la funzione.
 * ogni variabile occupa uno spazio di memoria contiguo. le variabili, fra di loro, possono non essere contigue.
 
 # Tipi di variabili
 
 * Il tipo che associamo a una variabile identifica due caratteristiche principali:
-  * la modalità di rappresentazione
-  * la quantità di memoria occupata
+    * la modalità di rappresentazione
+    * la quantità di memoria occupata
 
 # I tipi di dati numerici interi (IEEE 754-1985)
 
@@ -154,12 +149,12 @@ printf(“\tlonglong=%lu\n”, sizeof(long long));
 
 # Rappresentazione del dato
 * In base alla rappresentazione, l’implementazione delle operazioni cambia completamente
-(e anche la loro complessità e le performance)
-  * Numeri interi
-    * Con segno [-2^b-1 : +2^b-1 - 1] b = 4 [-8, 7]
-    * Senza segno [ 0 : +2^b - 1] b = 4 [0, 15]
-  * Numeri virgola mobile
-  
+  (e anche la loro complessità e le performance)
+    * Numeri interi
+        * Con segno [-2^b-1 : +2^b-1 - 1] b = 4 [-8, 7]
+        * Senza segno [ 0 : +2^b - 1] b = 4 [0, 15]
+    * Numeri virgola mobile
+
 # Range dei tipi di dato
 
 * Variabili intere (limits.h) CHAR_MIN, CHAR_MAX, INT_MIN , INT_MAX, LONG_MIN, LONG_MAX , LLONG_MIN, LLONG_MAX, ...
@@ -169,13 +164,13 @@ printf(“\tlonglong=%lu\n”, sizeof(long long));
 # Letterali numerici
 * Col termine letterale si intende un valore costante del C.
 * Letterali di tipo int:
-  * Decimali: 123, 245681, ecc...
-  * Ottali: 0123, 02456, ecc...
-  * Esadecimali: 0x123, 0x245abc, ecc...
+    * Decimali: 123, 245681, ecc...
+    * Ottali: 0123, 02456, ecc...
+    * Esadecimali: 0x123, 0x245abc, ecc...
 * Con il suffisso «u» è possibile specificare che il loro tipo è unsigned int, (123u unsigned int).
 * Letterali di tipo double, definiti dalla presenza di un punto decimale:
-  * 123\. è un double, come anche 123.0 o 123.345
-  * Notazione scientifica: 1.23e2, oppure 123.e-2 oppure 12e7
+    * 123\. è un double, come anche 123.0 o 123.345
+    * Notazione scientifica: 1.23e2, oppure 123.e-2 oppure 12e7
 * Letterali di tipo float, definiti dalla presenza di un punto decimale e dal il suffisso «f»
 
 

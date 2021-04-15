@@ -12,15 +12,6 @@ aspectratio: 1610
 lang: it
 ---
 
-# Risorse di riferimento
-
-Libro di testo “Programmare in C”
-
-* Prefazione
-* Cap. 1.0, 1.1, 2.1 (Introduzione)
-* Cap. 10 (Makefile)
-
-
 # Il linguaggio C
 
 * È un linguaggio di programmazione general-purpose progettato inizialmente da Dennis Ritchie dei Bell Laboratories e implementato nel 1972. Inventato per sopperire ai limiti del linguaggio B e BCPL

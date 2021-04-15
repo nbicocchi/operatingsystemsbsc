@@ -2,7 +2,7 @@
 date: Aprile 2021
 author: Nicola Bicocchi
 institute: DIEF/UNIMORE
-title: Compilazione e Makefile
+title: Preprocessore e Makefile
 subtitle: Corso di Programmazione di Sistema
 section-titles: true
 theme: Madrid
