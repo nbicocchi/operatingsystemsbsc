@@ -5,8 +5,7 @@ SRCS=$(wildcard *.md)
 OBJS=$(SRCS:.md=.pdf)
 
 all: $(OBJS)
-		mkdir -p ../pdf
-		cp *.pdf ../pdf
+
 
 clean:
 		rm -rf *.pdf
