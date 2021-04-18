@@ -18,6 +18,6 @@
 1. Trasformare un intervallo di tempo espresso in millisecondi (unsigned long) in giorni, ore, minuti e secondi. L’output visualizzato è epresso tramite il formato ‘giorni-ore-minuti-secondi’
 1. Dato un numero (unsigned int), visualizzarlo nei formati ottale, decimale ed esadecimale
 1. Visualizzare a monitor la tabella dei caratteri ascii in cui ogni riga è dedicata a un carattere ed è formata da tre colonne *allineate*: la prima colonna mostra il simbolo ascii del carattere, la seconda il suo valore esadecimale e la terza il suo valore esadecimale
-1. Dati due numeri N (unsigned int) e COLS (unsigned int), visualizzare i numeri pari da 0 a N per righe di dimensione COLS allineate
+1. Dati due numeri N (unsigned int) e COLS (unsigned int), visualizzare i numeri interi da 0 a N per righe di dimensione COLS allineate
 1. Dato un numero (unsigned int), contare il numero di bit impostati a 1 nella sua rappresentazione binaria (ad esempio, il risultato per l’intero 5 è 2)
 1. Mostrare un numero intero senza segno (unsigned int) tramite i numeri romani

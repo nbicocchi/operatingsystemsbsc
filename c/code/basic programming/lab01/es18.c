@@ -20,5 +20,5 @@ void print_aligned(unsigned n, unsigned cols){
 }
 
 int main(){
-    print_aligned(100, 2);
+    print_aligned(100, 5);
 }
