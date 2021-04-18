@@ -21,8 +21,4 @@ void print_aligned(unsigned n, unsigned cols){
 
 int main(){
     print_aligned(100, 2);
-    print_aligned(100, 5);
-    print_aligned(100, 7);
-    print_aligned(100, 10);
-    print_aligned(UINT_MAX, 50);
 }

@@ -6,7 +6,7 @@ OBJS=$(SRCS:.md=.pdf)
 
 all: $(OBJS)
 		mkdir -p ../pdf
-		mv *.pdf ../pdf
+		cp *.pdf ../pdf
 
 clean:
 		rm -rf *.pdf
