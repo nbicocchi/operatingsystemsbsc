@@ -10,3 +10,5 @@ add_executable(es17 lab01/es17.c)
 add_executable(es18 lab01/es18.c)
 add_executable(es20 lab01/es20.c)
 
+add_executable(helloworld examples/helloworld.c)
+

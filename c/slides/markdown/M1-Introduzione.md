@@ -181,7 +181,7 @@ int main(){
 
 # Commenti
 
-* I commenti sono porzioni di testo che non vengono considerate dal compilatore
+* I commenti sono porzioni di testo che non vengono considerate dal compilatore (i.e., vengono eliminati dal preprocessore)
 * I commenti sono fondamentali per rendere leggibile il codice e promuovere la collaborazione fra più individui
 
 ```c
@@ -196,13 +196,13 @@ int main(){
 ```
 
 # Identificatori
-* In C un identificatore è un nome che si riferisce a funzioni, variabili, ed oggetti in genere definiti nel codice. Possono contenere qualsiasi combinazione di:
+* In C un identificatore è un nome che si riferisce a funzioni, variabili, ed oggetti in genere definiti nel codice
+* Non può cominciare con un numero ma può contenere qualsiasi combinazione di:
   * lettere maiuscole e minuscole
   * numeri
   * il carattere underscore (_)
-* L’unico ulteriore vincolo è che non possono cominciare con un numero
 * Esempi **validi**: Prova_1, prova_1, media_pasata, _tot
-* Esempi **invalidi**: 1_prova, totale_%, un$bucato
+* Esempi **invalidi**: 1_prova, totale_%, somma_{
 
 
 # Parole chiave
@@ -255,8 +255,8 @@ int main() {
   * espr ::=	(espr)
   * espr ::=	espr op espr (Dove op e' un operatore binario)
   * espr ::=	op espr (Dove op e' un operatore unario)
-  * espr ::=	variablie++
-  * espr ::=	variablie--
+  * espr ::=	variabile++
+  * espr ::=	variabile\-\-
   * espr ::=	variabile
   * espr ::=	funzione
   * espr ::=	costante
@@ -265,7 +265,7 @@ int main() {
 # Espressioni
 ```c
 45 * (a + b)
-delta * sqrt(abs( x1 * x2))
+delta * sqrt(abs(x1 * x2))
 sqrt(a * b - c) <= 10
 (c1 || c2) && c3
 ```
@@ -286,7 +286,7 @@ sqrt(a * b - c) <= 10
 # CLion
 * Software a pagamento ma con licenze gratuite per gli studenti (https://www.jetbrains.com/community/education/#students)
 * Sviluppato in Java (richiede risorse, portabile)
-* Prodotto dagli stessi autori di PyCharm (sviluppo Python) e IntelliJ IDEA (sviluppo Java/Android)
+* Prodotto dagli stessi autori di PyCharm (Python) e IntelliJ IDEA (Java/Android)
 
 
 # CMake
@@ -306,6 +306,11 @@ helloworld: helloworld.c
 ```
 
 # makefile
+* make supporta l'utilizzo di variabili e simboli speciali.
+* $(CC) : variabile che contiene il comando di compilazione (default: cc)
+* $(CFLAGS): variabile che contiene le opzioni di invocazione del compilatore
+* $@ : metacarattere che viene sostituito con il target (helloworld)
+* $^ : metacarattere che viene sostituito con le dipendenze (helloworld.c)
 ```make
 CC=gcc
 CFLAGS=-Wall
@@ -313,14 +318,10 @@ CFLAGS=-Wall
 helloworld: helloworld.c
     $(CC) $(CFLAGS) -o $@ $^
 ```
-* make supporta l'utilizzo di variabili e simboli speciali.
-* $(CC) : variabile che contiene il comando di compilazione (default: cc)
-* $(CFLAGS): variabile che contiene le opzioni di invocazione del compilatore
-* $@ : metacarattere che viene sostituito con il target (helloworld)
-* $^ : metacarattere che viene sostituito con le dipendenze (helloworld.c)
-
 
 # makefile
+* Di solito si imposta un target speciale *clean* per pulire il sistema dai residui della compilazione
+
 ```make
 CC=gcc
 CFLAGS=-Wall -g
@@ -331,7 +332,6 @@ clean:
 helloworld: helloworld.c
     $(CC) $(CFALGS) -o $@ $^
 ```
-* Di solito si imposta un target speciale *clean* per pulire il sistema
 
 
 # CMakeLists.txt

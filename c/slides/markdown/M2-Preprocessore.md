@@ -33,7 +33,7 @@ int main(){
 
 
 # Processo di compilazione
-![Processo di compilazione](./images/compilazione2.png)
+![Processo di compilazione](./images/compilazione.png)
 
 # Preprocessore
 * Non è un comando o programma aggiuntivo, ma solo un termine con cui si definisce questa fase del processo di compilazione
@@ -68,16 +68,13 @@ int main(){
 * Indichiamo al compilatore gcc di cercare in percorsi arbitrari con l’opzione di compilazione -I
 * Indichiamo al compilatore gcc di cercare localmente il file
 
-# Esempio
-bla bla...
-
 
 # Esempio (mymath.h e mymath.c)
 
 * All'interno del file .h posizioniamo i prototipi delle funzioni
 
 ```c
-unsigned mypow(unsigned base, unsigned exp);
+unsigned mypow(unsigned int base, unsigned int exp);
 ```
 
 * All'interno del file .c posizioniamo le implementazioni delle funzioni
@@ -85,8 +82,8 @@ unsigned mypow(unsigned base, unsigned exp);
 ```c
 #include "mymath.h"
 
-unsigned mypow(unsigned base, unsigned exp){
-    unsigned result;
+unsigned mypow(unsigned int base, unsigned int exp){
+    unsigned int result;
     for(result=1; exp>0 ; exp--){
         result*=base;
     }
@@ -100,8 +97,8 @@ unsigned mypow(unsigned base, unsigned exp){
 #include "mymath.h"
 
 int main(){
-    unsigned base=3,exp=5;
-    printf("3^5=%u\n", mypow(base,exp));
+    unsigned int base=3,exp=5;
+    printf("%u^%u=%u\n", base, exp, mypow(base, exp));
     return 0;
 }
 ```
@@ -165,7 +162,7 @@ SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5
 ```
 
 # Direttiva #undef
-* La direttiva \#define non scope 
+* La direttiva \#define non ha scope 
 * Il preprocessore non conosce le funzioni o altri costrutti di aggregazione/visibilità del linguaggio. Legge i sorgenti e opera **sequenzialmente** dall’inizio alla fine del file sorgente
 * Per eliminare una definizione è necessario utilizzare la direttiva \#undef in modo esplicito
 
