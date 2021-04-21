@@ -37,9 +37,8 @@ int main(){
 
 # Preprocessore
 * Non è un comando o programma aggiuntivo, ma solo un termine con cui si definisce questa fase del processo di compilazione
-* La si può immaginarla come una procedura di manipolazione di testo
-* L’input è codice sorgente l’output è codice sorgente
-* Le direttive al preprocessore non esistono più nel codice sorgente che viene effettivamente compilato nè tantomento nel codice compilato. Si tratta di uno *stratagemma* per manipolare il codice sorgente prima della compilazione
+* La si può immaginare come una procedura di manipolazione di testo: l’input è codice sorgente l’output è codice sorgente
+* Le direttive al preprocessore non esistono più nel codice sorgente che viene effettivamente compilato nè tantomento nel codice compilato. Si tratta di un meccanismo per manipolare il codice sorgente prima della compilazione
 * Per mostrare/salvare solo l’output del preprocessore si può usare:
   * *$ gcc -E filename.c*
 
@@ -49,7 +48,7 @@ int main(){
 
 **\#define** modifica del codice
 
-**\#ifdef \#else \#endif** esclusione/scelte di codice
+**\#ifdef (\#ifndef) \#else \#endif** esclusione condizionata di codice
 
 # Direttiva #include
 * Aggiunge codice sorgente presente in file esterni
@@ -112,8 +111,8 @@ add_executable(main main.c mymath.c)
 ```
 
 # Direttiva #define
-* La direttiva \#define modifica il codice sorgente sostituendo tutte le occorrenze di INPUT con OUTPUT
-* Attenzione: \#define non definisce variabili globali!
+* La direttiva \#define INPUT OUTPUT modifica il codice sorgente sostituendo tutte le occorrenze di INPUT con OUTPUT
+* **Attenzione**: \#define non definisce variabili e/o funzioni globali!
 
 ```c
 #define INPUT OUTPUT
@@ -140,7 +139,7 @@ int main(){
 }
 ```
 
-* **Attenzione!** N non è una funzione!
+* **Attenzione**: N non è una funzione!
 * Il preprocessore crea un nuovo codice sorgente sostituendo tutte le occorrenze di N(argomento) con (10 * (argomento)) senza effettuare alcun controllo!
 * E' importante utilizzare in modo opportuno le parentesi per evitare problemi di priorità!
 
