@@ -48,6 +48,10 @@ La chiamata exec() viene utilizzata per sostituire il codice di un processo con 
 ## Esercizi ##
 01. Scrivere un sorgente C che stampi la stringa "Hello, I'm the father" e crei un processo figlio che stampi la stringa "Hello, I'm the child". Entrambi i processi, inoltre, stampano a video il valore ritornato da fork(). Per quale motivo troviamo su stdout due messaggi (con valori differenti)?
 
+```
+Approfondimento: La funzione fork() ritorna in modo diverso nel caso si tratti del processo padre o del processo figlio. In particolare, ritorna il PID del figlio nel caso del padre, e 0 nel caso del figlio.
+```
+
 02. La funzione fork() restituisce -1 in caso di errore (in questo caso non genera il nuovo processo). Aggiungere questa verifica associandola ad un opportuno messaggio d’errore. Inoltre, sia il processo padre che il processo figlio hanno un proprio exit value. Utilizzare la funzione wait() per recuperare l’exit value del processo figlio. La wait svolge anche un ruolo di sincronizzazione fra processo padre e processo figlio?
 
 03. Creare un sorgente che generi un numero di figli uguale al numero passato come argomento (usare -n e getopt). Ogni figlio stampi su stdout il proprio indice. Il processo padre attenda la terminazione di tutti i processi figli riportando su stdout le exit value di ogni processo accanto al pid del processo terminato. Per questioni legate alla manutenibilita' del codice, il codice eseguito dai processi figli deve essere contenuto all'interno di una funzione.
@@ -70,9 +74,9 @@ consente al padre di attendere la terminazione di un processo figlio specifico s
 09. Si progetti una applicazione concorrente composta da due processi, padre e figlio, tali che il file rappresentato dal primo argomento sia aperto prima della fork() ed utilizzato in lettura in modo condiviso! per contare i caratteri contenuti leggendoli ad uno ad uno. Cambia qualcosa in caso di file grandi o di file piccoli?
 
 ## Soluzioni ##
-01. Approfondimento: La funzione fork() ritorna in modo diverso nel caso si tratti del processo padre o del processo figlio. In particolare, ritorna il PID del figlio nel caso del padre, e 0 nel caso del figlio.
 
-02. Approfondimento: Si! La wait viene utilizzata dal padre per attendere la terminazione di tutti i processi figli prima di terminare. Si tratta di un caso di sincronizzazione.
 
-09. Approfondimento: Nel caso di file piccoli, il tempo assegnato ad ogni processo dallo scheduler dei processi e' sufficiente a leggerlo per intero. Al contrario, in caso di file grandi, i due processi si alternano. La somma delle due misure e' pari alla dimensione del file. E' importante ricordare che questo esercizio ha finalità puramente didattiche. Nella pratica dello sviluppo di sistemi industriali, l'utilizzo di file descriptors condivisi fra piu' processi e' sconsigliabile. 
+2. Approfondimento: Si! La wait viene utilizzata dal padre per attendere la terminazione di tutti i processi figli prima di terminare. Si tratta di un caso di sincronizzazione.
+
+9. Approfondimento: Nel caso di file piccoli, il tempo assegnato ad ogni processo dallo scheduler dei processi e' sufficiente a leggerlo per intero. Al contrario, in caso di file grandi, i due processi si alternano. La somma delle due misure e' pari alla dimensione del file. E' importante ricordare che questo esercizio ha finalità puramente didattiche. Nella pratica dello sviluppo di sistemi industriali, l'utilizzo di file descriptors condivisi fra piu' processi e' sconsigliabile. 
 
