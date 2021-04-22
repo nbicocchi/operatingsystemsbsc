@@ -23,23 +23,23 @@ Ogni processo Unix, all'avvio, ha disponibili tre file descriptors: 0, 1, 2. Que
 ```
 
 ## Esercizi ##
-01. (es11.c) Utilizzare l'editor vim per realizzare un sorgente C il cui obiettivo sia quello di emettere su stdout il messaggio "Hello World!" utilizzando (a) la primitiva fprintf(), (2) la primitiva write(), (3) la funzione zprintf (vedi utils). Utilizzare gcc per compilare es11.c. Cosa viene prodotto? Invocare gcc in modo che venga generato un file eseguibile di nome es11 invece di a.out (opzione -o). Come reagisce gcc al parametro -Wall? Mettere in esecuzione es11 visualizzandone l'exit value dalla shell chiamante (echo $?). In caso non abbiate utilizzato exit(), modificate il sorgente di conseguenza. Mettere in esecuzione es11 verificando che i caratteri emessi siano realmente diretti su stdout provando a ridirigere alternativamente stdout e stderr su /dev/null.
+01. Utilizzare l'editor vim per realizzare un sorgente C il cui obiettivo sia quello di emettere su stdout il messaggio "Hello World!" utilizzando (a) la primitiva fprintf(), (2) la primitiva write(), (3) la funzione zprintf (vedi utils). Utilizzare gcc per compilare es11.c. Cosa viene prodotto? Invocare gcc in modo che venga generato un file eseguibile di nome es11 invece di a.out (opzione -o). Come reagisce gcc al parametro -Wall? Mettere in esecuzione es11 visualizzandone l'exit value dalla shell chiamante (echo $?). In caso non abbiate utilizzato exit(), modificate il sorgente di conseguenza. Mettere in esecuzione es11 verificando che i caratteri emessi siano realmente diretti su stdout provando a ridirigere alternativamente stdout e stderr su /dev/null.
 
-02. (es12.c) Stampare il valore di una variabile intera, di un singolo carattere, di un array di caratteri (come stringa), utilizzando fprintf().
+02. Stampare il valore di una variabile intera, di un singolo carattere, di un array di caratteri (come stringa), utilizzando fprintf().
 
-03. (es13.c) Scrivere un programma che visualizzi tutti gli argomenti presenti nella propria command line (uno per linea) utilizzando fprintf().
+03. Scrivere un programma che visualizzi tutti gli argomenti presenti nella propria command line (uno per linea) utilizzando fprintf().
 
-04. (es14.c) Scrivere un sorgente C che stampi la stringa "Hello World [%d]!" su stdout(fdescriptor=1) o stderr(fdescriptor=2) in base al numero passato come primo parametro. Si utilizzi la funzione zprintf(). In caso il parametro sia assente o non corretto, il programma utilizzi stdout. Si popoli la variabile "%d" della stringa da stampare con il valore del file descriptor utilizzato per l'output.
+04. Scrivere un sorgente C che stampi la stringa "Hello World [%d]!" su stdout(fdescriptor=1) o stderr(fdescriptor=2) in base al numero passato come primo parametro. Si utilizzi la funzione zprintf(). In caso il parametro sia assente o non corretto, il programma utilizzi stdout. Si popoli la variabile "%d" della stringa da stampare con il valore del file descriptor utilizzato per l'output.
 
-05. (es15.c) Scrivere un sorgente C che apra il file indicato dal primo argomento, sovrascriva i primi 5 caratteri con la stringa "Hello", e tronchi la dimensione del file a 16 caratteri (vedi ftruncate()).
+05. Scrivere un sorgente C che apra il file indicato dal primo argomento, sovrascriva i primi 5 caratteri con la stringa "Hello", e tronchi la dimensione del file a 16 caratteri (vedi ftruncate()).
 
-06. (es16.c) Scrivere un sorgente C che legga i primi N caratteri (N minore di 100) dal file F e li copi alla posizione K di F. N, F e K rispettivamente primo, secondo e terzo argomento a linea di comando.
+06. Scrivere un sorgente C che legga i primi N caratteri (N minore di 100) dal file F e li copi alla posizione K di F. N, F e K rispettivamente primo, secondo e terzo argomento a linea di comando.
 
-07. (es17.c) Implementare una versione del comando head di Unix. Il comando head riporta su stdout le prime linee di un file. In assenza di opzioni sulla command line, le linee stampate sono 10 e il file di input e' stdin. Il comando accetta due parametri opzionali, il primo per impostare un numero di linee diverso da 10 e il secondo per aprire un file diverso da stdin.
+07. Implementare una versione del comando head di Unix. Il comando head riporta su stdout le prime linee di un file. In assenza di opzioni sulla command line, le linee stampate sono 10 e il file di input e' stdin. Il comando accetta due parametri opzionali, il primo per impostare un numero di linee diverso da 10 e il secondo per aprire un file diverso da stdin.
 
-08. (es18.c) Si progetti un filtro che accetta un singolo parametro (R). Il filtro deve riportare sullo standard output una selezione dei caratteri dello standard input: in particolare, si deve riportare in uscita un carattere se e solo se non compare nella stringa R oppure compare un numero di volte maggiore di 1.
+08. Si progetti un filtro che accetta un singolo parametro (R). Il filtro deve riportare sullo standard output una selezione dei caratteri dello standard input: in particolare, si deve riportare in uscita un carattere se e solo se non compare nella stringa R oppure compare un numero di volte maggiore di 1.
 
-09. (es19.c) Si progetti un filtro che accetta N parametri (N deve essere pari) che rappresentano nomi di file F1, . . . , FN e riporta su stdout un carattere per ogni file indicato. Il primo carattere del primo file F1, l’ultimo carattere dell’ultimo file FN, il secondo carattere del secondo file F2, il penultimo carattere del penultimo file FN-1 e cosi' di seguito. Nel caso in cui un file non abbia numero di caratteri sufficienti a consentire l’estrazione, il filtro deve terminare immediatamente con exit value pari a 1, mentre deve restituire 0 in caso contrario.
+09. Si progetti un filtro che accetta N parametri (N deve essere pari) che rappresentano nomi di file F1, . . . , FN e riporta su stdout un carattere per ogni file indicato. Il primo carattere del primo file F1, l’ultimo carattere dell’ultimo file FN, il secondo carattere del secondo file F2, il penultimo carattere del penultimo file FN-1 e cosi' di seguito. Nel caso in cui un file non abbia numero di caratteri sufficienti a consentire l’estrazione, il filtro deve terminare immediatamente con exit value pari a 1, mentre deve restituire 0 in caso contrario.
 
 
 
