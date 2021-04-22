@@ -52,12 +52,11 @@ La chiamata exec() viene utilizzata per sostituire il codice di un processo con 
 
 03. Creare un sorgente che generi un numero di figli uguale al numero passato come argomento (usare -n e getopt). Ogni figlio stampi su stdout il proprio indice. Il processo padre attenda la terminazione di tutti i processi figli riportando su stdout le exit value di ogni processo accanto al pid del processo terminato. Per questioni legate alla manutenibilita' del codice, il codice eseguito dai processi figli deve essere contenuto all'interno di una funzione.
 
-04. La funzione waitpid()
+04. La funzione waitpid() (vedi prototipo sotto) consente al padre di attendere la terminazione di un processo figlio specifico specificato dal parametro pid. Creare un sorgente che generi un numero di figli uguale al numero passato come argomento (usare -n e getopt). Ogni figlio stampi su stdout il proprio indice. Il processo padre attenda la terminazione di tutti i processi figli in ordine inverso rispetto all'ordine di creazione riportando su stdout le exit value di ogni processo accanto al pid del processo terminato. 
+
 	```
 	pid_t waitpid(pid_t pid, int *status, int options); 
 	```
-
-consente al padre di attendere la terminazione di un processo figlio specifico specificato dal parametro pid. Creare un sorgente che generi un numero di figli uguale al numero passato come argomento (usare -n e getopt). Ogni figlio stampi su stdout il proprio indice. Il processo padre attenda la terminazione di tutti i processi figli in ordine inverso rispetto all'ordine di creazione riportando su stdout le exit value di ogni processo accanto al pid del processo terminato. 
 
 05. Utilizzo di exec(). Creare un sorgente che generi un numero di figli uguale al numero passato come argomento (usare -n e getopt). Ogni figlio esegua al suo interno il comando "echo Hello!"
 
