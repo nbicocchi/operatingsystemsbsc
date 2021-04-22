@@ -32,24 +32,24 @@ aspectratio: 169
 # Costrutto if
 
 ```c
-if (expression)
-    statement
+if (espressione)
+    istruzioni1
 ```
 
 ```c
-  if (expression)
-    statement1
-  else
-    statement2
+if (espressione)
+    istruzioni1
+else
+    istruzioni2
 ```
 
 ```c
-  if (expression1)
-    statement1
-  else if (expression2)
-    statement2
-  else
-    statement3
+if (espressione1)
+    istruzioni1
+else if (espressione2)
+    istruzioni2
+else
+    istruzioni3
 ```
   
 # Costrutto if
