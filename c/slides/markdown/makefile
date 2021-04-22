@@ -1,14 +1,16 @@
 CC=pandoc
 FLAGS_SLIDES=--from markdown --to beamer --template "eisvogel.tex" --listings
 FLAGS_BOOK=--from markdown --template "eisvogel.tex" --listings
-SRCS=$(wildcard *.md)
-OBJS=$(SRCS:.md=.pdf)
+PDFDIR=../pdf
 
-all: $(OBJS)
+SOURCE_FILES=$(wildcard *.md)
+OBJECT_FILES=$(SOURCE_FILES:%.md=$(PDFDIR)/%.pdf)
+
+all: $(OBJECT_FILES)
 
 
 clean:
 		rm -rf *.pdf
 
-%.pdf: %.md
+$(PDFDIR)/%.pdf: %.md
 		$(CC) $< -o $@ $(FLAGS_SLIDES)
