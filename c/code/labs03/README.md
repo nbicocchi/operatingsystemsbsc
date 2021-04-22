@@ -1,4 +1,4 @@
-# Operating System Course - DIEF UNIMORE #
+# Programmazione di Sistema - DIEF/UNIMORE
 Comunicazione fra processi utilizzando la system call pipe(). Costruzione di diverse topologie di comunicazione e di gerarchie di processi, attraverso la configurazione dei lati di una pipe. Introduzione ad una scrittura sintetica del makefile.
 
 Note: per utilizzare questa guida con vim utilizzare i seguenti due comandi 

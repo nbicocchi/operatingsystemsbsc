@@ -1,4 +1,4 @@
-# Operating System Course - DIEF UNIMORE #
+# Programmazione di Sistema - DIEF/UNIMORE
 Sincronizzazione fra processi utilizzando i segnali. System call signal(), sleep(), utilizzo avanzato di wait(). Utilizzo di puntatori a funzione.
 
 Note: per utilizzare questa guida con vim utilizzare i seguenti due comandi 

@@ -1,4 +1,5 @@
-# Operating System Course - DIEF UNIMORE #
+# Programmazione di Sistema - DIEF/UNIMORE
+
 Ripasso fondamenti linguaggio C. Funzioni read(), write(), open() e differenze rispetto a fread(), fwrite(), fopen(). Il parsing degli argomenti a linea di comando (variabili argc, argv) con e senza la funzione getopt(). 
 Introduzione alla compilazione con gcc e make.
 

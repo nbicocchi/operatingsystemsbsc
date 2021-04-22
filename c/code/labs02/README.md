@@ -1,4 +1,4 @@
-# Operating System Course - DIEF UNIMORE #
+# Programmazione di Sistema - DIEF/UNIMORE
 Le system call fork(), exec(), e wait() per generare e sincronizzare processi paralleli. Utilizzo esclusivo e condiviso di file descriptors.
 
 Note: per utilizzare questa guida con vim utilizzare i seguenti due comandi 

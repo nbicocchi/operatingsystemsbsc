@@ -1,6 +1,6 @@
-﻿
-**Esercizi C (variabili e flusso di esecuzione)**
+﻿# Programmazione di Sistema - DIEF/UNIMORE
 
+## Esercizi C (variabili e flusso di esecuzione)
 1. Calcolare e visualizzare l’area di un rettangolo avendo la base (int) e l’altezza (int)
 1. Dati due numeri (int), calcolare e visualizzare il risultato della somma, della sottrazione, del prodotto e della divisione fra i due numeri
 1. Calcolare (float) e visualizzare l’area di un triangolo avendo la base (int) e l’altezza (int)
