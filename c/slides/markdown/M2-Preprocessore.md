@@ -177,7 +177,7 @@ SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5
 * E' possibile abilitare o disabilitare porzioni di codice attraverso l'uso del preprocessore e la direttiva \#if
 * Il preprocessore non può valutare il contenuto di variabili o di codice a runtime
 * Le uniche *variabili* nel preprocessore sono quelle definite attraverso la direttiva \#define (macro)
-* Utile per: (a) scegliere tipi diversi di implemtazione, (b) stabilire tipi di dati utilizzati, (c) stabilire comportamenti speciali per la fase di sviluppo (debug)
+* Utile per: (a) scegliere tipi diversi di implementazione, (b) stabilire tipi di dati utilizzati, (c) stabilire comportamenti speciali per la fase di sviluppo (debug)
 
 ```c
 #define MAX 10 \

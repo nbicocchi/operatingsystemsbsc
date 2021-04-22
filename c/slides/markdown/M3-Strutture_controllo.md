@@ -88,7 +88,7 @@ int main() {
 
 # Costrutto if (condizioni annidate)
 
-* Le istruzioni condizionali if possono essere annidate per creare strutture di controllo più raffinate. Un esempio è mostrato nel listato seguente, dove la valutazione ed esecuzione delle istruzioni contenute all’interno del blocco if annidato è condizionato dalla valutazione della clausola del blocco if più esterno.
+* Le istruzioni condizionali if possono essere annidate per creare strutture di controllo più raffinate. Un esempio è mostrato nel listato seguente, dove la valutazione ed esecuzione delle istruzioni contenute all’interno del blocco *if* annidato è condizionato dalla valutazione della clausola del blocco *if* più esterno.
 
 ```c
 include <stdio.h>
@@ -106,13 +106,13 @@ int main() {
 L' operatore *?* (ternary condition) e' la forma piu' efficente per esprimere semplici costrutti if. 
 
 ```c
-expression1 ? expression2 : expression3
+espressione1 ? espressione2 : espressione3
 ```
 
 che equivale a:
 
 ```c
-if expression1 then expression2 else expression3
+if espressione1 then espressione2 else espressione3
 ```
 
 Ad esempio:
@@ -178,8 +178,8 @@ switch(a) {
 
 
 # Costrutto while
-* Il costrutto while è un costrutto condizionale dove un blocco di istruzioni viene eseguito fino a quando (while) l'espressione di controllo risulta vera.
-* Ogni esecuzione del blocco di istruzioni è detta ciclo o iterazione. In ogni ciclo sono eseguite le stesse istruzioni del blocco
+* Il costrutto *while* è un costrutto condizionale dove un blocco di istruzioni viene eseguito fino a quando (while) l'espressione di controllo risulta vera
+* *Ogni esecuzione del blocco di istruzioni è detta ciclo o iterazione*. In ogni ciclo sono eseguite le stesse istruzioni del blocco
 
 ```c
 while ( espressione di controllo ) { 
@@ -196,8 +196,8 @@ while(i < 10) {
 ```
 
 # Costrutto do-while
-* Il costrutto do-while è un costrutto post-condizionale dove prima sono eseguite le istruzioni che formano il blocco dell’iterazione e successivamente è verificata la la condizione. Se la condizione è vera allora si ripete il ciclo, altrimenti si passa all’istruzione successiva.
-* Il do-while può servire in tutti i casi in cui la prima iterazione deve essere eseguita a prescindere dal successo dell’istruzione di controllo. *Pochi casi d'uso*
+* Il costrutto *do-while* è un costrutto post-condizionale dove prima sono eseguite le istruzioni che formano il blocco dell’iterazione e successivamente è verificata la la condizione. Se la condizione è vera allora si ripete il ciclo, altrimenti si passa all’istruzione successiva
+* Il costrutto *do-while* può servire in tutti i casi in cui la prima iterazione deve essere eseguita a prescindere dal successo dell’istruzione di controllo. *Casi d'uso limitati*
 
 ```c
 do {
@@ -215,7 +215,7 @@ do {
 ```
 
 # Costrutto for
-* Il costrutto for è un’istruzione che viene utilizzata per codificare la ripetizione di istruzioni che devono essere ripetute un numero prestabilito di volte
+* Il costrutto *for* viene utilizzato per codificare la ripetizione di istruzioni per un numero prestabilito di volte
 * Le variabili che controllano il flusso del for sono  completamente ed esclusivamente gestite all’interno della direttiva for: **assegnazione, controllo, modifica post-ciclo**
 
 ```c
@@ -244,7 +244,7 @@ for(i = 0; i < 10; i++) {
 * **i++**: comando/azione eseguito ad ogni ciclo dopo il controllo della condizione
 
 # Istruzione break
-* L'istruzione *break* interrompe le iterazioni di costrutto iterativo (for, while, do-while)
+* L'istruzione *break* interrompe le iterazioni di costrutto iterativo (*for, while, do-while*)
 * In genere è associata a una struttura condizionale *if* per associarla al verificarsi di un evento
 * L'istruzione *break* è utile per evitare cicli infiniti, spostando l'espressione di controllo all'interno del ciclo
 
@@ -277,7 +277,7 @@ for(i=0; i<5; i++){
 ```
 
 # Cicli infiniti
-* *for* e *while* possono essere utilizzati anche per creare cicli infiniti
+* Sia *for* che *while* possono essere utilizzati anche per creare cicli infiniti
 * Spesso i cicli infiniti sono interrotti attraverso un'istruzione *break* che verifica una condizione all'interno del ciclo
 
 ```c
@@ -327,10 +327,11 @@ int main() {
 ```
 
 ```c
-// esempio di underflow unsigned int[0, 4.294.967.295]
+// esempio di underflow 
+// unsigned int[0, 4.294.967.295], int[-2.147.483.648, 2.147.483.647]
 // non dovrebbe terminare MA termina!
 int main() {
-    unsigned int a;
+    int a;
     for(a=9; a>=0; a++) { }
     return 0;
 }
@@ -338,7 +339,7 @@ int main() {
 # Istruzione goto
 
 * *goto* è un costrutto di salto incondizionato che rappresenta l'istruzione *jump* presente nei linguaggi di basso livello
-* A volte si utilizza nella gestione degli errori, ma in generale è sconsigliato utilizzarlo se non si ha piena coscienza di ciò che si sta facendo.
+* A volte si utilizza nella gestione degli errori, ma in generale è sconsigliato utilizzarlo se non si ha piena coscienza di ciò che si sta facendo
 * *Edsger W. Dijkstra - Go To statement considered harmful*
 
 ```c
