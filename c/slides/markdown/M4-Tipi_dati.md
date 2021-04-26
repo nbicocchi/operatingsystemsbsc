@@ -312,14 +312,14 @@ int main(){
 
 ```c
 char *p;
-if (p == NULL) {
+if (p != NULL) {
   /* istruzioni */
 }
 ```
 
 ```c
 char *p;
-if (!p) {
+if (p) {
   /* istruzioni */
 }
 ```
