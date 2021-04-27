@@ -1,6 +1,6 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
-## Esercizi C (Allocazione dinamica memorio)
+## Esercizi C (Allocazione dinamica memoria)
 ~~Si propone di creare delle funzioni simili, ma che hanno un prototipo differente per gestire dinamicamente l’allocazione della memoria al loro interno.~~
 
 ---
