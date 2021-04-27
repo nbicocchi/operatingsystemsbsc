@@ -11,10 +11,10 @@ void reversei(int *r, const int *values, unsigned size);
 
 dove:
 
-* **r** è il puntatore all’array dove verrà salvata l’array invertito • values è il puntatore all’array di input
-* **size** è la dimensione dell’array
+   * **r** è il puntatore all’array dove verrà salvata l’array invertito • values è il puntatore all’array di input
+   * **size** è la dimensione dell’array
 
-2. Implementare una funzione che inverta l’ordine dei caratteri di una stringa C che rispetti il seguente prototipo:
+1. Implementare una funzione che inverta l’ordine dei caratteri di una stringa C che rispetti il seguente prototipo:
 
 ```c
 void reverses(char *r, const char *s);
@@ -25,7 +25,7 @@ dove:
 * **r** è il puntatore all’array dove verrà salvata la stringa C invertita
 * **s** è il puntatore alla stringa in input
 
-3. Implementare una funzione rot13 che trasorma una stringa in un’altra stringa di uguale dimensione, ma in cui ogni carattere della stringa generate è dal carattere alla stessa posizione nella stringa originale “spostato” di 13 caratteri (considerando una successione di caratteri “ciclica”, dove la a segue la z).
+1. Implementare una funzione rot13 che trasorma una stringa in un’altra stringa di uguale dimensione, ma in cui ogni carattere della stringa generate è dal carattere alla stessa posizione nella stringa originale “spostato” di 13 caratteri (considerando una successione di caratteri “ciclica”, dove la a segue la z).
 
 ```c
 void rot13(char *r, const char *s);
