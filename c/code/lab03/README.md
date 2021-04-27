@@ -1,7 +1,6 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
 ## Esercizi C (Puntatori e funzioni)
-I seguenti esercizi sono pensati per l’utilizzo di array e stringhe allocate automaticamente, senza utilizzare allocazione dinamica con malloc. Per questo si assuma che tutti i puntatori impiegati facciano già riferimento ad aree di memoria valida e di dimensioni appropriate.
 
 ---
 
