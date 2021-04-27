@@ -65,8 +65,8 @@ Esercizio 3. Implementare una funzione che dati due array di valori interi ordin
 
 ```c
 typedef struct int_array {
-int *p;
-unsigned size;
+    int *p;
+    unsigned size;
 } int_array_t;
 
 void merge(int_array_t **r, const int_array_t *a1, const int_array_t *a2);
