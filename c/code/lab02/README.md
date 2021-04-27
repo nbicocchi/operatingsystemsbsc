@@ -3,7 +3,7 @@
 ## Esercizi C (Array e stringhe)
 I seguenti esercizi sono pensati per l’utilizzo di array e stringhe allocate automaticamente, senza utilizzare allocazione dinamica con malloc. Per questo si assuma che tutti i puntatori impiegati facciano già riferimento ad aree di memoria valida e di dimensioni appropriate.
 
-1. Implementare una funzione che inverta l’ordine dei valori di un array di dati interi che rispetti il seguente prototipo:
+Esercizio 1. Implementare una funzione che inverta l’ordine dei valori di un array di dati interi che rispetti il seguente prototipo:
 
 ```c
 void reversei(int *r, const int *values, unsigned size);
@@ -14,7 +14,9 @@ dove:
    * **r** è il puntatore all’array dove verrà salvata l’array invertito • values è il puntatore all’array di input
    * **size** è la dimensione dell’array
 
-1. Implementare una funzione che inverta l’ordine dei caratteri di una stringa C che rispetti il seguente prototipo:
+---
+
+Esercizio 2. Implementare una funzione che inverta l’ordine dei caratteri di una stringa C che rispetti il seguente prototipo:
 
 ```c
 void reverses(char *r, const char *s);
@@ -25,7 +27,9 @@ dove:
 * **r** è il puntatore all’array dove verrà salvata la stringa C invertita
 * **s** è il puntatore alla stringa in input
 
-1. Implementare una funzione rot13 che trasorma una stringa in un’altra stringa di uguale dimensione, ma in cui ogni carattere della stringa generate è dal carattere alla stessa posizione nella stringa originale “spostato” di 13 caratteri (considerando una successione di caratteri “ciclica”, dove la a segue la z).
+---
+
+Esercizio 3. Implementare una funzione rot13 che trasorma una stringa in un’altra stringa di uguale dimensione, ma in cui ogni carattere della stringa generate è dal carattere alla stessa posizione nella stringa originale “spostato” di 13 caratteri (considerando una successione di caratteri “ciclica”, dove la a segue la z).
 
 ```c
 void rot13(char *r, const char *s);
