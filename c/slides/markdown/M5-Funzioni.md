@@ -190,13 +190,15 @@ int main() {
 ```
 
 # Passaggio per valore (copia)
-Figura 6.2 rifatta
+![Passaggio di parametri per valore](./images/passaggio_copia.png)
+
 
 # Passaggio per riferimento (copia del riferimento)
 * Permette alla funzione chiamata di modificare il valore della variabile passata dal chiamante
 * Evita la copia di variabili voluminose
 * Contente alla funzione chiamata di ritornare più di un valore di ritorno
 * Il passaggio per riferimento **implica il passaggio per valore di un puntatore alla variabile**
+
 
 # Passaggio per riferimento (copia del riferimento)
 ```c
@@ -214,11 +216,155 @@ int main() {
 ```
 
 # Passaggio per riferimento (copia del riferimento)
-Figura 6.2 rifatta
+![Passaggio di parametri per valore](./images/passaggio_riferimento.png)
+
 
 # Passaggio di puntatori const
+* Talvolta è necessario passare alla funzione variabili di grandi dimensioni (array, matrici)
+* Per evitare la copia della variabile si usa un puntatore alla variabile. Tuttavia, questa possibilità si scontra con il fatto che, tramite il puntatore, la funzione può modificare i dati del chiamante
+* Questo può determinare che un errore di implementazione nella funzione propaghi esiti non voluti. Il problema è risolvibile attraverso *puntatori definiti costanti*
+
+```c
+void scambia(const int *a, const int *b) {
+    int tmp = *a;
+    *a = *b;        // errori di compilazione!
+    *b = tmp;       // errori di compilazione!
+}
+
+int main() {
+    int a = 2, b = 3;
+    scambia(&b, &a);
+    printf("a=%d b=%d\n", a, b);
+}
+```
+
+# Vettori di puntatori
+* Gli elementi di un vettore possono essere di qualunque tipo:
+  * anche puntatori
+  * ad esempio char **\*vet[10]** è un vettore che memorizza 10 puntatori a carattere (in genere utilizzato per gestire stringhe di caratteri)
+
+```c
+char *settimana[] = {
+    "lunedì", 
+    "martedì", 
+    "mercoledì",
+    "giovedì", 
+    "venerdì",
+    "sabato", 
+    "domenica" 
+};
+
+printf("%s\n", settimana[0]); // lunedi
+```
 
 # Passaggio di parametri al programma principale
+* E' possibile passare parametri *dalla shell* ad *un programma C* utilizzando parametri opzionali della funzione main()
+* **argc** è un numero intero e rappresenta il numero dei parametri ricevuti (considerando anche il comando stesso)
+* **argv** è un vettore di stringhe che rappresenta i parametri stessi (argv[0] è il comando stesso)
+
+```c
+int main() {
+    
+}
+```
+
+```c
+int main(int argc, char *argv[]) {
+    
+}
+```
+
+# Passaggio di parametri al programma principale
+```c
+int main(int argc, char *argv[]) {
+    int i;
+    
+    for (i=0; i<argc; i++) {
+        printf("[%d] %s\n", i, argv[i]);
+    }
+}
+```
+
+```shell
+$ ./a.out ciao, nicola bicocchi
+[0] ./a.out
+[1] ciao,
+[2] nicola
+[3] bicocchi
+```
+
+# Passaggio di parametri al programma principale
+```c
+int main(int argc, char *argv[]) {
+    int a;
+    double b;
+    char c[128];
+
+    if (argc != 4) {
+        printf("usage: %s int double char[]\n", argv[0]);
+        exit(1);
+    }
+    
+    a = atoi(argv[1]);
+    b = atof(argv[2]);
+    strncpy(c, argv[3], sizeof(c));
+    printf("%d %f %s\n", a, b, c);
+}
+```
+
 
 # Ricorsione
+* Una funzione è definita in modo ricorsivo se è definita in termini di se stessa.
+* Nella definizione ricorsiva di una funzione è possibile identificare *casi base* e *casi ricorsivi*:
+* I casi base permettono di calcolare il valore della funzione, anche se solo nei casi più semplici
+* I casi ricorsivi permettono di calcolare la funzione mediante altre valutazioni della funzione
 
+```c
+n! = 1 x 2 x ... x (n-2) x (n-1) x n
+
+n! = 1            (if n == 0) // caso base
+n! = n x (n-1)!   (if n > 0)  // caso ricorsivo
+```
+
+# Ricorsione (fattoriale)
+```c
+// implementazione fattoriale iterativa
+int fatt(int n) {
+    int fatt, i;
+    for (i=1, fatt=1; i<=n; i++)
+        fatt = fatt * i;
+    return fatt;
+}
+```
+
+```c
+// implementazione fattoriale ricorsiva
+int fatt_r(int n) {
+    if (n == 0)
+        return 1;
+    return n * fatt_r(n - 1);
+}
+```
+
+# Ricorsione (fibonacci)
+```c
+// implementazione fibonacci iterativa
+int fibonacci(int n) {      
+    int x = 0, y = 1, z = 0;
+    for (int i = 0; i < n; i++) {
+        z = x + y;
+        x = y;
+        y = z;
+    }
+    return z;
+}
+```
+
+```c
+// implementazione fibonacci ricorsiva
+int fibbonacci_r(int n) {    
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return (fibbonacci(n-1) + fibbonacci(n-2));
+}
+```
