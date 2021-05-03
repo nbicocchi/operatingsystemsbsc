@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+int is_prime(unsigned v);
+
 int is_prime(unsigned v) {
     unsigned i;
 

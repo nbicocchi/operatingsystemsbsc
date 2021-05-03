@@ -5,7 +5,7 @@ set(CMAKE_C_FLAGS "-Wall -Wconversion -Wformat")
 set(CMAKE_C_STANDARD 99)
 
 # Examples
-add_executable(test examples/test.c)
+add_executable(example examples/example.c)
 
 # Basic Programming lab01
 add_executable(0101 lab01/0101.c)

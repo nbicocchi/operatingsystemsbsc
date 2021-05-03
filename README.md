@@ -120,6 +120,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 [M5] Funzioni
 * Dichiarazione, definizione, chiamata a funzione
+* Variabili locali, globali e static
 * Passaggio di parametri (per valore, per riferimento)
 * Ricorsione
 
