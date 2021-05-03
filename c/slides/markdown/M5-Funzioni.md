@@ -106,13 +106,20 @@ int main(){
 }
 ```
 
-# Visibilità
+# Visibilità e tempo di vita delle variabili locali
 * Le variabili che abbiamo utilizzato fin’ora sono **variabili locali**, visibili solo all’interno della funzione
 * Le funzioni invocate **non hanno accesso** alle variabili di livello superiore!
+* La gestione della memoria delle variabili locali è **automatica**
+  * Vengono allocate al momento dell’invocazione della funzione
+  * Vengono de-allocate al momento del ritorno della funzione
+* Ad ogni invocazione le variabili e i parametri della funzione non dipendono dalle esecuzioni precedenti!
+
+
+# Variabili globali
+
 * Il C supporta anche **variabili globali**, visibili da tutte le funzioni
 * *Preferibile limitare utilizzo di variabili globali, oppure utilizzarle come costanti*
 
-# Variabili globali
 ```c
 #include<stdio.h>
 
@@ -120,7 +127,6 @@ int a;
 // const int a produce invece un errore!
 
 void test_visibilita(void){
-    printf("a=%d\n", a);
     a = 10;
 }
 
@@ -128,20 +134,12 @@ int main(){
     a=5;
     test_visibilita();
     printf("a=%d\n", a);
-    return 0;
 }
 ```
 
-# Tempo di vita delle variabili locali
-* La gestione della memoria delle variabili locali è **automatica**
-  * Vengono allocate al momento dell’invocazione della funzione
-  * Vengono de-allocate al momento del ritorno della funzione
-* Ad ogni invocazione le variabili e i parametri della funzione non dipendono dalle esecuzioni precedenti!
-
-
-# Variabili locali statiche
-* Una variabile locale è detta **statica** se il suo tempo di vita corrisponde a quelllo del processo
-* E' possibile utilizzare variabili statiche per avere funzioni che mantengono uno stato fra diverse invocazioni
+# Variabili locali static
+* Una variabile locale è detta **static** se il suo tempo di vita corrisponde a quelllo del processo
+* E' possibile utilizzare variabili static per avere funzioni che mantengono uno stato fra diverse invocazioni
 
 ```c
 void counter() {
@@ -199,8 +197,6 @@ int main() {
 * Contente alla funzione chiamata di ritornare più di un valore di ritorno
 * Il passaggio per riferimento **implica il passaggio per valore di un puntatore alla variabile**
 
-
-# Passaggio per riferimento (copia del riferimento)
 ```c
 void scambia(int *a, int *b) {
     int tmp = *a;
@@ -257,13 +253,16 @@ char *settimana[] = {
 printf("%s\n", settimana[0]); // lunedi
 ```
 
+# Vettori di puntatori
+![Puntatore a puntatore a carattere](./images/puntatore_puntatore_char.png)
+
 # Passaggio di parametri al programma principale
 * E' possibile passare parametri *dalla shell* ad *un programma C* utilizzando parametri opzionali della funzione main()
 * **argc** è un numero intero e rappresenta il numero dei parametri ricevuti (considerando anche il comando stesso)
 * **argv** è un vettore di stringhe che rappresenta i parametri stessi (argv[0] è il comando stesso)
 
 ```c
-int main() {
+int main(void) {
     
 }
 ```
