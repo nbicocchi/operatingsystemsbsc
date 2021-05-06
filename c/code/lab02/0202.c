@@ -19,5 +19,4 @@ int main(void) {
 
     reverses(dst, src);
     printf("%s\n", dst);
-
 }

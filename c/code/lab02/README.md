@@ -32,7 +32,7 @@ dove:
 
 ---
 
-Esercizio 3. Implementare una funzione *rot13* che trasforma una stringa in un’altra stringa di uguale dimensione, ma in cui ogni carattere della stringa generate è dal carattere alla stessa posizione nella stringa originale "spostato" di 13 caratteri (considerando una successione di caratteri "ciclica", dove la a segue la z).
+Esercizio 3. Implementare una funzione *rotate13* che trasforma una stringa in un’altra stringa di uguale dimensione, ma in cui ogni carattere della stringa generate è dal carattere alla stessa posizione nella stringa originale "spostato" di 13 caratteri (considerando una successione di caratteri "ciclica", dove la a segue la z).
 
 ```c
 void rotate13(char *dst, const char *src);
@@ -53,9 +53,9 @@ long findi(int t, const int *values, unsigned size);
 
 dove:
 
+* **t** è il valore da ricercare
 * **values** è il puntatore all’array di input
 * **size** è la dimensione dell’array
-* **t** è il valore da ricercare
 * **il valore di ritorno** indica la posizione all’interno dell’array, e ha valore speciale -1 se l’elemento non esiste
 
 ---
