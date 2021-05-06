@@ -16,7 +16,7 @@ void capitalize(char *dst, const char *src) {
 }
 
 int main(void) {
-    char src[SIZE] = "Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime.";
+    char src[SIZE] = "give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime.";
     char dst[SIZE];
 
     capitalize(dst, src);

@@ -2,7 +2,7 @@
 
 #define SIZE 128
 
-void trova_max(int *rmax, int *values, unsigned size) {
+void trova_max(int *rmax, const int *values, unsigned size) {
     unsigned i;
     int max = values[0];
 

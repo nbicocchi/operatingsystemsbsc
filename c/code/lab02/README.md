@@ -86,7 +86,7 @@ dove:
 
 ---
 
-Esercizio 7. Implementare una funzione *merge* che dati due array di valori interi ordinati, generi un terzo array che contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci possano essere elementi duplicati. La funzione rispetti il seguente prototipo:
+Esercizio 7. Implementare una funzione *merge* che dati due array di valori interi ordinati in modo crescente, generi un terzo array che contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci possano essere elementi duplicati. La funzione rispetti il seguente prototipo:
 
 ```c
 void merge(int *dst, const int *a1, unsigned s1, const int *a2, unsigned s2);
@@ -118,14 +118,14 @@ dove:
 Esercizio 9. Implementare una funzione *trova_max* per individuare il valore massimo all’interno di un array di numeri interi che rispetti il seguente prototipo:
 
 ```c
-void trova_max(int *rmax, int *values, unsigned size);
+void trova_max(int *rmax, const int *values, unsigned size);
 ```
 
 dove:
 
-* **values** è il puntatore all’array
-* **size** è la dimensione dell’array
-* **rmax** è il puntatore all’elemento dell’array che rappresenta il valore massimo
+* **rmax** è il puntatore alla variabile che conterrà il valore massimo trovato;
+* **values** è il puntatore all’array;
+* **size** è la dimensione dell’array.
 
 Si assuma che il puntatore all’array sia valido, che la dimensione indicata dalla variabile size sia sempre maggiore di 0 e consistente con i valori effettivamente presenti nell’array
 
@@ -134,16 +134,15 @@ Si assuma che il puntatore all’array sia valido, che la dimensione indicata da
 Esercizio 10. Implementare una funzione *trova_minmax* simile a quella indicata nell’esercizio precedente, ma che individui sia il valore minimo, sia il valore massimo. La funzione deve rispettare il seguente prototipo:
 
 ```c
-void trova_minmax(int *rmin, int *rmax, int *values, unsigned size);
+void trova_minmax(int *rmin, int *rmax, const int *values, unsigned size);
 ```
 
 dove:
 
-* **values** è il puntatore all’array
-* **size** è la dimensione dell’array
-* **rmin** è il puntatore all’elemento dell’array che rappresenta il valore minimo
-* **rmax** è il puntatore all’elemento dell’array che rappresenta il valore massimo
-
+* **rmin** è il puntatore alla variabile che conterrà il valore minimo trovato;
+* **rmax** è il puntatore alla variabile che conterrà il valore massimo trovato;
+* **values** è il puntatore all’array;
+* **size** è la dimensione dell’array.
 ---
 
 Esercizio 11. Implementare una funzione *compute_mean_variance* per il calolo della media aritmetica e della varianza di un insieme di valori, che rispetti il seguente prototipo:
@@ -154,7 +153,7 @@ void compute_mean_variance(float *rmean, float *rvariance, float *values, unsign
 
 dove:
 
-* **values** è il puntatore all’array
-* **size** è la dimensione dell’array
-* **rmean** è il puntatore alla variabile dove viene memorizzata la media
-* **rvariance** è il puntatore alla variabile dove viene memorizzata la varianza
+* **rmean** è il puntatore alla variabile dove viene memorizzata la media;
+* **rvariance** è il puntatore alla variabile dove viene memorizzata la varianza;
+* **values** è il puntatore all’array;
+* **size** è la dimensione dell’array.

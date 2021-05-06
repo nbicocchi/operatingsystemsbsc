@@ -2,7 +2,7 @@
 
 #define SIZE 128
 
-void trova_minmax(int *rmin, int *rmax, int *values, unsigned size) {
+void trova_minmax(int *rmin, int *rmax, const int *values, unsigned size) {
     unsigned i;
     int max = values[0];
     int min = values[0];
