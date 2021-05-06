@@ -296,16 +296,14 @@ operativo) su cui si lavora.
 difficilmente corrisponde a un indirizzo di memoria valido. **Tale situazione può essere causa di errori difficilmente identificabili**
 
 ```c
-// bad!!
 int main(){
     int *p;
 
     printf("%d\n", *p);
-    *p = 5;
+    *p = 5; /* male! scrive in un'area imprecisata della memoria del processo */ 
     printf("%d\n", *p);
 }
 ```
-  
 
 # Puntatore nullo
 *  Il *puntatore nullo* vale zero e non è un puntatore valido; nelle funzioni che ritornano un puntatore è spesso ritornato come segnalazione di errore. La macro NULL vale 0, e 0 è confrontabile con qualunque puntatore.
@@ -446,6 +444,39 @@ i = sizeof(p);    // 8 o 4 (dimensione del puntatore)
 i = sizeof(v);    // 40 o 20
 i = sizeof(v)/sizeof(*v); /* 10: numero di elementi del vettore v */
 ```
+
+# Array e puntatori
+* Nella maggior parte dei casi, puntatori ed array possono essere utilizzati in modo intercambiabile. Esistono però alcune eccezioni:
+
+* **Operatore sizeof**
+  * sizeof(array) ritorna la quantità di memoria usata da tutti gli elementi dell'array
+  * sizeof(puntatore) ritorna la quantità di memoria usata dal puntatore stesso
+* **Operatore &**
+  * &array è un alias di &array[0] e ritorna l'indirizzo del primo elemento dell'array
+  * &pointer ritorna l'indirizzo del puntatore stesso
+
+# Array e puntatori
+
+```c
+void stampa_array(const int *v, unsigned size) {
+    unsigned i;
+
+    for (i = 0; i < size; i++) {
+        printf("%d\n", v[i]);
+    }
+}
+
+int main(void) {
+    int v[16];
+    int *v2 = v;
+
+    printf("%ld\n", sizeof(v));     /* 64 */
+    printf("%ld\n", sizeof(v2));    /* 8 */
+    printf("%p\n", &v[0]);          /* 0x7ffeedce4890 */
+    printf("%p\n", &v2);            /* 0x7ffeedce4888 */
+}
+```
+
 # Una macro utile per i vettori
 ```c
 #define ARRAY_SIZE(x) (sizeof(x)/sizeof(*x))
@@ -478,12 +509,9 @@ char vet3[] = { '0', 0 };
 * Una stringa costante è rappresentata da una sequenza di 0 o più caratteri racchiusi fra doppi apici, per esempio:
 
 ```c
-char s1[] = "Questa è una stringa";
-char s2[] = "Hello World!\n";
-char s3[] = "max=%d";
+char str[] = "Hello World!\n";
 ```
 
-# Il carattere di terminazione
 * La memorizzazione di una stringa comprende i caratteri che effettivamente la compongono, più un carattere di terminazione che delimita l'ultimo carattere della stringa (delimitatore)
 * Il carattere di terminazione è il byte di valore numerico 0 (zero). Esso non corrisponde ad un carattere ASCII stampabile
 * La dimensione di una variabile stringa deve prevedere lo spazio sufficiente per includere anche il carattere zero di
@@ -500,7 +528,7 @@ char str1[] = "str1";
 char str2[128] = "str2";
 char str3[4] = "str3";
 
-    printf("%d %d %d\n", sizeof str1, sizeof str2, sizeof str3);
+    printf("%d %d %d\n", sizeof(str1), sizeof(str2), sizeof(str3));
     printf("%s %s %s\n", str1, str2, str3);
     str3[3] = 0;
     printf("%s %s %s\n", str1, str2, str3);
@@ -533,18 +561,26 @@ char v[] = "a"; // vettore di 2 caratteri inizializzato a {'a', '\0'}
 printf("%d %d %d\n", sizeof(c), sizeof(s), sizeof(v)); // Output: 1 4 2
 ```
 
-# Funzioni di libreria
-
+# Funzioni di libreria (caratteri)
 ```c
+#include <ctype.h>
+
+int toupper(int ch);
+int tolower(int ch);
+int isupper(int ch);
+int islower(int ch);
+int isalpha(int ch);
+int isdigit(int ch);
+```
+
+# Funzioni di libreria (stringhe)
+```c
+#include <stdlib.h>
+#include <string.h>
+
 int atoi(const char *str);
 long atol(const char *str);
 double atof(const char *str);
-
-int getchar(void);
-int putchar(int c);
-
-char *gets(char *str);
-int puts(const char *str);
 
 char *strcpy(char *dest, const char *src);
 char *strcat(char *dest, const char *src);
@@ -552,3 +588,4 @@ int strcmp(const char *s1, const char *s2);
 
 size_t strlen(const char *str);
 ```
+
