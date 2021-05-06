@@ -1,48 +1,44 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
-## Esercizi C (Puntatori e funzioni)
+## Esercizi C (Matrici e strutture innestate)
+Si propongono alcuni esercizi relativi all’utilizzo di matrici (array bi-dimensionali) e strutture innestate (liste di array tramite puntatori di puntatori).
 
 ---
 
-Esercizio 1. Implementare una funzione per individuare il valore massimo all’interno di un array di numeri interi che rispetti il seguente prototipo:
+Esercizio 1. Implementare una funzione *matrix_edge* che, data una matrice come input, calcoli la somma di tutti i valori presenti nella sua *cornice*. La funzione deve rispettare il seguente prototipo:
 
 ```c
-void trova_max(int *rmax, int *values, unsigned size);
+long matrix_edge(unsigned n_rows, unsigned n_cols, int m[][n_cols]);
 ```
 
 dove:
 
-* **values** è il puntatore all’array
-* **size** è la dimensione dell’array
-* **rmax** è il puntatore all’elemento dell’array che rappresenta il valore massimo
-
-Si assuma che il puntatore all’array sia valido, che la dimensione indicata dalla variabile size sia sempre maggiore di 0 e consistente con i valori effettivamente presenti nell’array
+* **m** è la matrice di input, con **n_rows** righe e **n_cols** colonne;
+* la funzione calcola il risultato e restuisce la somma tramite il suo valore di ritorno.
 
 ---
 
-Esercizio 2. Implementare una funzione simile a quella indicata nell’esercizio precedente, ma che individui sia il valore minimo, sia il valore massimo. La funzione deve rispettare il seguente prototipo:
+Esercizio 2. Implementare una funzione *diagonals* che estrae la diagonale principale e la diagonale secondaria di una matrice quadrata. La funzione deve rispettare il seguente prototipo:
 
 ```c
-void trova_minmax(int *rmin, int *rmax, int *values, unsigned size);
+void diagonals(int *rdp, int *rds, unsinged size, const int m[][size]);
 ```
 
 dove:
 
-* **values** è il puntatore all’array
-* **size** è la dimensione dell’array
-* **rmin** è il puntatore all’elemento dell’array che rappresenta il valore minimo • rmax è il puntatore all’elemento dell’array che rappresenta il valore massimo
+* **m** è la matrice di input di dimensione **size** righe e **size** colonne;
+* **rdp** è il puntatore in cui viene memorizzata la diagonale principale;
+* **rds** è il puntatore in cui viene memorizzata la diagonale secondaria;
+* assumere che sia rdp sia rds siano puntatori ad aree di memoria già allocate correttamente.
 
 ---
 
-Esercizio 3. Implementare una funzione per il calolo della media aritmetica e della varianza di un insieme di valori, che rispetti il seguente prototipo:
+Esercizio 3. Implementare una funzione *tabula_recta* che crei una matrice contenente la tabula recta (vedere wikipedia) dell’alfabeto inglese. Rispettare il seguente prototipo:
 
 ```c
-void compute_mean_variance(float *rmean, float *rvariance, float *values, unsigned size);
+void tabula_recta(char t[][26]);
 ```
-
 dove:
 
-* **values** è il puntatore all’array
-* **size** è la dimensione dell’array
-* **rmean** è il puntatore alla variabile dove viene memorizzata la media
-* **rvariance** è il puntatore alla variabile dove viene memorizzata la varianza
+* **t** è la matrice in cui viene salvato la matrice generata.
+```

@@ -1,6 +1,6 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
-## Esercizi C (Array e stringhe)
+## Esercizi C (Array, stringhe, puntatori, funzioni)
 I seguenti esercizi sono pensati per l’utilizzo di array e stringhe allocate automaticamente, senza utilizzare allocazione dinamica con malloc. Per questo si assuma che tutti i puntatori impiegati facciano già riferimento ad aree di memoria valida e di dimensioni appropriate.
 
 ---
@@ -112,3 +112,49 @@ dove:
 
 * **dst** è il puntatore all’array generato
 * **n** è il numero di valori della serie da generate
+
+---
+
+Esercizio 9. Implementare una funzione *trova_max* per individuare il valore massimo all’interno di un array di numeri interi che rispetti il seguente prototipo:
+
+```c
+void trova_max(int *rmax, int *values, unsigned size);
+```
+
+dove:
+
+* **values** è il puntatore all’array
+* **size** è la dimensione dell’array
+* **rmax** è il puntatore all’elemento dell’array che rappresenta il valore massimo
+
+Si assuma che il puntatore all’array sia valido, che la dimensione indicata dalla variabile size sia sempre maggiore di 0 e consistente con i valori effettivamente presenti nell’array
+
+---
+
+Esercizio 10. Implementare una funzione *trova_minmax* simile a quella indicata nell’esercizio precedente, ma che individui sia il valore minimo, sia il valore massimo. La funzione deve rispettare il seguente prototipo:
+
+```c
+void trova_minmax(int *rmin, int *rmax, int *values, unsigned size);
+```
+
+dove:
+
+* **values** è il puntatore all’array
+* **size** è la dimensione dell’array
+* **rmin** è il puntatore all’elemento dell’array che rappresenta il valore minimo
+* **rmax** è il puntatore all’elemento dell’array che rappresenta il valore massimo
+
+---
+
+Esercizio 11. Implementare una funzione *compute_mean_variance* per il calolo della media aritmetica e della varianza di un insieme di valori, che rispetti il seguente prototipo:
+
+```c
+void compute_mean_variance(float *rmean, float *rvariance, float *values, unsigned size);
+```
+
+dove:
+
+* **values** è il puntatore all’array
+* **size** è la dimensione dell’array
+* **rmean** è il puntatore alla variabile dove viene memorizzata la media
+* **rvariance** è il puntatore alla variabile dove viene memorizzata la varianza
