@@ -12,6 +12,11 @@ aspectratio: 169
 * Si tratta di una generalizzazione del concetto di vettore
 * Sono permesse un numero arbitrario di dimensioni per la struttura dichiarata
 * Il caso tipico di array multi-dimensionale è quello di array a due dimensioni, le cosiddette *matrici*
+* La sintassi della dichiarazione di un array multi-dimensionale è la seguente:
+
+```c
+nome-tipo identificatore [ card_1 ] [ card_2 ] ... [ card_n] ;
+```
 
 # Le matrici
 * La matrice è tecnicamente un array a 2 dimensioni. Può essere vista come un vettore monodimensionale i cui singoli elementi sono vettori essi stessi. La sintassi della dichiarazione di una matrice è la seguente:
@@ -34,13 +39,13 @@ printf("%d\n", mat[2][6]);
 ```
 
 * La matrice si chiama *mat*
-* Ha 6 righe e 7 colonne
+* La matrice ha 6 righe e 7 colonne
 * Le due componenti sono indicizzate da 0 a 5 (righe) e da 0 a 6 (colonne)
-* Ad esempio, l'elemento mat[2][6] è un valore di tipo intero che può essere utilizzato come un qualunque altro valore intero
+* L'elemento mat[2][6] è un valore di tipo intero che può essere utilizzato come un qualunque altro valore intero
 
 # Le matrici: allocazione
 * La matrice è una struttura bidimensionale. Va definito il modo in cui mapparla all'interno della memoria RAM, che è al contrario una struttura monodimensionale
-* Una matrice viene allocata in memoria per righe. Si parte dall'indirizzo dell'elemento di indice mat[0][0] e vengono memorizzati in successione tutti i valori della matrice (sono collocati tutti gli elementi della prima riga, poi la seconda, la terza, ...)
+* **Una matrice viene allocata in memoria per righe**. Si parte dall'indirizzo dell'elemento di indice mat[0][0] e si prosegue memorizzando in successione tutti i valori della matrice riga dopo riga.
 
 # Le matrici: allocazione 
 
@@ -101,58 +106,6 @@ int mat[2][2] = { {0} };
 0 0
 ```
 
-# Passaggio di una matrice ad una funzione
-
-```c
-#define ROWS 2
-#define COLS 3
-
-int main(int argc, char *argv[]) {
-    int i, j;
-    int v[ROWS][COLS] = {
-            {1, 2, 3},
-            {4, 5, 6},
-    };
-    
-    for (i = 0; i < ROWS; i++) {
-        for (j = 0; j < COLS; j++) {
-            printf("%3d", v[i][j]);
-        }
-        printf("\n");
-    }
-    printf("%d\n", sum(v));
-}
-```
-
-# Passaggio di una matrice ad una funzione (1)
-```c
-int sum(int v[ROWS][COLS]) {
-    int i, j, sum = 0;
-    
-    for (i = 0; i < ROWS; i++) {
-        for (j = 0; j < COLS; j++) {
-            sum += v[i][j];
-        }
-    }
-    return sum;
-}
-```
-
-
-# Array con più di 2 dimensioni
-* E' possibile definire array con un numero arbitrario di dimensioni. la sintassi è la seguente:
-
-```c
-nome-tipo identificatore [ card_1 ] [ card_2 ] ... [ card_n ];
-```
-
-* Nell'esempio seguente viene dichiarato un array a 4 dimensioni
-* Un elemento qualsiasi di questo array, per esempio var[0][5][8][1], è un valore double
-
-```c
-double var[3][6][9][12];
-```
-
 # Matrici come parametri di funzione
 * A volte capita di dover elaborare delle matrici di cardinalità prefissata per mezzo di funzioni
 * Per comprendere come una matrice deve essere passata a una funzione è utile ricordare che essa può essere vista come un vettore, i cui elementi sono, a loro volta, vettori di cardinalità pari al numero di colonne (le righe della matrice)
@@ -160,9 +113,26 @@ double var[3][6][9][12];
 * Per dichiarare il tipo del parametro corrispondente, si devono indicare tutte le cardinalità dell'array, eccetto la prima
 * Nel caso di una matrice, il tipo del parametro che viene passato è quello di un puntatore a vettore della dimensione di una riga la sua dichiarazione deve fare riferimento al numero di colonne della matrice
 
-# Esempio
-matrice.c
 
+# Matrici come parametri di funzione
+```c
+void do_stuff(int rows, int cols, int v[][cols]) {
+int i, j;
+
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%3d", v[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main(void) {
+    int v[ROWS][COLS] = { {1, 2, 3}, {4, 5, 6}, };
+
+    do_stuff(ROWS, COLS, v);
+}
+```
 
 # Le strutture
 * Una struttura, o **struct**, è un tipo di dato derivato che permette di aggregare un insieme di elementi, detti campi, all'interno di un unica entità da gestire in modo unitario

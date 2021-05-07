@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <limits.h>
 
 int main() {
     /* interi con segno */

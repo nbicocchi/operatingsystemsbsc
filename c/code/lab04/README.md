@@ -1,81 +1,47 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
-## Esercizi C (Strutture dati)
-Si propongono alcuni esercizi riguardo l’impiego di strutture dati, alcuni dei quali sono varianti di esercizi già affrontati in precedenza utilizzando tipi primitivi del C.
+## Esercizi C (Allocazione dinamica memoria)
+Si propone un gruppo di esercizi per imparare ad utilizzare tecniche di allocazione dinamica della memoria.
 
 ---
 
-Esercizio 1. Implementatre una funzione *array_stats* per l’individuazione del valore minimo, del valore massimo, della media e della varianza dei valori di un array. La funzione deve rispettare il seguente prototipo:
+Esercizio 1. Implementare una funzione *reversei* che inverta l’ordine dei valori di un array di dati interi che rispetti il seguente prototipo:
 
 ```c
-typedef struct array_info {
-    int max;
-    int min;
-    float mean;
-    float variance;
-} array_info_t;
-
-array_info_t array_stats(const int *values, unsigned size);
+int* reversei(const int *src, unsigned size);
 ```
 
 dove:
 
-* **array_info_t** è la struct che gestisce la informazioni dell’array;
-* **values** è il puntatore all’array;
-* **size** è la dimensione dell’array.
+* **src** è il puntatore all’array di input;
+* **size** è la dimensione dell’array;
+* la funzione ritorna il puntatore all’array invertito, allocato dalla funzione. Ha valore NULL in caso di errore di allocazione.
 
 ---
 
-Esercizio 2. Implementare delle varianti dell’esercizio precedente che implementino le stesse funzionalità con lo stesso tipo di struct, ma che supportino differenti prototipi.
-
-*Variante 1:*
+Esercizio 2. Implementare una funzione *reverses* che inverta l’ordine dei caratteri di una stringa C che rispetti il seguente prototipo:
 
 ```c
-void array_stats(array_info_t *r, const int *values, unsigned size);
+void reverses(char **dst, const char *src);
 ```
 
 dove:
 
-* **r** è il puntatore alla struttura dati in cui memorizzare i valori calcolati dalla funzione.
-
-*Variante 2:*
-
-```c
-array_info_t *array_stats(const int *values, unsigned size);
-```
-
-dove:
-
-* la funzione restituire il puntatore alla struttura dati allocata appositamente dalla funzione, in cui
-sono memorizzati i risultati. Restituisce NULL in caso di errore.
-
-*Variante 3:*
-
-```c
-void array_stats(array_info_t **r, const int *values, unsigned size);
-```
-
-dove:
-
-* **r** è il puntatore al puntatore della struttura dati allocata appositamente dalla funzione in cui sono
-memorizzati i risultati. Vale NULL in caso di errore.
+* **dst** gestisce il puntatore per memorizzare la stringa C invertita, ha valore NULL in caso di errore di allocazione;
+* **src** è il puntatore alla stringa in input.
 
 ---
 
-Esercizio 3. Implementare una funzione **merge** che dati due array di valori interi ordinati, generi un terzo array che contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci possano essere elementi duplicati. La funzione rispetti il seguente prototipo:
+Esercizio 3. Implementare una funzione che dati due array di valori interi ordinati, generi un terzo array che contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci possano essere elementi duplicati. La funzione rispetti il seguente prototipo:
 
 ```c
-typedef struct int_array {
-    int *p;
-    unsigned size;
-} int_array_t;
-
-void merge(int_array_t **r, const int_array_t *a1, const int_array_t *a2);
+void merge(int **dst, const int *a1, unsigned s1, const int *a2, unsigned s2);
 ```
 
 dove:
+* **dst** è il puntatore all’array generato, della dimensione opportuna per contenere il numero opportuno di elementi. Ha valore NULL in caso di errore di allocazione;
+* **a1** è il puntatore al primo array di input;
+* **s1** è la dimensione del primo array;
+* **a2** è il puntatore al secondo array di input;
+* **s2** è la dimensione del secondo array.
 
-* **int_array_t** è la struttura per gestire un array di variabili int. La struttura include la variabile puntatore p, che include l’indirizzo dell’array gestito, e variabile size, che indica la dimensione dell’array;
-* **r** è il puntatore alla struct che gestisce l’array generato, da allocare appositamente da parte della funzione;
-* **a1** è il puntatore alla struct che gestisce il primo array di input;
-* **a2** è il puntatore alla struct che gestisce il secondo array di input

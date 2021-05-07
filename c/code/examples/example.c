@@ -1,21 +1,26 @@
 #include <stdio.h>
 
-void stampa_array(const int *v, unsigned size) {
-    unsigned i;
+#define ROWS 2
+#define COLS 3
 
-    for (i = 0; i < size; i++) {
-        printf("%d\n", v[i]);
+void do_stuff(int rows, int cols, int v[][cols]) {
+    int i, j;
+
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%3d", v[i][j]);
+        }
+        printf("\n");
     }
 }
 
 int main(void) {
-    int v[16];
-    int *v2 = v;
+    int v[ROWS][COLS] = {
+            {1, 2, 3},
+            {4, 5, 6},
+    };
 
-    printf("%ld\n", sizeof(v));
-    printf("%ld\n", sizeof(v2));
-    printf("%p\n", &v[0]);
-    printf("%p\n", &v2);
+    do_stuff(ROWS, COLS, v);
 }
 
 

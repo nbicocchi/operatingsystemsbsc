@@ -30,17 +30,22 @@ add_executable(example examples/example.c)
 #add_executable(0120 lab01/0120.c)
 
 # Basic Programming lab02
-add_executable(0201 lab02/0201.c)
-add_executable(0202 lab02/0202.c)
+#add_executable(0201 lab02/0201.c)
+#add_executable(0202 lab02/0202.c)
 add_executable(0203 lab02/0203.c)
-add_executable(0204 lab02/0204.c)
-add_executable(0205 lab02/0205.c)
-add_executable(0206 lab02/0206.c)
-add_executable(0207 lab02/0207.c)
-add_executable(0208 lab02/0208.c)
-add_executable(0209 lab02/0209.c)
-add_executable(0210 lab02/0210.c)
-add_executable(0211 lab02/0211.c)
+#add_executable(0204 lab02/0204.c)
+#add_executable(0205 lab02/0205.c)
+#add_executable(0206 lab02/0206.c)
+#add_executable(0207 lab02/0207.c)
+#add_executable(0208 lab02/0208.c)
+#add_executable(0209 lab02/0209.c)
+#add_executable(0210 lab02/0210.c)
+#add_executable(0211 lab02/0211.c)
+
+# Basic Programming lab03
+add_executable(0301 lab03/0301.c)
+add_executable(0302 lab03/0302.c)
+add_executable(0303 lab03/0303.c)
 
 # System Programming labs01
 #add_executable(s011 labs01/s011.c utils/utils.c)
