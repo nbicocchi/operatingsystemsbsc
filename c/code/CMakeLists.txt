@@ -32,7 +32,7 @@ add_executable(example examples/example.c)
 # Basic Programming lab02
 #add_executable(0201 lab02/0201.c)
 #add_executable(0202 lab02/0202.c)
-add_executable(0203 lab02/0203.c)
+#add_executable(0203 lab02/0203.c)
 #add_executable(0204 lab02/0204.c)
 #add_executable(0205 lab02/0205.c)
 #add_executable(0206 lab02/0206.c)

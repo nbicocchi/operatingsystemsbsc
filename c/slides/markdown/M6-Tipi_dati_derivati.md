@@ -27,7 +27,7 @@ nome-tipo identificatore [ card_1 ] [ card_2 ] ;
 
 * *nome-tipo* è un qualsiasi tipo di dato, sia semplice che derivato
 * *identificatore* è il nome che identifica la matrice
-* *card_1* e *card_2* indicano la cardinalità delle due dimensioni (righe e colonne)
+* *card_1* e *card_2* indicano la cardinalità delle due dimensioni (righe e colonne, rispettivamente)
 
 # Esempio 
 Esempio di dichiarazione di matrice:
@@ -38,17 +38,16 @@ mat[2][6] = 3;
 printf("%d\n", mat[2][6]);
 ```
 
-* La matrice si chiama *mat*
+* La matrice è associata all'identificatore *mat*
 * La matrice ha 6 righe e 7 colonne
-* Le due componenti sono indicizzate da 0 a 5 (righe) e da 0 a 6 (colonne)
-* L'elemento mat[2][6] è un valore di tipo intero che può essere utilizzato come un qualunque altro valore intero
+* Le due componenti (righe e colonne) sono indicizzate da 0 a 5 (righe) e da 0 a 6 (colonne)
+* L'elemento mat[2][6] (ultimo elemento della terza riga) è un valore di tipo intero che può essere utilizzato come un qualunque altro valore intero
 
-# Le matrici: allocazione
-* La matrice è una struttura bidimensionale. Va definito il modo in cui mapparla all'interno della memoria RAM, che è al contrario una struttura monodimensionale
-* **Una matrice viene allocata in memoria per righe**. Si parte dall'indirizzo dell'elemento di indice mat[0][0] e si prosegue memorizzando in successione tutti i valori della matrice riga dopo riga.
+# Le matrici: allocazione in memoria
+* La matrice è una struttura **bidimensionale**. Va definito il modo in cui mapparla all'interno della memoria RAM, che è al contrario una struttura **monodimensionale**!
+* *Una matrice viene allocata in memoria per righe*. Si parte dall'indirizzo dell'elemento di indice mat[0][0] e si prosegue memorizzando in successione tutti i valori della matrice, riga dopo riga.
 
-# Le matrici: allocazione 
-
+# Le matrici: allocazione in memoria
 ![Allocazione Matrici](./images/allocazione_matrice.jpg)
 
 # Le matrici: inizializzazione
@@ -64,22 +63,22 @@ int mat[2][4] = {
 ```
 
 # Le matrici: inizializzazione
-* Quando nella dichiarazione della matrice si inizializzano i suoi valori, non è necessario indicare la prima dimensione (il numero di righe). Viene automaticamente calcolata dal compilatore in base ai valori usati per l'inizializzazione.
+* Quando nella dichiarazione della matrice si inizializzano i suoi valori, non è necessario indicare la prima dimensione (il numero di righe nel caso bidimensionale). Viene automaticamente calcolata dal compilatore in base ai valori usati per l'inizializzazione.
 * Eventuali valori mancanti vengono inizializzati a 0
 
 ```
 int mat[][4] = {
     {1, 2, 3, 4},
-    {5, 6, 7, 8},
-    {9},
-    {0} 
+    {5, 6, 7},
+    {8, 9},
+    {9} 
 };
 ```
 ```
 1 2 3 4 
-5 6 7 8 
-9 0 0 0 
-0 0 0 0
+5 6 7 0 
+8 9 0 0 
+9 0 0 0
 ```
 
 # Le matrici: inizializzazione
@@ -107,11 +106,13 @@ int mat[2][2] = { {0} };
 ```
 
 # Matrici come parametri di funzione
-* A volte capita di dover elaborare delle matrici di cardinalità prefissata per mezzo di funzioni
 * Per comprendere come una matrice deve essere passata a una funzione è utile ricordare che essa può essere vista come un vettore, i cui elementi sono, a loro volta, vettori di cardinalità pari al numero di colonne (le righe della matrice)
-* Quando un array multi-dimensionale viene passato a una funzione, questa riceve l'indirizzo del suo primo elemento
-* Per dichiarare il tipo del parametro corrispondente, si devono indicare tutte le cardinalità dell'array, eccetto la prima
-* Nel caso di una matrice, il tipo del parametro che viene passato è quello di un puntatore a vettore della dimensione di una riga la sua dichiarazione deve fare riferimento al numero di colonne della matrice
+* *Quando un array multi-dimensionale viene passato a una funzione, questa riceve l'indirizzo del suo primo elemento. Non una copia dell'array!* Per dichiarare il tipo del parametro corrispondente, si devono indicare tutte le cardinalità dell'array, eccetto la prima. Nel caso di una matrice, il tipo del parametro che viene passato è quello di un array in cui non viene indicato il numero di righe, ma solo quello delle colonne
+* *Il numero di colonne è fondamentale per conoscere l'indirizzo degli elementi memorizzati in righe diverse dalla prima*. Come posso sapere qual'è l'indirizzo di matrice[1][0] se non conosco il numero di colonne?
+
+```c
+void do_stuff(int rows, int cols, int v[][cols]);
+```
 
 
 # Matrici come parametri di funzione
@@ -121,9 +122,8 @@ int i, j;
 
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
-            printf("%3d", v[i][j]);
+            v[i][j] += 1;
         }
-        printf("\n");
     }
 }
 
@@ -135,22 +135,23 @@ int main(void) {
 ```
 
 # Le strutture
-* Una struttura, o **struct**, è un tipo di dato derivato che permette di aggregare un insieme di elementi, detti campi, all'interno di un unica entità da gestire in modo unitario
-* Si raggruppano variabili che hanno una correlazione logica per il problema da risolvere
-* I campi di una struttura possono essere di tipo diverso, sia tipi semplici che derivati, incluse altre strutture
-* Dopo la dichiarazione, *struct nome è il nome di un nuovo tipo di dato* che può essere usato per dichiarare variabili e puntatori
+* Una struttura, o **struct**, è un tipo di dato derivato che permette di aggregare un insieme di elementi, detti *campi*, all'interno di un unica entità utilizzabile in modo unitario (Si tratta di una forma di aggregazione dei dati, si raggruppano variabili che hanno una correlazione logica per il problema da risolvere)
+* I campi di una struttura possono essere di tipo diverso, sia semplici che derivati, incluse altre strutture
+* Dopo la dichiarazione, *struct nome* diventa il nome di un *nuovo tipo di dato* che può essere usato per dichiarare variabili e puntatori
 
 ```c
  struct nome {
        tipo-campo nome-campo ;
        [tipo-campo nome-campo ; ... ]
 };
+
+struct nome a, *p;
 ```
 
 # Esempio (struct punto)
-* Le variabili di nome pt e pt1 sono di tipo struct punto
-* L'identificatore pt è associato ad una porzione di memoria in grado di conservare due dati di tipo int, i campi della struttura
-* I campi si chiamano x e y
+* Le variabili di nome pt e pt2 sono di tipo *struct punto*
+* L'identificatore pt è associato ad una porzione di memoria in grado di conservare due dati di tipo int (i campi x e y della struttura). Anche pt2 è associato ad una porzione di memoria dedicata
+* La variabile pt_ptr è invece di tipo puntatore, e una volta inizializzato, contiene l'indirizzo del primo byte di una *struct punto* 
 
 ```c
 struct punto {
@@ -158,18 +159,18 @@ struct punto {
     int y;
 };
 
-struct punto pt, pt1; /* dichiara due variabili */
-struct punto *pt_ptr; /* dichiara un puntatore */
+struct punto pt, pt2; /* dichiara due variabili */
+struct punto *pt_ptr;  /* dichiara un puntatore */
+pt_ptr = &pt;
 ```
 
 # Esempio (struct punto)
-
 ![Allocazione Matrici](./images/allocazione_struct.jpg)
 
 
 # Accesso ai campi
 
-* Per far riferimento ai valori memorizzati nei singoli campi si usa la notazione
+* Per far riferimento ai valori memorizzati nei singoli campi di una struttura si usa la *notazione punto*
 
 ```c
 <nome variabile>.<nome campo>
@@ -177,27 +178,78 @@ pt.x = 5;
 pt.y = -7
 ```
 
-* Le strutture si possono anche assegnare direttamente 
+* Le strutture si possono anche assegnare direttamente (i valori vengono **copiati** fra le due aree di memoria come nel caso delle normali variabili)
 
 ```c
 pt1 = pt;
+```
+
+# Assegnamento diretto
+
+```c
+struct punto {
+    int x;
+    int y;
+};
+
+int main(void) {
+    struct punto pt, pt2;
+
+    pt.x = 5; pt.y = -7;
+
+    pt2 = pt;
+
+    pt2.x = -5; pt2.y = 7;
+
+    /* Output: pt=[5, -7] pt2=[-5, 7] */
+    printf("pt=[%d, %d] pt2=[%d, %d]\n", pt.x, pt.y, pt2.x, pt2.y);
+}
 ```
 
 # Puntatori a struttura
 
 * *pt_ptr* è un puntatore a struttura e memorizza l'indirizzo di una struttura (*struct punto*)
 * La sua dichiarazione, non alloca memoria per una struttura ma soltanto per un puntatore ad essa
-* La due istruzioni seguenti, ottengono il medesimo scopo, ed assegnano a *pt_ptr* l'indirizzo della struttura *pt*
+* La due istruzioni seguenti, ottengono il medesimo scopo, ed assegnano a *pt_ptr* l'indirizzo del primo byte della struttura *pt*
 
 ```c
 pt_ptr = &pt;
 *pt_ptr = pt;
 ```
 
+# Inizializzazione dei campi di strutture
+
+* La prima forma è poco leggibile e legata all'ordine dei parametri (scomodo)
+* La seconda forma non è standard (warning)
+* *La terza forma è quella consigliata*
+* Tutti i campi non specificati vengono impostati al valore 0
+
+```c
+struct info {
+    int id;
+    char *nome;
+    int valore;
+    int privato;
+}
+
+struct info el1 = {3, "aldo", 45};
+struct info el2 = {id: 3, nome: "aldo", valore: 45};
+struct info el3 = {.id=3, .nome="aldo", .valore=45};
+```
+
+# Strutture come parametri di funzioni
+* Il passaggio dei parametri per valore richiede l'allocazione di una copia locale delle variabili dichiarate nella lista dei parametri. Oltre all'allocazione, tali variabili devono anche essere inizializzate per riflettere il valore della espressione del chiamante. Questo comporta la copia esplicita di una porzione di memoria dalla variabile utilizzata per la chiamata alla variabile locale (perdita di efficienza proporzionale alla dimensione della variabile)
+* *Il passaggio per riferimento elimina il tempo necessario per effettuare la copia*. Viene copiato soltanto l'indirizzo della variabile che ha dimensione limitata e fissa (32/64bit). Questo approccio migliora in modo sensibile l'efficienza dei programmi
+
+```c
+double distanza_v1(struct punto p1, struct punto p2);
+double distanza_v2(struct punto *p1, struct punto *p2);
+```
+
 # Strutture come parametri di funzioni
 
-* Anche se è consentito, le strutture non vengono normalmente passate né come argomenti né vengono utilizzate come valori di ritorno
-* In caso si utilizzi un puntatore, la notazione va adeguata
+* Per ragioni di efficienza, anche se è consentito, le strutture non vengono normalmente passate né come argomenti né vengono utilizzate come valori di ritorno
+* Si utilizzano invece spesso *puntatori a struttura*, adeguando la notazione
 
 ```c
 double distanza(struct punto p1, struct punto p2) {
@@ -217,67 +269,65 @@ double distanza(struct punto *p1, struct punto *p2) {
 }
 ```
 
-# Strutture come parametri di funzioni
-* Il passaggio dei parametri per valore richiede l'allocazione di una copia locale delle variabili dichiarate nella lista dei parametri
-* Oltre all'allocazione, tali variabili devono anche essere inizializzate per riflettere il valore della espressione del chiamante
-* Questo comporta la copia esplicita di una porzione di memoria dalla variabile utilizzata per la chiamata alla variabile locale
-* C'è una perdita di efficienza nel passaggio dei parametri per valore proporzionale alla dimensione della variabile
-* Il passaggio per riferimento elimina il tempo necessario per effettuare la copia
-* Viene copiato soltanto l'indirizzo della variabile
-* Esso ha dimensione limitata e fissa (la dimensione di un puntatore)
-* Questo rende più veloce la chiamata alla funzione
-* Questo approccio migliora l'efficienza dei programmi
 
-# Inizializzazione dei campi di strutture
 
-* prima forma poco leggibile, legata all'ordine
-* seconda fuori standard
-* terza ok
-* tutti i campi non specificati vanno a 0
-
-```c
-struct info {
-    int id;
-    char *nome;
-    int valore;
-    int privato;
-}
-
-struct info el1 = {3, "aldo", 45};
-struct info el2 = {id: 3, nome: "aldo", valore: 45};
-struct info el3 = {.id 3, .nome "aldo", .valore 45};
-```
 
 # Confronto fra strutture
 
-esempio datecmq
+```c
+struct data {
+    int g; int m; int a;
+};
+
+int datecmp(const struct data *d1, const struct data *d2) {
+    int ret;
+    if (!(ret=(d1->a - d2->a)))
+        if (!(ret=(d1->m - d2->m)))
+            ret=(d1->g - d2->g);
+    return ret;
+}
+
+int main(void) {
+    struct data d1 = {.g=10, .m=10, .a=2010};
+    struct data d2 = {.g=10, .m=10, .a=2020};
+    printf("%d\n", datecmp(&d1, &d2));
+}
+```
 
 # typedef
 
 * In C è possibile assegnare dei nomi simbolici ai tipi di dati esistenti
 * Migliora la chiarezza di programmi lunghi e complessi
-* La definizione di un nuovo tipo si realizza per mezzo della parola chiave **typedef**. La sintassi è la seguente:
+* La definizione di un nuovo tipo si realizza per mezzo della parola chiave **typedef** utilizzando la seguente sintassi:
 
 ```c
 typedef tipo nuovo-tipo;
 ```
 
-* L'istruzione associa il nome *nuovo-tipo* al tipo *tipo*
+```c
+typedef long time_t;
+typedef unsigned long long size_t;
+typedef struct {
+    int x, y;
+    int raggio;
+} cerchio_t;
+```
+
 
 # typedef
-* In UNIX per tenere traccia del trascorrere del tempo in unità discrete si usa la seguente definizione:
+* In UNIX, per tenere traccia del trascorrere del tempo in unità discrete si usa la seguente definizione:
 
 ```c
 typedef long time_t;
 ```
 
-* Questo permette di individuare facilmente nel programma le variabili che sono collegate alla gestione del tempo
-* Esse sono dichiarate di tipo *time_t*, distinguendole da generiche variabili di tipo long utilizzate per altri scopi
-* Il fatto di affermare che le variabili sono *dichiarate di tipo time_t* è un po' improprio. L'assegnazione del nome time_t al tipo long non crea un nuovo tipo di dato dal punto di vista semantico una variabile dichiarata di tipo long è perfettamente equivalente ad una di tipo time_t
+* Questo permette di individuare facilmente nel programma le variabili che sono collegate alla gestione del tempo. Esse sono dichiarate di tipo *time_t*, distinguendole da generiche variabili di tipo long utilizzate per altri scopi
+* Il fatto di affermare che le variabili sono *dichiarate di tipo time_t è improprio*. L'assegnazione del nome time_t al tipo long non crea un nuovo tipo di dato. *Dal punto di vista semantico una variabile dichiarata di tipo long è perfettamente equivalente ad una di tipo time_t*
 
 # typedef
-* E' possibile assegnare un nome sintetico a tipi complessi, questo aumenta la chiarezza del codice
-* Si possono definire e utilizzare variabili di tipo cerchio_t
+* E' anche possibile assegnare un nome sintetico a tipi complessi
+* Dopo l'utilizzo di **typedef**, si possono definire e utilizzare variabili di tipo cerchio_t
+* I puntatori c1 e c2 possono essere utilizzati come puntatori a struttura (equivalenza semantica)
 
 ```c
 typedef struct {
@@ -287,19 +337,18 @@ typedef struct {
 ```
 
 ```c
-int uguale(cerchio_t c1, cerchio_t c2) {
-    return ((c1.x == c2.x) && (c1.y == c2.y) && (c1.raggio == c2.raggio));
+int equals(const cerchio_t *c1, const cerchio_t *c2) {
+    return ((c1->x == c2->x) && 
+        (c1->y == c2->y) && 
+        (c1->raggio == c2->raggio));
 }
 ```
 
 # Le enumerazioni (enum)
 
-* Le enumerazioni sono usate per definire degli insiemi omogenei di costanti intere
-* A ciascuna costante viene associato un nome univoco
-* Il loro scopo è quello di rendere più comprensibile il codice, permettendo di dichiarare insiemi di costanti dal significato logico coerente
-* Una variabile di tipo enum può essere usata in tutti i contesti nei quali è possibile usare variabili intere (l'indicizzazione di vettori, espressioni)
-* Le enumerazioni rappresentano una alternativa alle macro del preprocessore per la definizione di costanti
-* Hanno il vantaggio che i valori numerici vengono assegati automaticamente dal compilatore
+* Le enumerazioni sono usate per definire degli insiemi omogenei di costanti intere. Il loro scopo è quello di rendere più comprensibile il codice, permettendo di dichiarare insiemi di costanti dal significato logico coerente
+* A ciascuna costante viene associato un nome univoco. Una variabile di tipo enum può essere usata in tutti i contesti nei quali è possibile usare variabili intere (l'indicizzazione di vettori, espressioni)
+* Le enumerazioni rappresentano una alternativa alle macro del preprocessore per la definizione di costanti. Hanno il vantaggio che i valori numerici vengono assegati automaticamente dal compilatore. 
 * Al contrario delle macro, si tratta di tipi veri e propri su cui vengono fatti tutti i controlli di coerenza d'uso
 
 # Le enumerazioni (enum)
@@ -311,8 +360,7 @@ enum identificatore { lista-di-elementi }
 
 * *lista-di-elementi* è un elenco di identificatori separati dalla virgola
 * Al primo elemento viene assegnato il valore 0 
-* Ogni elemento successivo viene incrementato di 1 
-* E' possibile effettuare degli assegnamenti espliciti
+* Ogni elemento successivo viene incrementato di 1
 
 ```c
 enum direzioni { nord, sud, ovest, est };
@@ -321,29 +369,31 @@ enum direzioni dir = est;
 
 # Le enumerazioni (enum)
 
-* Il seguente codice usa una enumerazione per dichiarare delle costanti associate ai punti cardinali
-* A nord viene assegnato il valore 0, sud = 1, ovest = 10, est = 11
-* Segue un esempio di uso (dichiaro una variabile e la inizializzo al valore est)
+* E' anche possibile effettuare degli assegnamenti espliciti
+* Il seguente codice usa una enumerazione per dichiarare delle costanti associate ai punti cardinali. A nord viene assegnato il valore 0, sud = 1, ovest = 10, est = 11. Successivamente, dichiara una variabile (dir) e la inizializza al valore est (11)
 * Spesso il valore numerico non ha importanza, i nomi sono semplici etichette (non è definito un ordinamento)
-
 
 ```c
 enum direzioni { nord, sud, ovest = 10, est };
 enum direzioni dir = est;
 ```
 
-
 # Le enumerazioni (enum)
 
 ```c
 typedef enum { falso, vero } booleano;
+
 booleano flags[10] = { vero };
 booleano flag = vero;
-printf("%d", flag);
-printf("%s", flag != falso ? "vero" : "falso");
-flag = 5; // non dà errori in compilazione
 
-// in alternativa
+/* Output: 1 */
+printf("%d\n", flag);
+/* Output: vero */
+printf("%s\n", flag != falso ? "vero" : "falso");
+/* Non produce errori di compilazione! */
+flag = 5; 
+
+/* in alternativa... */
 #define booleano int
 #define falso 0
 #define vero 1
