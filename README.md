@@ -126,7 +126,11 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 [M6] Tipi di dati derivati
 * Array multi-dimensionali
+* Array multi-dimensionali come parametri di funzione
+* Matrici
 * Strutture dati
+* Enumerazioni
+* *typedef*
 
 [M7] File
 * File binari e file di testo
