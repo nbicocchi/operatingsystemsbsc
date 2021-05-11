@@ -8,7 +8,7 @@ Si propone un gruppo di esercizi per imparare ad utilizzare tecniche di allocazi
 Esercizio 1. Implementare una funzione *reversei* che inverta l’ordine dei valori di un array di dati interi che rispetti il seguente prototipo:
 
 ```c
-int* reversei(const int *src, unsigned size);
+int *reversei(const int *src, unsigned size);
 ```
 
 dove:
@@ -22,13 +22,14 @@ dove:
 Esercizio 2. Implementare una funzione *reverses* che inverta l’ordine dei caratteri di una stringa C che rispetti il seguente prototipo:
 
 ```c
-void reverses(char **dst, const char *src);
+char *reverses(const char *src);
 ```
 
 dove:
 
-* **dst** gestisce il puntatore per memorizzare la stringa C invertita, ha valore NULL in caso di errore di allocazione;
 * **src** è il puntatore alla stringa in input.
+* la funzione ritorna il puntatore all’array invertito, allocato dalla funzione. Ha valore NULL in caso di errore di allocazione.
+
 
 ---
 
@@ -45,3 +46,36 @@ dove:
 * **a2** è il puntatore al secondo array di input;
 * **s2** è la dimensione del secondo array.
 
+---
+
+Esercizio 4. Implementare una funzione per l’individuazione del valore minimo, del valore massimo, della media e della varianza dei valori di un array. La funzione deve rispettare il seguente prototipo:
+
+```c
+typedef struct array_info {
+    int max;
+    int min;
+    float mean;
+    float variance;
+} array_info_t;
+
+array_info_t *array_stats(const int *values, unsigned size);
+```
+
+dove:
+
+* **values** è il puntatore all’array;
+* **size** è la dimensione dell’array;
+* **(array_info_t \*)** è un puntatore alla struct che gestisce la informazioni dell’array. 
+
+---
+
+Esercizio 5. Implementare una funzione che, data una stringa contenente una sequenza di parole separate da spazio, crei una lista di stringhe in cui l’ultimo elemento della lista è seguito da un valore NULL (ad esempio, in presenza di una stringa C di N parole, se la variabile char **list punta alla lista, list[N] == NULL). La funzione deve rispettare il seguente prototipo:
+
+```c
+char **split(const char *s);
+```
+
+dove:
+
+* **s** è il puntatore alla stringa C data in input; 
+* la funzione funzione restituisce il puntatore alla lista, e vale NULL in caso di errore di memoria.

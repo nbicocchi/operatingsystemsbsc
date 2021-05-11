@@ -20,7 +20,7 @@ void compute_mean_variance(float *rmean, float *rvariance, float *values, unsign
     for (i = 0; i < size; i++) {
         *rvariance += powf(values[i] - *rmean, 2.0F);
     }
-    *rvariance = sqrtf(*rvariance / (float)size);
+    *rvariance /= (float)size;
 }
 
 int main(void) {

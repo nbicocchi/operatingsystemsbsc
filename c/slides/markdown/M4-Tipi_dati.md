@@ -571,6 +571,7 @@ int isupper(int ch);
 int islower(int ch);
 int isalpha(int ch);
 int isdigit(int ch);
+int isspace(int ch);
 ```
 
 # Funzioni di libreria (stringhe)

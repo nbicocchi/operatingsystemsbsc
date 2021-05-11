@@ -97,3 +97,28 @@ dove:
 * **c1** rapresenta il primo numero da moltiplicare;
 * **c2** rapresenta il secondo numero da moltiplicare.
 
+---
+
+Esercizio 7. Implementare una funzione per il calcolo dell’area di un poligono irregolare date le coordinate dei suoi vertici (https://arachnoid.com/area_irregular_polygon/index.html). La funzione supporti il seguente prototipo:
+
+```c
+typedef struct point {
+   float x;
+   float y;
+} point_t;
+
+typedef struct polygon {
+    unsigned n;
+    point_t *vertices;
+} polygon_t;
+   
+float compute_area(const polygon_t *p);
+```
+
+dove:
+
+* **point_t** rappresenta un punto sul piano con coordinate x e y; 
+* **polygon_t** rappresenta il poligono con n vertici, ognuno identificato come un punto sul piano;
+* **compute_area** è la funzione per il calcolo dell’area:
+   * accetta il puntatore alla struttura che rappresenta il poligono;
+   * restituisce l’area del poligono.
