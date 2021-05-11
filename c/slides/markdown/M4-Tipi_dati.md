@@ -582,10 +582,11 @@ int atoi(const char *str);
 long atol(const char *str);
 double atof(const char *str);
 
+int strcmp(const char *s1, const char *s2);
+int strcasecmp(const char *s1, const char *s2);
 char *strcpy(char *dest, const char *src);
 char *strcat(char *dest, const char *src);
-int strcmp(const char *s1, const char *s2);
+char *strdup(const char *s1);
 
 size_t strlen(const char *str);
 ```
-

@@ -364,7 +364,10 @@ enum identificatore { lista-di-elementi }
 
 ```c
 enum direzioni { nord, sud, ovest, est };
-enum direzioni dir = est;
+enum direzioni dir; 
+dir = est;
+...
+dir = nord;
 ```
 
 # Le enumerazioni (enum)
@@ -375,7 +378,10 @@ enum direzioni dir = est;
 
 ```c
 enum direzioni { nord, sud, ovest = 10, est };
-enum direzioni dir = est;
+enum direzioni dir;
+dir = est;
+...
+dir = nord;
 ```
 
 # Le enumerazioni (enum)
