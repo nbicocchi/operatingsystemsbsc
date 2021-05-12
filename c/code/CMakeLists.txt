@@ -6,8 +6,10 @@ set(CMAKE_C_STANDARD 99)
 
 # Examples
 add_executable(example examples/example.c)
-add_executable(matrix_single examples/allocate_matrix_single.c)
-add_executable(matrix_double examples/allocate_matrix_double.c)
+add_executable(matrix_single examples/dynamic_matrix_single.c)
+add_executable(matrix_double examples/dynamic_matrix_double.c)
+add_executable(static_array examples/static_array.c)
+add_executable(static_matrix examples/static_matrix.c)
 
 # Basic Programming lab01
 #add_executable(0101 lab01/0101.c)

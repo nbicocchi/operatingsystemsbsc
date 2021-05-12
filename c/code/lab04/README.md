@@ -1,6 +1,6 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
-## Esercizi C (Allocazione dinamica memoria)
+## Esercizi C (Allocazione dinamica della memoria)
 Si propone un gruppo di esercizi per imparare ad utilizzare tecniche di allocazione dinamica della memoria.
 
 ---

@@ -1,6 +1,6 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
-## Esercizi C (Matrici e strutture innestate)
+## Esercizi C (Matrici e strutture)
 Si propongono alcuni esercizi relativi all’utilizzo di matrici (array bi-dimensionali) e strutture (struct).
 
 ---
