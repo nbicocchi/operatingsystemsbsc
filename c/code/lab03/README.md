@@ -80,7 +80,7 @@ dove:
 
 ---
 
-Esercizio 6. Implementare una funzione per calcolare il prodotto di due numeri complessi che rispetti il seguente prototipo:
+Esercizio 6. Implementare una funzione *complex_product* per calcolare il prodotto di due numeri complessi che rispetti il seguente prototipo:
 
 ```c
 struct complex {
@@ -88,7 +88,7 @@ struct complex {
     double imaginary;
 };
 
-void complex_product (struct complex *r, const struct complex *c1, const struct complex *c2);
+void complex_product(struct complex *r, const struct complex *c1, const struct complex *c2);
 ```
 
 dove:
@@ -99,7 +99,7 @@ dove:
 
 ---
 
-Esercizio 7. Implementare una funzione per il calcolo dell’area di un poligono irregolare date le coordinate dei suoi vertici (https://arachnoid.com/area_irregular_polygon/index.html). La funzione supporti il seguente prototipo:
+Esercizio 7. Implementare una funzione *compute_area* per il calcolo dell’area di un poligono irregolare date le coordinate dei suoi vertici (https://arachnoid.com/area_irregular_polygon/index.html). La funzione supporti il seguente prototipo:
 
 ```c
 typedef struct point {
@@ -125,7 +125,7 @@ dove:
 
 ---
 
-Esercizio 8. Implementare una funzione per che verifichi se un punto 2D si trova all'interno di un cerchio. La funzione supporti il seguente prototipo:
+Esercizio 8. Implementare una funzione *isinside* per che verifichi se un punto 2D si trova all'interno di un cerchio. La funzione supporti il seguente prototipo:
 
 ```c
 typedef struct point {
