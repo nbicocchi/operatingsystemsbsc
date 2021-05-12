@@ -33,7 +33,7 @@ dove:
 
 ---
 
-Esercizio 3. Implementare una funzione che dati due array di valori interi ordinati, generi un terzo array che contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci possano essere elementi duplicati. La funzione rispetti il seguente prototipo:
+Esercizio 3. Implementare una funzione *merge* che dati due array di valori interi ordinati, generi un terzo array che contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci possano essere elementi duplicati. La funzione rispetti il seguente prototipo:
 
 ```c
 void merge(int **dst, const int *a1, unsigned s1, const int *a2, unsigned s2);
@@ -48,7 +48,7 @@ dove:
 
 ---
 
-Esercizio 4. Implementare una funzione per l’individuazione del valore minimo, del valore massimo, della media e della varianza dei valori di un array. La funzione deve rispettare il seguente prototipo:
+Esercizio 4. Implementare una funzione *array_stats* per l’individuazione del valore minimo, del valore massimo, della media e della varianza dei valori di un array. La funzione deve rispettare il seguente prototipo:
 
 ```c
 typedef struct array_info {
@@ -69,7 +69,7 @@ dove:
 
 ---
 
-Esercizio 5. Implementare una funzione che, data una stringa contenente una sequenza di parole separate da spazio, crei una lista di stringhe in cui l’ultimo elemento della lista è seguito da un valore NULL (ad esempio, in presenza di una stringa C di N parole, se la variabile char **list punta alla lista, list[N] == NULL). La funzione deve rispettare il seguente prototipo:
+Esercizio 5. Implementare una funzione *split* che, data una stringa contenente una sequenza di parole separate da spazio, crei una lista di stringhe in cui l’ultimo elemento della lista è seguito da un valore NULL (ad esempio, in presenza di una stringa C di N parole, se la variabile char **list punta alla lista, list[N] == NULL). La funzione deve rispettare il seguente prototipo:
 
 ```c
 char **split(const char *s);
@@ -79,3 +79,21 @@ dove:
 
 * **s** è il puntatore alla stringa C data in input; 
 * la funzione funzione restituisce il puntatore alla lista, e vale NULL in caso di errore di memoria.
+
+---
+
+Esercizio 6. Implementare una funzione *matrix_transpose* che data una matrice, ritorna la sua matrice trasposta (le righe diventano colonne e viceversa). La funzione deve rispettare il seguente prototipo:
+
+```c
+struct matrix {
+    size_t rows, cols;
+    double *data;
+};
+
+struct matrix *matrix_transpose(const struct matrix *m);
+```
+
+dove:
+
+* **mat** è il puntatore alla struttura che rappresenta la matrice originale
+* La funzione deve ritornarne il puntatore alla matrice trasposta, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
