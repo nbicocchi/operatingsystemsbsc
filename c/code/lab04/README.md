@@ -95,5 +95,5 @@ struct matrix *matrix_transpose(const struct matrix *m);
 
 dove:
 
-* **mat** è il puntatore alla struttura che rappresenta la matrice originale
-* La funzione deve ritornarne il puntatore alla matrice trasposta, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
+* **m** è il puntatore alla struttura che rappresenta la matrice originale
+* la funzione deve ritornarne il puntatore alla matrice trasposta, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
