@@ -29,7 +29,7 @@ struct matrix *matrix_transpose(const struct matrix *m) {
 
     m_trans->rows = m->cols;
     m_trans->cols = m->rows;
-    m_trans->data = malloc((unsigned long)(m_trans->rows * m_trans->cols) * sizeof(*m));
+    m_trans->data = malloc((unsigned long)(m_trans->rows * m_trans->cols) * sizeof(*(m_trans->data)));
     if (!m_trans->data) return NULL;
 
     for (i = 0; i < m_trans->rows; i++) {

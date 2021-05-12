@@ -122,3 +122,30 @@ dove:
 * **compute_area** è la funzione per il calcolo dell’area:
    * accetta il puntatore alla struttura che rappresenta il poligono;
    * restituisce l’area del poligono.
+
+---
+
+Esercizio 8. Implementare una funzione per che verifichi se un punto 2D si trova all'interno di un cerchio. La funzione supporti il seguente prototipo:
+
+```c
+typedef struct point {
+   float x;
+   float y;
+} point_t;
+
+typedef struct circle {
+    point_t center;
+    float radius;
+} circle_t;
+   
+int isinside(const point_t *p, const circle_t *c);
+```
+
+dove:
+
+* **point_t** rappresenta un punto sul piano con coordinate x e y;
+* **circle_t** rappresenta il poligono con n vertici, ognuno identificato come un punto sul piano;
+* **isinside** è la funzione che verifica se il punto è contenuto oppure no all'interno del cerchio:
+  * accetta il puntatore alla struttura che rappresenta il punto;
+  * accetta il puntatore alla struttura che rappresenta il cerchio;
+  * ritorna 0 (falso) oppure 1 (vero).

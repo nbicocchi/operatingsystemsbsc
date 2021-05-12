@@ -32,7 +32,7 @@ struct matrix *matrix_swap_diagonals(const struct matrix *m) {
 
     m_diags->rows = m->rows;
     m_diags->cols = m->cols;
-    m_diags->data = malloc((unsigned long)(m_diags->rows * m_diags->cols) * sizeof(*m));
+    m_diags->data = malloc((unsigned long)(m_diags->rows * m_diags->cols) * sizeof(*(m_diags->data)));
     if (!m_diags->data) return NULL;
 
     for (i = 0; i < m_diags->rows; i++) {

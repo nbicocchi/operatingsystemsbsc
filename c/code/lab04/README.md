@@ -100,7 +100,7 @@ dove:
 
 ---
 
-Esercizio 7. Implementare una funzione *matrix_swap_diagonals* che accetta come parametri un puntatore ad una matrice quadrata e deve restituire un puntatore a una nuova matrice allocata dinamicamente che contenga la matrice ottenuta scambiando la diagonale principale con l’antidiagonale, ovvero la diagonale che va dall’angolo in alto a destra all’angolo in basso a sinistra. La funzione deve rispettare il seguente prototipo:
+Esercizio 7. Implementare una funzione *matrix_swap_diagonals* che accetta come parametro un puntatore ad una matrice quadrata e deve restituire un puntatore a una nuova matrice allocata dinamicamente che contenga la matrice ottenuta scambiando la diagonale principale con l’antidiagonale, ovvero la diagonale che va dall’angolo in alto a destra all’angolo in basso a sinistra. La funzione deve rispettare il seguente prototipo:
 
 ```c
 struct matrix {
@@ -115,3 +115,22 @@ dove:
 
 * **m** è il puntatore alla struttura che rappresenta la matrice originale
 * la funzione deve ritornarne il puntatore alla matrice con le diagonali invertite, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
+
+---
+
+Esercizio 8. Implementare una funzione *matrix_product* che accetta come parametri due puntatori a matrice e restituisce un puntatore a una nuova matrice allocata dinamicamente che contenga il prodotto matriciale delle due passate come parametro. La funzione deve rispettare il seguente prototipo:
+
+```c
+struct matrix {
+    size_t rows, cols;
+    double *data;
+};
+
+struct matrix *matrix_product(const struct matrix *m1, const struct matrix *m2);
+```
+
+dove:
+
+* **m1** è il puntatore alla struttura che rappresenta la prima matrice
+* **m2** è il puntatore alla struttura che rappresenta la seconda matrice
+* la funzione deve ritornarne il puntatore alla matrice prodotto, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
