@@ -97,3 +97,21 @@ dove:
 
 * **m** è il puntatore alla struttura che rappresenta la matrice originale
 * la funzione deve ritornarne il puntatore alla matrice trasposta, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
+
+---
+
+Esercizio 7. Implementare una funzione *matrix_swap_diagonals* che accetta come parametri un puntatore ad una matrice quadrata e deve restituire un puntatore a una nuova matrice allocata dinamicamente che contenga la matrice ottenuta scambiando la diagonale principale con l’antidiagonale, ovvero la diagonale che va dall’angolo in alto a destra all’angolo in basso a sinistra. La funzione deve rispettare il seguente prototipo:
+
+```c
+struct matrix {
+    size_t rows, cols;
+    double *data;
+};
+
+struct matrix *matrix_swap_diagonals(const struct matrix *m);
+```
+
+dove:
+
+* **m** è il puntatore alla struttura che rappresenta la matrice originale
+* la funzione deve ritornarne il puntatore alla matrice con le diagonali invertite, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
