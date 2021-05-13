@@ -29,7 +29,7 @@ nome-tipo identificatore [ card_1 ] [ card_2 ] ;
 * *identificatore* è il nome che identifica la matrice
 * *card_1* e *card_2* indicano la cardinalità delle due dimensioni (righe e colonne, rispettivamente)
 
-# Esempio 
+# Le matrici: esempio di dichiarazione
 Esempio di dichiarazione di matrice:
 
 ```c

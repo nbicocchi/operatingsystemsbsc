@@ -8,7 +8,7 @@ Si propongono alcuni esercizi relativi all’utilizzo di matrici (array bi-dimen
 Esercizio 1. Implementare una funzione *matrix_edge* che, data una matrice come input, calcoli la somma di tutti i valori presenti nella sua *cornice*. La funzione deve rispettare il seguente prototipo:
 
 ```c
-long matrix_edge(unsigned n_rows, unsigned n_cols, int m[][n_cols]);
+long matrix_edge(unsigned rows, unsigned cols, int m[][cols]);
 ```
 
 dove:
@@ -21,7 +21,7 @@ dove:
 Esercizio 2. Implementare una funzione *diagonals* che estrae la diagonale principale e la diagonale secondaria di una matrice quadrata. La funzione deve rispettare il seguente prototipo:
 
 ```c
-void diagonals(int *rdp, int *rds, unsigned size, const int m[][size]);
+void diagonals(int *rdp, int *rds, unsigned cols, const int m[][cols]);
 ```
 
 dove:
@@ -149,3 +149,15 @@ dove:
   * accetta il puntatore alla struttura che rappresenta il punto;
   * accetta il puntatore alla struttura che rappresenta il cerchio;
   * ritorna 0 (falso) oppure 1 (vero).
+
+---
+
+Esercizio 9. Implementare una funzione *show_addresses* per che mostri all'utente che le celle di una matrice sono memorizzate in modo contiguo, riga dopo riga. 
+
+```c
+void show_addresses(int rows, int cols, int m[][cols]);
+```
+
+dove:
+
+* **m** è la matrice di input, con **rows** righe e **cols** colonne;

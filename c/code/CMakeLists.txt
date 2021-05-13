@@ -55,6 +55,7 @@ add_executable(0305 lab03/0305.c)
 add_executable(0306 lab03/0306.c)
 add_executable(0307 lab03/0307.c)
 add_executable(0308 lab03/0308.c)
+add_executable(0309 lab03/0309.c)
 
 # Basic Programming lab04
 add_executable(0401 lab04/0401.c)

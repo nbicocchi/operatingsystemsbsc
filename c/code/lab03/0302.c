@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-void diagonals(int *rdp, int *rds, unsigned size, const int m[][size]) {
+void diagonals(int *rdp, int *rds, unsigned cols, const int m[][cols]) {
     unsigned row;
-    for (row = 0; row < size; row++) {
+    for (row = 0; row < cols; row++) {
         rdp[row] = m[row][row];
-        rds[row] = m[size - 1 - row][row];
+        rds[row] = m[cols - 1 - row][row];
     }
 }
 
