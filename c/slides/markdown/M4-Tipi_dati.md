@@ -492,6 +492,12 @@ dim = ARRAY_SIZE(v);
 
 * A dim viene  assegnato il valore 10. Si noti che il risultato non dipende dalla dimensione del tipo di dato
 
+# Una macro utile per i vettori
+
+* Attenzione ad usa la macro dentro una funzione!
+* v[] e *v sono quasi sempre uguali ma non sempre. Esempio sizeof!
+* Altri esempi
+
 # Vettori di caratteri
 I vettori di caratteri non differiscono dagli altri vettori. Esempi di dichiarazione:
 ```c
