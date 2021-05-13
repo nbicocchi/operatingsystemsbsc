@@ -20,56 +20,47 @@ void show_matrix(const struct matrix *m) {
     printf("\n");
 }
 
-struct matrix *matrix_product(const struct matrix *m1, const struct matrix *m2) {
-    struct matrix *m_prod;
-    size_t i, j, h;
+struct matrix *matrix_swap_diagonals(const struct matrix *m) {
+    struct matrix *m_diags;
+    size_t i, j;
 
     /* check if m is square */
-    if (m1->cols != m2->rows) return NULL;
+    if (m->rows != m->cols) return NULL;
 
-    m_prod = malloc(sizeof(*m_prod));
-    if (!m_prod) return NULL;
+    m_diags = malloc(sizeof(*m_diags));
+    if (!m_diags) return NULL;
 
-    m_prod->rows = m1->rows;
-    m_prod->cols = m2->cols;
-    m_prod->data = malloc((unsigned long)(m_prod->rows * m_prod->cols) * sizeof(*(m_prod->data)));
-    if (!m_prod->data) return NULL;
+    m_diags->rows = m->rows;
+    m_diags->cols = m->cols;
+    m_diags->data = malloc((unsigned long)(m_diags->rows * m_diags->cols) * sizeof(*(m_diags->data)));
+    if (!m_diags->data) return NULL;
 
-    for (i = 0; i < m_prod->rows; i++) {
-        for (j = 0; j < m_prod->cols; j++) {
-            /* actual product */
-            m_prod->data[i * m_prod->cols + j] = 0.0;
-            for (h = 0; h < m1->cols; h++) {
-                double n1 = m1->data[i * m1->cols + h];
-                double n2 = m2->data[h * m2->cols + j];
-                m_prod->data[i * m_prod->cols + j] += n1 * n2;
+    for (i = 0; i < m_diags->rows; i++) {
+        for (j = 0; j < m_diags->cols; j++) {
+            /* check if the element is on a diagonal */
+            if ((i == j) || (i == m->cols - j - 1)){
+                /* copy and swap */
+                m_diags->data[i * m->cols + j] = m->data[i * m->cols + (m->cols - j - 1)];
+            } else {
+                /* standard copy */
+                m_diags->data[i * m->cols + j] = m->data[i * m->cols + j];
             }
         }
     }
-    return m_prod;
+    return m_diags;
 }
 
 int main(void) {
-    struct matrix *m_prod;
-
-    double v1[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
-    struct matrix m1 = {
+    double values[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
+    struct matrix *m_diags, m = {
             .rows=3,
             .cols=3,
-            .data = v1,
+            .data = values,
     };
 
-    double v2[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
-    struct matrix m2 = {
-            .rows=3,
-            .cols=2,
-            .data = v2,
-    };
+    m_diags = matrix_swap_diagonals(&m);
 
-    m_prod = matrix_product(&m1, &m2);
-
-    show_matrix(&m1);
-    show_matrix(&m2);
-    show_matrix(m_prod);
-    free(m_prod);
+    show_matrix(&m);
+    show_matrix(m_diags);
+    free(m_diags);
 }

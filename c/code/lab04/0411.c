@@ -59,30 +59,43 @@ void show_matrix(const struct matrix *m) {
     printf("\n");
 }
 
-struct matrix *matrix_transpose(const struct matrix *m) {
-    struct matrix *m_trans;
-    size_t i, j;
+struct matrix *matrix_product(const struct matrix *m1, const struct matrix *m2) {
+    struct matrix *m_prod;
+    size_t i, j, h;
 
-    m_trans = allocate_matrix(m->cols, m->rows);
-    for (i = 0; i < m_trans->rows; i++) {
-        for (j = 0; j < m_trans->cols; j++) {
-            m_trans->data[i][j] = m->data[j][i];
+    /* check if m is square */
+    if (m1->cols != m2->rows) return NULL;
+
+    m_prod = allocate_matrix(m1->rows, m2->cols);
+
+    for (i = 0; i < m_prod->rows; i++) {
+        for (j = 0; j < m_prod->cols; j++) {
+            /* actual product */
+            m_prod->data[i][j] = 0.0;
+            for (h = 0; h < m1->cols; h++) {
+                m_prod->data[i][j] += m1->data[i][h] * m2->data[h][j];
+            }
         }
     }
-    return m_trans;
+    return m_prod;
 }
 
 int main(void) {
-    struct matrix *m, *m_trans;
+    struct matrix *m1, *m2, *m_prod;
 
-    m = allocate_matrix(3, 2);
-    fill_matrix(m);
+    m1 = allocate_matrix(3, 3);
+    m2 = allocate_matrix(3, 2);
 
-    m_trans = matrix_transpose(m);
+    fill_matrix(m1);
+    fill_matrix(m2);
 
-    show_matrix(m);
-    show_matrix(m_trans);
+    m_prod = matrix_product(m1, m2);
 
-    free_matrix(m);
-    free_matrix(m_trans);
+    show_matrix(m1);
+    show_matrix(m2);
+    show_matrix(m_prod);
+
+    free_matrix(m1);
+    free_matrix(m2);
+    free_matrix(m_prod);
 }

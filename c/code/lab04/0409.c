@@ -59,30 +59,41 @@ void show_matrix(const struct matrix *m) {
     printf("\n");
 }
 
-struct matrix *matrix_transpose(const struct matrix *m) {
-    struct matrix *m_trans;
+struct matrix *matrix_swap_diagonals(const struct matrix *m) {
+    struct matrix *m_diags;
     size_t i, j;
 
-    m_trans = allocate_matrix(m->cols, m->rows);
-    for (i = 0; i < m_trans->rows; i++) {
-        for (j = 0; j < m_trans->cols; j++) {
-            m_trans->data[i][j] = m->data[j][i];
+    /* check if m is square */
+    if (m->rows != m->cols) return NULL;
+
+    m_diags = allocate_matrix(m->rows, m->cols);
+
+    for (i = 0; i < m_diags->rows; i++) {
+        for (j = 0; j < m_diags->cols; j++) {
+            /* check if the element is on a diagonal */
+            if ((i == j) || (i == m->cols - j - 1)){
+                /* copy and swap */
+                m_diags->data[i][j] = m->data[i][m->cols - j - 1];
+            } else {
+                /* standard copy */
+                m_diags->data[i][j] = m->data[i][j];
+            }
         }
     }
-    return m_trans;
+    return m_diags;
 }
 
 int main(void) {
-    struct matrix *m, *m_trans;
+    struct matrix *m, *m_diags;
 
-    m = allocate_matrix(3, 2);
+    m = allocate_matrix(3, 3);
     fill_matrix(m);
 
-    m_trans = matrix_transpose(m);
+    m_diags = matrix_swap_diagonals(m);
 
     show_matrix(m);
-    show_matrix(m_trans);
+    show_matrix(m_diags);
 
     free_matrix(m);
-    free_matrix(m_trans);
+    free_matrix(m_diags);
 }
