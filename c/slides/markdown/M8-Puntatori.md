@@ -27,7 +27,6 @@ i = f;
 ```
 
 
-
 # Puntatori a void
 ```c
 void stampa_bit(void *ptr) {
@@ -52,39 +51,44 @@ int main(void) {
 0x7ffee58cc8d8 01000010110010000000000000000000
 ```
 
-# Puntatori e somma di numeri interi
-* Ai puntatori possono essere sommati e sottratti numeri interi. Il risultato della somma di un puntatore e di un numero intero è l'indirizzo dell'elemento n-esimo del vettore
-* *Il numero intero non rappresenta il numero di byte da aggiungere nell'indirizzo, ma il numero di elementi*. Il *fattore di scala* appropriato viene applicato dal compilatore in base al tipo cui punta il puntatore
+
+# Aritmetica dei puntatori
+* Ai puntatori possono essere sommati e sottratti numeri interi. Il risultato della somma di un puntatore e di un numero intero è l'indirizzo dell'elemento n-esimo del vettore. Il valore numerico del puntatore (indirizzo in memoria espresso in byte) viene incrementato/decrementato della dimensione di un oggetto puntato (sizeof(\*p))
 
 ```c
 int main(void) {
-    int i, v[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, *p = v;
+    int i, v[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int *p = v;
 
     for (i = 0; i < 10; i++) {
-        printf("[%d] %d %d %d\n", i, v[i], *(v+i), *(p+i));
+        printf("[%d] %d %d %d\n", i, v[i], *(v + i), *(p + i));
+    }
+
+    for (i = 0; i < 10; i++, p++) {
+        printf("[%d] %d %d %d\n", i, v[i], *(v + i), *p);
     }
 }
 ```
 
 
-# Puntatori e somma di numeri interi
-* Se si incrementa/decrementa di 1 un puntatore *p*, il suo valore numerico (indirizzo in memoria espresso in byte) viene incrementato/decrementato di un elemento, che equivale a *sizeof(\*p)*, ossia la dimensione dell'oggetto
-  puntato
-* Nell'esempio sotto, l'indirizzo contenuto in *p* è incrementato di 5 * sizeof(int), quindi di 20 byte se int ha dimensione pari a 4 byte
+# Aritmetica dei puntatori
+* Il puntatore *p* è utilizzato per scorrere il vettore, essendo inizializzato all'indirizzo del primo elemento del vettore
+* Il ciclo termina quando il valore puntato \*p, è nullo (il valore 0 equivale alla condizione logica *falso*)
+* L'unico valore di *v* con valore zero deve essere ultimo, altrimenti il puntatore assumerà valori non validi andando ad accedere oltre la fine del vettore oppure il ciclo terminerà in modo prematuro
 
 ```c
-int main(void) {
-    int v[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int *p, *q;
+int *p, v[] = {
+        1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+};
+int sum = 0;
 
-    p = &v[0];  /* p = v */
-    q = p + 5;
-
-    printf("%d\n", *q);
+for (p = v; *p; p++) {
+  sum += *p;
 }
 ```
 
-# Differenza fra puntatori
+
+# Aritmetica dei puntatori
 * E' possibile fare la differenza (ma non la somma!) tra puntatori dello stesso tipo
 * Il risultato della differenza fra puntatori è un numero intero che rappresenta il numero di elementi tra i due puntatori
 * La dimensione di un singolo elemento è quella definita dal tipo di dato puntato
@@ -94,8 +98,12 @@ int main(void) {
     int *p, *q, v[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     p = &v[0];  /* p = v */
-    q = p + 5;
-    printf("%d\n", q - p);
+    
+    q = p + 2;
+    printf("%d\n", q - p);  /* Output: 2 */
+
+    q = p + 4;
+    printf("%d\n", q - p);  /* Output: 4 */
 }
 ```
 
@@ -119,30 +127,22 @@ p++;        /* p punta ad indice 5 di v */
 i = p - v;  /* i == 5 */
 ```
 
-# Esempi di utilizzo
-* Il puntatore *p* è utilizzato per scorrere il vettore, essendo inizializzato all'indirizzo del primo elemento del vettore
-* Il ciclo termina quando il valore puntato \*p, è nullo (il valore 0 equivale alla condizione logica *falso*)
-* Deve esistere almeno un elemento di *v* che vale zero, altrimenti il puntatore assumerà valori non validi andando ad accedere oltre la fine del vettore
-
+# Puntatori e stringhe
+* Vettori e puntatori sono concetti affini, ma esistono sottili differenze
+  * I puntatori possono contenere indirizzi variabili nel corso dell'esecuzione, mentre i vettori rappresentano *indirizzi costanti* (non è possibile modificare l'indirizzo ad un vettore!)
+  * Le stringhe memorizzate in un vettore possono essere modificate in ogni momento o accedendo ai singoli elementi oppure tramite apposite funzioni (e.g., *strcpy*). Le stringhe memorizzate attraverso puntatore sono stringhe *senza nome* che possono essere memorizzate in aree di memoria in *sola lettura*
+  * Operatore *sizeof* si comporta in modo diverso. In un caso ritorna la dimensione del vettore, nell'altro la dimensione del puntatore
+  
 ```c
-int *p, v[] = {1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-int sum = 0;
+int main(void) {
+    char s1[] = "nicola";
+    char *s2 = "nicola";
 
-for (p = v; *p; p++) {
-  sum += *p;
+    s1 = s2;        /* Errore in compilazione */
+    s2[0] = 'a';    /* Errore a runtime */
+    printf("%lu %lu\n", sizeof(s1), sizeof(s2));    /* Output: 7 8 */
 }
 ```
-
-# Puntatori e stringhe
-```c
-char *nome_ptr = "paolo";
-char nome_vet[] = "paolo";
-```
-
-* Vettori e puntatori sono concetti affini, ma esistono sottili differenze
-* I puntatori possono contenere indirizzi variabili nel corso dell'esecuzione, mentre i vettori rappresentano *indirizzi costanti*
-* Le stringhe memorizzate in un vettore possono essere modificate in ogni momento o accedendo ai singoli elementi oppure tramite apposite funzioni (e.g., *strcpy*). Le stringhe memorizzate attraverso puntatore sono stringhe *senza nome* che possono essere memorizzate in aree di memoria in *sola lettura*
-* Operatore *sizeof* si comporta in modo diverso. In un caso ritorna la dimensione del vettore, nell'altro la dimensione del puntatore
 
 
 # Puntatori e stringhe
@@ -151,15 +151,14 @@ char s1[] = "prova";
 char s2[] = {'p', 'r', 'o', 'v', 'a', '\0'};
 char c, *t;
 
-c = *s1;        /* c = p */
+c = *s1;        /* c == 'p' */
 t = s1 + 2;     /* t contine indirizzo del carattere 'o' */
 
-s1[0] = *t;     /* s1 == orova */
+s1[0] = *t;     /* s1 == "orova" */
 
 t++;            /* t contine indirizzo del carattere 'v' */
 
-/* errore */
-s1++;
+s1++;           /* errore in compilazione */
 ```
 
 # Puntatori e stringhe
@@ -180,12 +179,55 @@ int main(void) {
 ```
 
 # Vettori di stringhe
+```c
+int main(void) {
+    int i;
+    char *strings[] = {
+        "Sara", "Sebastiano",
+        "Paolo", "Agostino",
+        "Elvira", NULL,
+    };
+    char **p = strings;
+
+    for (i = 0; i < 3; i++) {
+        printf("[%d] %s %s %s\n", i, strings[i], *(strings + i), *(p + i));
+    }
+    
+    for (p = strings; *p; p++) {
+        printf("[%d] %s\n", i, *p);
+    }
+}
+```
+
+# Vettori di stringhe
+![Vettore di Stringhe](./images/vettore_stringhe.jpg)
+
+# Vettori di stringhe
+```c
+int main(void) {
+  char *strings[] = {
+    "Sara", "Sebastiano", "Paolo", "Agostino", "Elvira", NULL,
+  };
+  char **p = strings;
+  
+  /* Indirizzo del primo puntatore a carattere */
+  printf("%p %p %p\n", strings, &strings[0], p);
+  
+  /* Indirizzo del secondo puntatore a carattere */
+  printf("%p %p\n", &strings[1], p + 1);
+  
+  /* Indirizzo del primo carattere della prima stringa */
+  printf("%p %p\n", *p, &strings[0][0]);
+  
+  /* Valore del primo carattere della prima stringa */
+  printf("%c %c\n", **p, strings[0][0]);
+}
+```
 
 
 # L'allocazione dinamica della memoria
-* Il linguaggio C permette di effettuare l'allocazione di memoria anche durante l'esecuzione del programma, sulla base della necessità e di opportune condizioni che possono verificarsi durante l'esecuzione
-* Questo tipo di allocazione di memoria è detta dinamica, proprio perché avviene dinamicamente durante l'esecuzione. L'allocazione cosiddetta statica è quella che invece viene effettuata
-  dal compilatore a seguito della dichiarazione delle variabili
+* Il linguaggio C permette di effettuare l'allocazione di memoria anche durante l'esecuzione del programma, sulla base di opportune condizioni che possono verificarsi durante l'esecuzione
+* Questo tipo di allocazione di memoria è detta dinamica (*heap*), proprio perché avviene dinamicamente durante l'esecuzione. L'allocazione cosiddetta statica (*stack*) è quella che invece viene effettuata dal compilatore a seguito della dichiarazione delle variabili
 * Il tempo di vita di porzioni di memoria allocate dinamicamente *non dipende* da quello dello funzione in cui l'allocazione è avvenuta
 
 ```c
@@ -223,7 +265,7 @@ p = malloc(10 * sizeof(*p));
 int *p;
 p = malloc(10 * sizeof(*p));
 
-if (!pt) {
+if (!p) {
     /* gestione dell'errore */
 }
 
@@ -235,21 +277,28 @@ free(p);
 ```
 
 * Viene allocato lo spazio necessario per memorizzare 10 valori interi contigui, uno spazio di memoria che può quindi essere acceduto come fosse un vettore
-* E' poi possibile utilizzare il puntatore indicizzandolo opportunamente per accedere alla memoria allocata
+* E' possibile utilizzare il puntatore tramite indici (notazione []) per accedere alla memoria allocata
 
 
 # L'allocazione dinamica della memoria (malloc)
-* Per azzerare tutti gli elementi interi memorizzati:
+* Tecniche per azzerare gli elementi di un vettore allocato dinamicamente
 
 ```c
-for (i = 0; i < 10; i++)
-    pt[i] = 0;
-```
-* Ma si può anche fare:
+/* calloc: alloca un vettore e lo inizializza a 0 */
+p = calloc(10, sizeof(*p));
 
-```c
+/* for e puntatori */
+for(i = 0; i < 10; i++)
+    p[i] = 0;
+
 for (i = 0; i < 10; i++, p++)
-    *pt = 0;
+    *p = 0;
+
+/* memset */
+memset(p, 0, 10 * sizeof(*p));
+
+/* bzero */
+bzero(p, 10 * sizeof(*p));
 ```
 
 # L'allocazione dinamica della memoria (free)
@@ -298,7 +347,7 @@ int main(void) {
 
 # L'allocazione dinamica della memoria (esempio strdup)
 
-* Esistono funzioni di libreria che utilizzano *malloc* per espletare i loro compiti
+* Esistono funzioni di libreria che utilizzano *malloc* per svolgere i loro compiti
 
 ```c
 char *strdup(const char *s);
@@ -315,33 +364,49 @@ obtained with malloc(3), and can be freed with free(3).
 ```
 
 # Problemi con i puntatori (dangling references)
-Questa situazione ricorre durante l'accesso tramite puntatore ad un'area di memoria non (piu') allocata.
+* Un puntatore *dangling* è puntatore che punta ad un'area di memoria non valida
 
 ```c
 int *p;                         /* puntatore a intero (definizione) */
   
-p=(int *)malloc(sizeof(int));   /* allocazione della memoria */
+p = malloc(sizeof(int));        /* allocazione della memoria */
   
-*p=57;                          /* impiego dell'area allocata */
+*p = 57;                        /* impiego dell'area allocata */
 
 free(p);                        /* deallocazione memoria */
   
-*p=20;                          /* Errore! Dangling Reference */
+*p = 20;                        /* Errore! Dangling Reference */
                                 /* L'area di memoria puntata da p non e' piu' disponibile !!!! */
 
-p=NULL;                         /* Non accedo alla memoria puntata da p */
+p = NULL;                       /* Non accedo alla memoria puntata da p */
                                 /* Accedo a p e lo faccio puntare a NULL */
 ```
 
+# Problemi con i puntatori (dangling references)
+* In questo caso viene ritornato l'indirizzo di una variabile memorizzata nella porzione di stack riservata alla funzione *func*. Sfortunatamente, quella porzione di memoria viene resa disponibile non appena la funzione *func* termina. Questa circostanza genera un warning in compilazione.
+
+```c
+int *func(void) {
+    int n = 13;
+    return &n;
+}
+
+int main(void) {
+int *p;
+
+    p = func();
+    printf("%d\n", *p);
+}
+```
+
 # Problemi con i puntatori (aree non piu' utilizzabili)
-Questo problema avviene quando, per un qualsiasi motivo, viene perso l'indirizzo di un'area di memoria ancora allocata.
-Chiaramente l'area di memoria interessata non e' piu' referenziabile e nemmeno deallocabile!
+* Questo problema avviene quando, per un qualsiasi motivo, viene perso l'indirizzo di un'area di memoria ancora allocata. Chiaramente l'area di memoria interessata non e' piu' referenziabile e nemmeno deallocabile!
 
 ```c
 int *p1, *p2;                       /* definizione di 2 puntatori a intero */
 
-p1 = (int *)malloc(sizeof(int));    /* alloco 1^ area di memoria */
-p2 = (int *)malloc(sizeof(int));    /* alloco 2^ area di memoria */
+p1 = malloc(sizeof(int));           /* alloco 1^ area di memoria */
+p2 = malloc(sizeof(int));           /* alloco 2^ area di memoria */
 
 /* Errore! p2 punta all'area di p1. Non posso piu' accedere alla memoria allocata con la seconda malloc() */
 p2 = p1;                            

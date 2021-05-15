@@ -1,9 +1,15 @@
 #include <stdio.h>
 
-int main(void) {
-
+int *func(void) {
+    int n = 13;
+    return &n;
 }
 
+int main(void) {
+    int *p;
 
+    p = func();
+    printf("%d\n", *p);
+}
 
 
