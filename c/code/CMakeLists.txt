@@ -45,6 +45,10 @@ add_executable(static_matrix examples/static_matrix.c)
 #add_executable(0209 lab02/0209.c)
 #add_executable(0210 lab02/0210.c)
 #add_executable(0211 lab02/0211.c)
+#add_executable(0212 lab02/0212.c)
+#add_executable(0213 lab02/0213.c)
+#add_executable(0214 lab02/0214.c)
+#add_executable(0215 lab02/0215.c)
 
 # Basic Programming lab03
 add_executable(0301 lab03/0301.c)

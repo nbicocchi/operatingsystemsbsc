@@ -157,3 +157,58 @@ dove:
 * **rvariance** è il puntatore alla variabile dove viene memorizzata la varianza;
 * **values** è il puntatore all’array;
 * **size** è la dimensione dell’array.
+
+---
+
+Esercizio 12. Implementare una funzione *my_strcpy*, ispirata alla funzione *strcpy* dichiarata all'interno di string.h, che copia il contenuto di una stringa all'interno di un'altra stringa. La funzione deve rispettare il seguente prototipo:
+
+```c
+void my_strcpy(char *dst, const char *src);
+```
+
+dove:
+
+* **dst** è il puntatore al vettore di caratteri verso cui effettuare la copia;
+* **src** è il puntatore al vettore di caratteri da cui effettuare la copia.
+
+---
+
+Esercizio 13. Implementare una funzione *my_strcat*, ispirata alla funzione *strcat* dichiarata all'interno di string.h, che concatena il contenuto di una stringa con quello di un'altra stringa. La funzione deve rispettare il seguente prototipo:
+
+```c
+void my_strcat(char *dst, const char *src);
+```
+
+dove:
+
+* **dst** è il puntatore al vettore di caratteri a cui concatenare;
+* **src** è il puntatore al vettore di caratteri da concatenare a **dst**.
+
+---
+
+Esercizio 14. Implementare una funzione *my_strlen*, ispirata alla funzione *strlen* dichiarata all'interno di string.h, che determina la lunghezza di una stringa zero-terminata. La funzione deve rispettare il seguente prototipo:
+
+```c
+unsigned my_strlen(const char *src);
+```
+
+dove:
+
+* **src** è il puntatore al vettore di caratteri di cui si vuole calcolare la lunghezza;
+* la funziona ritorna la lunghezza della stringa, escluso il carattere di terminazione.
+
+---
+
+Esercizio 15. Implementare una funzione *my_strcmp*, ispirata alla funzione *strcmp* dichiarata all'interno di string.h, che confronta due stringhe. La funzione deve rispettare il seguente prototipo:
+
+```c
+int my_strcmp(const char *s1, const char *s2);
+```
+
+dove:
+
+* **s1** è il puntatore al primo vettore di caratteri;
+* **s2** è il puntatore al secondo vettore di caratteri;
+* la funzione ritorna 0 in caso le stringhe siano uguali, 1 in caso siano diverse.
+
+
