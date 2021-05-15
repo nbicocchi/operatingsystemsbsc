@@ -411,3 +411,93 @@ p2 = malloc(sizeof(int));           /* alloco 2^ area di memoria */
 /* Errore! p2 punta all'area di p1. Non posso piu' accedere alla memoria allocata con la seconda malloc() */
 p2 = p1;                            
 ```
+
+# Allocazione dinamica e matrici (singolo puntatore)
+* Semplice e immediato
+* Impedisce uso di indicizzazione e necessita di calcolo manuale dell'offset (offset = i * cols + j)
+
+```c
+int *allocate_matrix(int rows, int cols) {
+    int *m;
+
+    m = malloc((unsigned long)(rows * cols) * sizeof(*m));
+    if (m == NULL) return NULL;
+    return m;
+}
+
+int main(void) {
+    int *m;
+
+    m = allocate_matrix(10, 10);
+    /* code here */
+    free_matrix(m);
+}
+```
+
+# Allocazione dinamica e matrici (singolo puntatore)
+```c
+void fill_matrix(int rows, int cols, int *m) {
+    int i, j;
+    for (i = 0; i<rows; i++) {
+        for (j = 0; j<cols; j++) {
+            m[i * cols + j] = i * j;
+        }
+    }
+}
+
+void show_matrix(int rows, int cols, int *m) {
+    int i, j;
+    for (i = 0; i<rows; i++) {
+        for (j = 0; j<cols; j++) {
+            printf("%4d", m[i * cols + j]);
+        }
+        printf("\n");
+    }
+}
+```
+
+# Allocazione dinamica e matrici (doppio puntatore)
+```c
+int **allocate_matrix(int rows, int cols) {
+    int i, **m;
+
+    m = malloc((unsigned long)(rows) * sizeof(*m));
+    if (m == NULL) return NULL;
+    for (i = 0; i < rows; i++) {
+        m[i] = malloc((unsigned long)(cols) * sizeof(**m));
+        if (m[i] == NULL) return NULL;
+    }
+    return m;
+}
+
+int main(void) {
+    int **m;
+    m = allocate_matrix(3, 2);
+    /* code here */
+    free_matrix(3, m);
+}
+```
+
+# Allocazione dinamica e matrici (doppio puntatore)
+```c
+void fill_matrix(int rows, int cols, int **m) {
+    int i, j;
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            m[i][j] = i * j;
+        }
+    }
+}
+
+void show_matrix(int rows, int cols, int **m) {
+    int i, j;
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%4d", m[i][j]);
+        }
+        printf("\n");
+    }
+}
+```
+
+# Allocazione dinamica e strutture
