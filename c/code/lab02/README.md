@@ -195,7 +195,7 @@ unsigned my_strlen(const char *src);
 dove:
 
 * **src** è il puntatore al vettore di caratteri di cui si vuole calcolare la lunghezza;
-* la funziona ritorna la lunghezza della stringa, escluso il carattere di terminazione.
+* la funzione ritorna la lunghezza della stringa, escluso il carattere di terminazione.
 
 ---
 
