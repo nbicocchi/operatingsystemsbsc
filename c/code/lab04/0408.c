@@ -50,6 +50,11 @@ struct matrix *matrix_swap_diagonals(const struct matrix *m) {
     return m_diags;
 }
 
+void free_matrix(struct matrix *m) {
+    free(m->data);
+    free(m);
+}
+
 int main(void) {
     double values[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
     struct matrix *m_diags, m = {
@@ -62,5 +67,6 @@ int main(void) {
 
     show_matrix(&m);
     show_matrix(m_diags);
-    free(m_diags);
+
+    free_matrix(m_diags);
 }

@@ -40,6 +40,11 @@ struct matrix *matrix_transpose(const struct matrix *m) {
     return m_trans;
 }
 
+void free_matrix(struct matrix *m) {
+    free(m->data);
+    free(m);
+}
+
 int main(void) {
     double values[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
     struct matrix *m_trans, m = {
@@ -52,5 +57,6 @@ int main(void) {
 
     show_matrix(&m);
     show_matrix(m_trans);
-    free(m_trans);
+
+    free_matrix(m_trans);
 }

@@ -49,6 +49,11 @@ struct matrix *matrix_product(const struct matrix *m1, const struct matrix *m2) 
     return m_prod;
 }
 
+void free_matrix(struct matrix *m) {
+    free(m->data);
+    free(m);
+}
+
 int main(void) {
     struct matrix *m_prod;
 
@@ -71,5 +76,6 @@ int main(void) {
     show_matrix(&m1);
     show_matrix(&m2);
     show_matrix(m_prod);
-    free(m_prod);
+
+    free_matrix(m_prod);
 }

@@ -281,7 +281,7 @@ free(p);
 
 
 # L'allocazione dinamica della memoria (malloc)
-* Tecniche per azzerare gli elementi di un vettore allocato dinamicamente
+* Tecniche per azzerare gli elementi di un vettore (allocato dinamicamente e non)
 
 ```c
 /* calloc: alloca un vettore e lo inizializza a 0 */
@@ -413,7 +413,7 @@ p2 = p1;
 ```
 
 # Allocazione dinamica e matrici (singolo puntatore)
-* Semplice e immediato
+* Approccio semplice ed immediato
 * Impedisce uso di indicizzazione e necessita di calcolo manuale dell'offset (offset = i * cols + j)
 
 ```c
@@ -424,7 +424,9 @@ int *allocate_matrix(int rows, int cols) {
     if (m == NULL) return NULL;
     return m;
 }
+```
 
+```c
 int main(void) {
     int *m;
 
@@ -436,23 +438,22 @@ int main(void) {
 
 # Allocazione dinamica e matrici (singolo puntatore)
 ```c
-void fill_matrix(int rows, int cols, int *m) {
-    int i, j;
-    for (i = 0; i<rows; i++) {
-        for (j = 0; j<cols; j++) {
-            m[i * cols + j] = i * j;
-        }
-    }
-}
-
 void show_matrix(int rows, int cols, int *m) {
-    int i, j;
+    int i, j, offset;
+    
     for (i = 0; i<rows; i++) {
         for (j = 0; j<cols; j++) {
-            printf("%4d", m[i * cols + j]);
+            offset = i * cols + j;
+            printf("%4d", m[offeset]);
         }
         printf("\n");
     }
+}
+```
+
+```c
+void free_matrix(int *m) {
+    free(m);
 }
 ```
 
@@ -469,7 +470,9 @@ int **allocate_matrix(int rows, int cols) {
     }
     return m;
 }
+```
 
+```c
 int main(void) {
     int **m;
     m = allocate_matrix(3, 2);
@@ -480,15 +483,6 @@ int main(void) {
 
 # Allocazione dinamica e matrici (doppio puntatore)
 ```c
-void fill_matrix(int rows, int cols, int **m) {
-    int i, j;
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
-            m[i][j] = i * j;
-        }
-    }
-}
-
 void show_matrix(int rows, int cols, int **m) {
     int i, j;
     for (i = 0; i < rows; i++) {
@@ -500,4 +494,57 @@ void show_matrix(int rows, int cols, int **m) {
 }
 ```
 
+```c
+void free_matrix(int rows, int cols, int **m) {
+    int i;
+    for (i = 0; i<rows; i++) {
+        free(m[i]);
+    }
+    free(m);
+}
+```
+
 # Allocazione dinamica e strutture
+```c
+struct matrix {
+    size_t rows, cols;
+    double **data;
+};
+```
+
+```c
+int main(void) {
+    struct matrix *m, *m_trans;
+    
+    m = allocate_matrix(3, 2);
+    
+    fill_matrix(m);
+    
+    m_trans = matrix_transpose(m);
+    
+    free_matrix(m);
+    free_matrix(m_trans);
+}
+```
+
+# Allocazione dinamica e strutture
+
+```c
+struct matrix *allocate_matrix(size_t rows, size_t cols) {
+    struct matrix *m;
+    int i;
+    
+    m = malloc(sizeof(*m));
+    m->rows = rows;
+    m->cols = cols;
+    m->data = malloc((unsigned long)(rows) * sizeof(*m));
+    if (m == NULL) return NULL;
+    
+    for (i = 0; i < rows; i++) {    
+        m->data[i] = malloc((unsigned long)(cols) * sizeof(**(m->data)));
+        if (m->data[i] == NULL) return NULL;
+    }
+    
+    return m;
+}
+```
