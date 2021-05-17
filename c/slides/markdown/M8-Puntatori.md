@@ -392,7 +392,7 @@ int *func(void) {
 }
 
 int main(void) {
-int *p;
+    int *p;
 
     p = func();
     printf("%d\n", *p);
@@ -403,10 +403,10 @@ int *p;
 * Questo problema avviene quando, per un qualsiasi motivo, viene perso l'indirizzo di un'area di memoria ancora allocata. Chiaramente l'area di memoria interessata non e' piu' referenziabile e nemmeno deallocabile!
 
 ```c
-int *p1, *p2;                       /* definizione di 2 puntatori a intero */
+int *p1, *p2;               /* definizione di 2 puntatori a intero */
 
-p1 = malloc(sizeof(int));           /* alloco 1^ area di memoria */
-p2 = malloc(sizeof(int));           /* alloco 2^ area di memoria */
+p1 = malloc(sizeof(int));   /* alloco 1^ area di memoria */
+p2 = malloc(sizeof(int));   /* alloco 2^ area di memoria */
 
 /* Errore! p2 punta all'area di p1. Non posso piu' accedere alla memoria allocata con la seconda malloc() */
 p2 = p1;                            
@@ -444,7 +444,7 @@ void show_matrix(int rows, int cols, int *m) {
     for (i = 0; i<rows; i++) {
         for (j = 0; j<cols; j++) {
             offset = i * cols + j;
-            printf("%4d", m[offeset]);
+            printf("%4d", m[offset]);
         }
         printf("\n");
     }
