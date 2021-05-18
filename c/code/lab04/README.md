@@ -203,7 +203,7 @@ char **invert_all(char *strings[]);
 
 dove:
 
-* **list** è il puntatore alla lista di stringhe
+* **strings** è il puntatore alla lista di stringhe
 * la funzione ritorna una nuova lista di stringhe (allocata dinamicamente) in cui sia l'ordine delle stringhe che dei caratteri all'interno di ogni stringa è invertito.
 
 ---
