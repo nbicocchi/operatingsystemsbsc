@@ -141,7 +141,8 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 [M8] Puntatori 
 * Puntatori a void
-* Puntatori e vettori
+* Puntatori e array
+* Aritmetica dei puntatori
 * Allocazione dinamica della memoria
 
 
