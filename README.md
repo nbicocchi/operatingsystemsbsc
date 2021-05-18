@@ -116,7 +116,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Puntatori
 * Array
 * Stringhe 
-* Conversione di tipo (casting)
+* Conversione di tipo (casting implicito, esplicito)
 * Operatori
 
 [M5] Funzioni
