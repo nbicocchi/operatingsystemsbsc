@@ -416,6 +416,7 @@ p2 = p1;
 * E' possibile allocare dinamicamente matrici (array bi-dimensionali), utilizzando sia un singolo puntatore (type *matrix) che un puntatore a puntatore (type **matrix)
 * Il primo (singolo puntatore) è semplice, immediato, ma impedisce uso di indicizzazione esplicita (matrix[i][j]) e necessita di calcolo manuale dell'offset (offset = i * cols + j)
 * Il secondo (puntatore a puntatore) richiede un meccanismo più complesso per allocare e disallocare la memoria, ma consente l'uso di indicizzazione esplicita (matrix[i][j])
+* Nel caso di oggetti relativamente complessi come le matrici, in cui i dati veri e propri (il contenuto della matrice) è sempre abbinato ad informazioni aggiuntive come al esempio il numero di righe e di colonne, l'utilizzo di strutture (aggregazione del codice) è consigliabile!
 
 # Allocazione dinamica e matrici (singolo puntatore)
 ```c

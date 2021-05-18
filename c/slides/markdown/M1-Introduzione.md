@@ -24,7 +24,7 @@ lang: it
 * La possibilità di utilizzare certe funzionalità del C dipende strettamente dal supporto del compilatore.
 
 
-# Inquadramento del C
+# Caratteristiche del C
 *E' la lingua franca per gli sviluppatori. Implementazioni di nuovi algoritmi, ad esempio, sono spesso divulgate inizialmente solo in C. E' anche il linguaggio in cui si descrive spesso il comportamento della macchina. Evita superstizione!*
 
 * Linguaggi di programmazione di **alto livello**: gestione intermediata della memoria, oggetti, stream, stringhe, iteratori, ...). Esempi: Python, Javascript, Java, Go, C++
@@ -37,6 +37,12 @@ strutture dati), parziale visibilità architetturale. Esempi: C, Rust
 * Il linguaggio è pensato per essere efficiente: lo sviluppatore ha il controllo completo su quello che succede.
 * Commettere errori è più facile e subdolo: il linguaggio non permette al compilatore di rilevare gli errori con la completezza con cui lavorano interpreti come Java o Python. Il suo principale inconveniente e' quello infatti di avere un metodo scadente per l'identificazione di errori, che puo' escluderne l'utilizzo ai principianti.
 * Gli errori possono produrre conseguenze gravi in termini di sicurezza ed integrità del sistema non esistendo una virtual machine (*concetto di sandbox*).
+
+
+# Caratteristiche del C
+* **Procedurale**: il programma è un insieme di *procedure* (funzioni). Non esiste supporto a strutture modulari più complesse come classi ed oggetti.
+* **Compilato**: il codice sorgente deve essere trasformato in linguaggio macchina da un compilatore (e.g., gcc) *prima di essere eseguito*.
+* **Tipizzato**: ogni variabile ha un tipo associato, lo sviluppatore deve sempre dichiarare il tipo prima di usare la variabile. E' però possibile utilizzare tipi alternativi per accedere al dato (i.e., lascamente tipizzato).
 
 
 # Ambito di utilizzo del C
@@ -62,10 +68,11 @@ strutture dati), parziale visibilità architetturale. Esempi: C, Rust
 * Sublime text, vim
 
 
-# Procedurale, compilato, tipizzato
-* **Procedurale**: il programma è un insieme di *procedure* (funzioni). Non esiste supporto a strutture modulari più complesse come classi ed oggetti.
-* **Compilato**: il codice sorgente deve essere trasformato in linguaggio macchina da un compilatore (e.g., gcc) *prima di essere eseguito*.
-* **Tipizzato**: ogni variabile ha un tipo associato, lo sviluppatore deve sempre dichiarare il tipo prima di usare la variabile. E' però possibile utilizzare tipi alternativi per accedere al dato (i.e., lascamente tipizzato).
+# Ambienti di sviluppo (CLion)
+* Software a pagamento ma con licenze gratuite per gli studenti (https://www.jetbrains.com/community/education/#students)
+* Sviluppato in Java (richiede risorse, portabile)
+* Piattaforma moderna, ricca di features, ottimo ambiente di debug
+* Prodotto dagli stessi autori di PyCharm (Python) e IntelliJ IDEA (Java/Android)
 
 
 # Hello World!
@@ -143,41 +150,53 @@ int main(){
 
 # Compilazione parziale
 
-* Direttiva per eseguire solamente il preprocessore e mostrare a video il suo output
+```shell
+$ gcc helloworld.c -o helloworld
+$ file helloworld
+helloworld: Mach-O 64-bit executable x86_64
+```
+
+* Direttiva per eseguire solamente il preprocessore
 ```shell
 $ gcc -E helloworld.c
 ```
 
-* Direttiva per disabilitare la fase di linking e produrre file oggetto (.o) piuttosto che un file eseguibile
+* Direttiva per disabilitare la fase di linking e produrre file oggetto (.o)
 ```shell
 $ gcc -c helloworld.c
 $ file helloworld.o
+helloworld.o: Mach-O 64-bit object x86_64
 ```
 
 # Compilazione ed esecuzione
-**$ gcc -Wall -o helloworld helloworld.c**
+```shell
+$ gcc -Wall -o helloworld helloworld.c
+$ ./helloworld
+```
 
 * Il comando compila il codice sorgente *helloworld.c* in un programma eseguibile di nome *helloworld*
   * -Wall attiva tutti i warnings (Warnings All)
   * -o specifica il nome del file compilato (default=a.out)
+* Gli *errori* causano il fallimento della compilazione del programma
+* I *warnings*, invece, sono segnalazioni di possibili problemi ma non causano il fallimento della fase di compilazione. In linea generale, è bene risolverli tutti prima di procedere con lo sviluppo.
+* E' infine possibile eseguire il programma invocandolo dalla shell utilizzando il nome specificato con l'opzione -o
   
-* Eventuali errori causano il fallimento della compilazione del programma. I warnings, invece, sono segnalazioni di possibili problemi ma non causano il fallimento della fase di compilazione. In linea generale, è bene risolverli tutti prima di procedere con lo sviluppo.
-* Se compilato nella directory corrente, è possibile eseguire il programma invocandolo dalla shell:
-  
-**$ ./helloworld**
-
 
 # Messaggi di errore
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
+int main() {
   printf("Hello, World!\n");
   return 0
 }
 ```
-**helloworld.c:6:1: error: expected ';' after return statement**
 
+```
+helloworld.c:6:1: error: expected ';' after return statement
+helloworld.c:2:1: warning: Unused "#include <stdlib.h>"
+```
 
 # Commenti
 
@@ -191,19 +210,10 @@ int main(){
 
 /* Questo è un commento multi-linea */
 
-// Questo è un commento singola-linea. 
-// Si tratta di una forma ereditata dal C++ non molto apprezzata dai puristi C.
+// Questo è un commento singola-linea
+// Si tratta di una forma ereditata dal C++ 
+// Non molto apprezzata dai puristi C
 ```
-
-# Identificatori
-* In C un identificatore è un nome che si riferisce a funzioni, variabili, ed oggetti in genere definiti nel codice
-* Non può cominciare con un numero ma può contenere qualsiasi combinazione di:
-  * lettere maiuscole e minuscole
-  * numeri
-  * il carattere underscore (_)
-* Esempi **validi**: Prova_1, prova_1, media_pasata, _tot
-* Esempi **invalidi**: 1_prova, totale_%, somma_{
-
 
 # Parole chiave
 | **Parole chiave** | **Utilizzo** |
@@ -213,6 +223,18 @@ int main(){
 | auto const extern register static volatile | modificatori di volatività e persistenza |
 | sizeof | operatore che ritorna la dimensione di una varibile |
 | typedef | definizione di tipi definiti dall'utente |
+
+
+# Identificatori
+* In C un identificatore è un nome che si riferisce a funzioni, variabili, ed oggetti in genere definiti nel codice
+* Non può cominciare con un numero ma può contenere qualsiasi combinazione di:
+  * lettere maiuscole e minuscole
+  * numeri
+  * il carattere underscore (_)
+* Non può essere una parola chive del linguaggio
+* Esempi **validi**: Prova_1, prova_1, media_pasata, _tot
+* Esempi **invalidi**: 1_prova, totale_%, somma_{
+
 
 # Variabili
 * Una variabile è una porzione di memoria che contiene dei dati che possono essere modificati durante l'esecuzione. Ogni variabile deve essere dichiarata, ovvero associata ad un identificatore ed a un tipo.
@@ -226,7 +248,7 @@ int main() {
     a = 10;
     b = 12;
     somma = a + b;
-    printf("somma=%i\n", somma);
+    printf("somma=%d\n", somma);
     return 0;
 }
 ```
@@ -252,41 +274,14 @@ int main() {
 # Espressioni
 * *Un programma C e' una sequenza di espressioni. Le espressioni sono combinazioni di variabili, costanti, chiamate a funzione per mezzo di opportuni operatori*. Non esiste in C una reale delimitazione fra espressioni logiche ed aritmetiche in quanto lo *0* aritmetico è considerato equivalente al valore logico *falso*
 
-  * espr ::=	(espr)
-  * espr ::=	espr op espr (Dove op e' un operatore binario)
-  * espr ::=	op espr (Dove op e' un operatore unario)
-  * espr ::=	variabile++
-  * espr ::=	variabile\-\-
-  * espr ::=	variabile
-  * espr ::=	funzione
-  * espr ::=	costante
-
-
-# Espressioni
 ```c
 45 * (a + b)
 delta * sqrt(abs(x1 * x2))
 sqrt(a * b - c) <= 10
 (c1 || c2) && c3
+max = a > b ? a : b
+a % b
 ```
-
-# Visualizzazione a video
-* La funzione *printf* visualizza una sequenza di caratteri (stringa) sostituendo agli specificatori di formato i valori delle variabili corrispondenti
-* *$ man printf* per elenco completo degli specificatori di formato
-
-| **Codice** | **Argomento** |
-| ----------------- | ------------ |
-| d i | signed int |
-| u | unsigned int |
-| e f | numero in virgola mobile |
-| s | stringa di caratteri |
-| c | int convertito in unsigned char |
-
-
-# CLion
-* Software a pagamento ma con licenze gratuite per gli studenti (https://www.jetbrains.com/community/education/#students)
-* Sviluppato in Java (richiede risorse, portabile)
-* Prodotto dagli stessi autori di PyCharm (Python) e IntelliJ IDEA (Java/Android)
 
 
 # CMake
@@ -294,6 +289,7 @@ sqrt(a * b - c) <= 10
 * Il file che gestisce i processi di compilazione è CmakeLists.txt
 * Si tratta di un sistema per generare il Makefile molto utile per aumentare la portabilità e la robustezza del processo di compilazione
 * Anche se possibile, *nel corso non utilizzeremo CMake in modo esplicito, ma lo utilizzeremo attraverso la GUI di CLion*
+
 
 # makefile
 * Per gestire la compilazione di un progetto C complesso si fa uso di tool ausiliari (e.g., make).

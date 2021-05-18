@@ -28,8 +28,8 @@ int main(){
 
 # Direttive preprocessore
 * Il simbolo **#** (diesis, cancelletto, o hash) precede tutte le operazioni che vengono gestite dal *preprocessore*
-* Sono operazioni eseguite staticamente durante il processo di compilazione
-* Servono a manipolare il codice sorgente prima della compilazione vera e propria. In particolare, sono utilizzate per aggiungere, modificare ed escludere parti di codice sorgente
+* Sono operazioni eseguite durante il processo di compilazione
+* Servono, in particolare, a manipolare il codice sorgente *prima* della compilazione vera e propria. In particolare, sono utilizzate per aggiungere, modificare ed escludere parti di codice sorgente
 
 
 # Processo di compilazione
@@ -40,7 +40,11 @@ int main(){
 * La si può immaginare come una procedura di manipolazione di testo: l’input è codice sorgente l’output è codice sorgente
 * Le direttive al preprocessore non esistono più nel codice sorgente che viene effettivamente compilato nè tantomento nel codice compilato. Si tratta di un meccanismo per manipolare il codice sorgente prima della compilazione
 * Per mostrare/salvare solo l’output del preprocessore si può usare:
-  * *$ gcc -E filename.c*
+  
+```shell
+$ gcc -E filename.c
+```
+  
 
 
 # Direttive rilevanti
@@ -54,18 +58,30 @@ int main(){
 * Aggiunge codice sorgente presente in file esterni
 * Utilizzato di solito con file header con estensione .h
 
-```make
+```c
 #include <stdio.h>
 ```
 
 * Il preprocessore genera un file sorgente intermedio in cui la direttiva \#include <stdio.h> è sostituita dal contenuto dell'intero file indicato (/usr/include, /usr/local/include)
-* *$ cat /usr/include/stdio.h*
+
+```shell
+$ cat /usr/include/stdio.h
+```
 
 # Progetto composto di più file
 
 * Mettiamo i nostri header in percorsi di sistema (e.g., /usr/include, /usr/local/include). Approccio utile solo per la distribuzione di librerie, non durante lo sviluppo
-* Indichiamo al compilatore gcc di cercare in percorsi arbitrari con l’opzione di compilazione -I
+* Indichiamo al compilatore gcc di cercare in percorsi arbitrari con l'opzione di compilazione -I
+
+```shell
+$ ...
+```
+
 * Indichiamo al compilatore gcc di cercare localmente il file
+
+```c
+#include "mymath.h"
+```
 
 
 # Esempio (mymath.h e mymath.c)
@@ -112,7 +128,7 @@ add_executable(main main.c mymath.c)
 
 # Direttiva #define
 * La direttiva \#define INPUT OUTPUT modifica il codice sorgente sostituendo tutte le occorrenze di INPUT con OUTPUT
-* **Attenzione**: \#define non definisce variabili e/o funzioni globali!
+* *Attenzione: \#define non definisce variabili e/o funzioni globali!*
 
 ```c
 #define INPUT OUTPUT
@@ -139,7 +155,7 @@ int main(){
 }
 ```
 
-* **Attenzione**: N non è una funzione!
+* *Attenzione: N non è una funzione!*
 * Il preprocessore crea un nuovo codice sorgente sostituendo tutte le occorrenze di N(argomento) con (10 * (argomento)) senza effettuare alcun controllo!
 * E' importante utilizzare in modo opportuno le parentesi per evitare problemi di priorità!
 
@@ -162,15 +178,17 @@ SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5
 
 # Direttiva #undef
 * La direttiva \#define non ha scope 
-* Il preprocessore non conosce le funzioni o altri costrutti di aggregazione/visibilità del linguaggio. Legge i sorgenti e opera **sequenzialmente** dall’inizio alla fine del file sorgente
+* Il preprocessore non conosce le funzioni o altri costrutti di aggregazione/visibilità del linguaggio. Legge i sorgenti e opera in modo sequenziale dall’inizio alla fine del file sorgente
 * Per eliminare una definizione è necessario utilizzare la direttiva \#undef in modo esplicito
 
 ```c
 #define MAX 128 
-
-// ... codice C ...
-
+...
+printf("%d\n", MAX);
+...
 #undef MAX
+...
+printf("%d\n", MAX);    /* Errore! */
 ```
 
 # Direttiva #if
@@ -190,6 +208,7 @@ SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5
 
 # Direttiva #if (Esempi)
 
+* message(S) stampa il messaggio solo se la MACRO DEBUG è definita
 ```c
 #ifndef DEBUG
 #define message(S) printf(S) \
@@ -197,6 +216,8 @@ SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5
 #define message(S)
 #endif
 ```
+
+* Include guards
 
 ```c
 #ifndef MYMATH_H
