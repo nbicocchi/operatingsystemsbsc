@@ -95,7 +95,7 @@ struct matrix *matrix_transpose(const struct matrix *m);
 
 dove:
 
-* **m** è il puntatore alla struttura che rappresenta la matrice originale
+* **m** è il puntatore alla struttura che rappresenta la matrice originale;
 * la funzione deve ritornarne il puntatore alla matrice trasposta, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
 
 ---
@@ -126,7 +126,7 @@ struct matrix *matrix_swap_diagonals(const struct matrix *m);
 
 dove:
 
-* **m** è il puntatore alla struttura che rappresenta la matrice originale
+* **m** è il puntatore alla struttura che rappresenta la matrice originale;
 * la funzione deve ritornarne il puntatore alla matrice con le diagonali invertite, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
 
 ---
@@ -157,8 +157,8 @@ struct matrix *matrix_product(const struct matrix *m1, const struct matrix *m2);
 
 dove:
 
-* **m1** è il puntatore alla struttura che rappresenta la prima matrice
-* **m2** è il puntatore alla struttura che rappresenta la seconda matrice
+* **m1** è il puntatore alla struttura che rappresenta la prima matrice;
+* **m2** è il puntatore alla struttura che rappresenta la seconda matrice;
 * la funzione deve ritornarne il puntatore alla matrice prodotto, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
 
 ---
@@ -173,3 +173,37 @@ struct matrix {
 
 struct matrix *matrix_product(const struct matrix *m1, const struct matrix *m2);
 ```
+
+---
+
+Esercizio 12. Implementare una funzione *matrix_compare* che accetta come parametri due puntatori a matrice e restituisce un numero intero da interpretare come un booleano. La funzione deve rispettare il seguente prototipo:
+
+```c
+struct matrix {
+    size_t rows, cols;
+    double **data;
+};
+
+int matrix_compare(const struct matrix *m1, const struct matrix *m2);
+```
+
+dove:
+
+* **m1** è il puntatore alla struttura che rappresenta la prima matrice
+* **m2** è il puntatore alla struttura che rappresenta la seconda matrice
+* la funzione ritorna un numero intero (0 se le due matrici sono uguali, 1 se le due matrici sono diverse)
+
+---
+
+Esercizio 13. Implementare una funzione *invert_all* che accetta come parametro una lista (zero-terminata) di stringhe (zero-terminate) ed inverte sia l'ordine delle stringhe che dei caratteri all'interno di ogni stringa. La funzione deve rispettare il seguente prototipo:
+
+```c
+char **invert_all(char *strings[]);
+```
+
+dove:
+
+* **list** è il puntatore alla lista di stringhe
+* la funzione ritorna una nuova lista di stringhe (allocata dinamicamente) in cui sia l'ordine delle stringhe che dei caratteri all'interno di ogni stringa è invertito.
+
+---

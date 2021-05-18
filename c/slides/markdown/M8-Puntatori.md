@@ -412,10 +412,12 @@ p2 = malloc(sizeof(int));   /* alloco 2^ area di memoria */
 p2 = p1;                            
 ```
 
-# Allocazione dinamica e matrici (singolo puntatore)
-* Approccio semplice ed immediato
-* Impedisce uso di indicizzazione e necessita di calcolo manuale dell'offset (offset = i * cols + j)
+# Allocazione dinamica e matrici
+* E' possibile allocare dinamicamente matrici (array bi-dimensionali), utilizzando sia un singolo puntatore (type *matrix) che un puntatore a puntatore (type **matrix)
+* Il primo (singolo puntatore) è semplice, immediato, ma impedisce uso di indicizzazione esplicita (matrix[i][j]) e necessita di calcolo manuale dell'offset (offset = i * cols + j)
+* Il secondo (puntatore a puntatore) richiede un meccanismo più complesso per allocare e disallocare la memoria, ma consente l'uso di indicizzazione esplicita (matrix[i][j])
 
+# Allocazione dinamica e matrici (singolo puntatore)
 ```c
 int *allocate_matrix(int rows, int cols) {
     int *m;
@@ -546,5 +548,29 @@ struct matrix *allocate_matrix(size_t rows, size_t cols) {
     }
     
     return m;
+}
+```
+
+# Allocazione dinamica e strutture
+```c
+void show_matrix(const struct matrix *m) {
+    size_t i, j;
+    for (i = 0; i < m->rows; i++) {
+        for (j = 0; j < m->cols; j++) {
+            printf("%8.2lf", m->data[i][j]);
+        }
+        printf("\n");
+    }
+}
+```
+
+```c
+void free_matrix(struct matrix *m) {
+    int i;
+    for (i = 0; i<m->rows; i++) {
+        free(m->data[i]);
+    }
+    free(m->data);
+    free(m);
 }
 ```
