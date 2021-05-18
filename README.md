@@ -148,4 +148,4 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 
 ## Esame
-L'esame consisterà di 2 esercizi al calcolatore di difficoltà crescente. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
+L'esame consiste in 2 esercizi al calcolatore (1x Bash, 1x C). Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
