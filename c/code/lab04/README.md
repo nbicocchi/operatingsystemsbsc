@@ -189,9 +189,9 @@ int matrix_compare(const struct matrix *m1, const struct matrix *m2);
 
 dove:
 
-* **m1** è il puntatore alla struttura che rappresenta la prima matrice
-* **m2** è il puntatore alla struttura che rappresenta la seconda matrice
-* la funzione ritorna un numero intero (0 se le due matrici sono uguali, 1 se le due matrici sono diverse)
+* **m1** è il puntatore alla struttura che rappresenta la prima matrice;
+* **m2** è il puntatore alla struttura che rappresenta la seconda matrice;
+* la funzione ritorna un numero intero (0 se le due matrici sono uguali, 1 se le due matrici sono diverse).
 
 ---
 
@@ -203,7 +203,7 @@ char **invert_all(char *strings[]);
 
 dove:
 
-* **strings** è il puntatore alla lista di stringhe (i.e., array di puntatori a carattere)
+* **strings** è il puntatore alla lista di stringhe (i.e., array di puntatori a carattere);
 * la funzione ritorna una nuova lista di stringhe (allocata dinamicamente) in cui sia l'ordine delle stringhe che dei caratteri all'interno di ogni stringa è invertito.
 
 ---
