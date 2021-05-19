@@ -9,9 +9,9 @@ aspectratio: 169
 ---
 
 # Strutture di controllo
-* Il paradigma di programmazione strutturata consente di dirigere il flusso delle istruzioni a tempo di esecuzione, in base allo stato dinamico del programma.
-* Il programmatore può predisporre molteplici blocchi di istruzioni da eseguire alternativamente o ripetutamente in base al soddisfacimento di determinate condizioni.
-* A parte alcune minime differenze sintattiche, queste istruzioni sono simili a quelle che si possono trovare negli altri linguaggi.
+* Il paradigma di programmazione strutturata consente di dirigere il flusso delle istruzioni a tempo di esecuzione, in base allo stato dinamico del programma
+* Il programmatore può predisporre molteplici blocchi di istruzioni da eseguire alternativamente o ripetutamente in base al soddisfacimento di determinate condizioni
+* A parte alcune minime differenze sintattiche, queste istruzioni sono simili a quelle che si possono trovare negli altri linguaggi
 * E' possibile realizzare due forme principali di controllo:
   * Esecuzioni condizionali
   * Esecuzioni iterative
@@ -33,29 +33,30 @@ aspectratio: 169
 
 ```c
 if (espressione)
-    istruzioni1
+    istruzione1
 ```
 
 ```c
 if (espressione)
-    istruzioni1
+    istruzione1
 else
-    istruzioni2
+    istruzione2
 ```
 
 ```c
 if (espressione1)
-    istruzioni1
+    istruzione1
 else if (espressione2)
-    istruzioni2
+    istruzione2
 else
-    istruzioni3
+    istruzione3
 ```
   
 # Costrutto if
 
 * Principali operatori di verifica delle condizioni: < , > , == , != , >= , <=
-* Le condizioni valutate dal costrutto *if* sono valori interi interpretati come "booleani" (non esiste il tipo boolean in C)
+* Le condizioni valutate dal costrutto *if* sono valori *interi* interpretati come *booleani* (convenzionalmente, 0 == falso, 1 == vero)
+* Il tipo *bool* è stato introdotto a partire dallo standard C99
 
 ```c
 include <stdio.h>
@@ -63,9 +64,9 @@ include <stdio.h>
 int main() {
     int a = 5;
     if (a < 0) {
-        printf("a < 0");
+        printf("a < 0\n");
     } else {
-        printf("a >= 0");
+        printf("a >= 0\n");
     }
 }
 ```
@@ -80,15 +81,18 @@ int main() {
         printf("a < 0");
     } else if (a < 10) {
         printf("0 <= a < 10");
+    } else if (a < 20) {
+        printf("10 <= a < 20");
     } else {
-        printf("a >= 10");
+        printf("a >= 20");
     }
 }
 ```
 
 # Costrutto if (condizioni annidate)
 
-* Le istruzioni condizionali if possono essere annidate per creare strutture di controllo più raffinate. Un esempio è mostrato nel listato seguente, dove la valutazione ed esecuzione delle istruzioni contenute all’interno del blocco *if* annidato è condizionato dalla valutazione della clausola del blocco *if* più esterno.
+* Le istruzioni condizionali if possono essere annidate per creare strutture di controllo più raffinate. Un esempio è mostrato nel listato seguente. 
+* La valutazione ed esecuzione delle istruzioni contenute all’interno del blocco *if* annidato *(b > 0)* è condizionato dalla valutazione della clausola del blocco *if* più esterno *(a > 0)*.
 
 ```c
 include <stdio.h>
@@ -103,7 +107,7 @@ int main() {
 ```
 
 # Operatore \?
-L' operatore *?* (ternary condition) e' la forma piu' efficente per esprimere semplici costrutti if. 
+L' operatore *?* (*ternary condition*) e' la forma piu' efficente per esprimere semplici costrutti if. 
 
 ```c
 espressione1 ? espressione2 : espressione3
@@ -162,7 +166,7 @@ switch(a) {
 # Costrutto switch-case (senza break)
 ```c
 int a = 7;
-switch(a) {
+switch (a) {
     case 0:printf("Eseguo il case 0\n");
     case 3:printf("Eseguo il case 3\n");
     case 7: printf("Eseguo il case 7\n");
@@ -171,15 +175,16 @@ switch(a) {
         break;
 }
 ```
-
-* Se a è uguale a 0, eseguo case 0, case 3 e case 7 
-* Se a è uguale a 3, eseguo case 3 e case 7
-* Se a è uguale a 7, eseguo case 7
+* Eliminando le istruzioni *break* per separare i casi, cambia la semantica  
+* se a == 0, vengono eseguiti i casi 0, 3, 7
+* se a == 3, vengono eseguiti i casi 3, 7
+* se a == 7, viene eseguito il caso 7
 
 
 # Costrutto while
 * Il costrutto *while* è un costrutto condizionale dove un blocco di istruzioni viene eseguito fino a quando (while) l'espressione di controllo risulta vera
-* *Ogni esecuzione del blocco di istruzioni è detta ciclo o iterazione*. In ogni ciclo sono eseguite le stesse istruzioni del blocco
+* *Ogni esecuzione del blocco di istruzioni è detta ciclo o iterazione*
+* In ogni ciclo sono eseguite le stesse istruzioni del blocco
 
 ```c
 while ( espressione di controllo ) { 
@@ -197,7 +202,8 @@ while(i < 10) {
 
 # Costrutto do-while
 * Il costrutto *do-while* è un costrutto post-condizionale dove prima sono eseguite le istruzioni che formano il blocco dell’iterazione e successivamente è verificata la la condizione. Se la condizione è vera allora si ripete il ciclo, altrimenti si passa all’istruzione successiva
-* Il costrutto *do-while* può servire in tutti i casi in cui la prima iterazione deve essere eseguita a prescindere dal successo dell’istruzione di controllo. *Casi d'uso limitati*
+* Il costrutto *do-while* può servire in tutti i casi in cui la prima iterazione deve essere eseguita a prescindere dal successo dell’istruzione di controllo. 
+* *Casi d'uso relativamente limitati* 
 
 ```c
 do {
@@ -215,8 +221,9 @@ do {
 ```
 
 # Costrutto for
-* Il costrutto *for* viene utilizzato per codificare la ripetizione di istruzioni per un numero prestabilito di volte
-* Le variabili che controllano il flusso del for sono  completamente ed esclusivamente gestite all’interno della direttiva for: **assegnazione, controllo, modifica post-ciclo**
+* Il costrutto *for* è utilizzato per la ripetizione di istruzioni per un numero prestabilito di volte
+* Le variabili che controllano il flusso del ciclo *for* sono gestite all’interno della direttiva *for*
+* *(1) assegnazione, (2) controllo, (3) modifica post-ciclo*
 
 ```c
 for ([<espressione assegnazione>]; [<espressione controllo>];[<espressione post-ciclo>]) {
@@ -235,22 +242,53 @@ for(i = 0; i < 10; i++) {
 ```c
 int i;
 for(i = 0; i < 10; i++) {
-    printf("Il valore di i è %d\n", i);
+    printf("i=%d\n", i);
 }
 ```
 
-* **i = 0**: comando di assegnazione eseguito come prima operazione
-* **i < 10**: condizione controllata prima di ogni ciclo (anche prima del primo ciclo, come per while)
-* **i++**: comando/azione eseguito ad ogni ciclo dopo il controllo della condizione
+* **i = 0**: assegnazione (eseguita una sola volta, come prima operazione)
+* **i < 10**: condizione di controllo (verificata prima di ogni ciclo)
+* **i++**: modifica post-ciclo (eseguita al termine di ogni ciclo)
+
+```c
+int i;
+for(i = 0, j = 0; i < 10; i++, j++) {
+    printf("i=%d, j=%d\n", i, j);
+}
+```
+
+# Cicli infiniti
+* I costrutti iterativi possono essere utilizzati anche per creare cicli infiniti
+* Spesso i cicli infiniti sono interrotti attraverso un'istruzione dedicata (*break*) posizionata all'interno del blocco di istruzioni
+
+```c
+for (;;) {
+  /* istruzioni */
+}
+```
+
+```c
+#define TRUE 1
+while (TRUE) {
+    /* istruzioni */
+}
+```
+
+```c
+do {
+    /* istruzioni */
+} while (TRUE);
+```
 
 # Istruzione break
 * L'istruzione *break* interrompe le iterazioni di costrutto iterativo (*for, while, do-while*)
 * In genere è associata a una struttura condizionale *if* per associarla al verificarsi di un evento
-* L'istruzione *break* è utile per evitare cicli infiniti, spostando l'espressione di controllo all'interno del ciclo
+* L'istruzione *break* sposta l'espressione di controllo all'interno del ciclo
 
 ```c
 int i=0;
-for(i=0; i<5; i++){
+
+for(i=0; i<5; i++) {
     if (i==2) {
         break;
     }
@@ -262,11 +300,13 @@ for(i=0; i<5; i++){
 
 # Istruzione continue
 * L'istruzione *continue* interrompe l'iterazione di un ciclo per saltare a quella successiva
-* Quando il compilatore incontra l'istruzione *continue*, interrompe l'iterazione corrente tornando all'espressione di controllo per iniziare l'interazione successiva, senza uscire dal ciclo
+* Quando il compilatore incontra l'istruzione *continue*, interrompe l'iterazione corrente tornando all'espressione di controllo per iniziare l'interazione successiva
+* Il ciclo non viene interrotto
 
 ```c
 int i=0;
-for(i=0; i<5; i++){
+
+for(i=0; i<5; i++) {
     if (i==2) {
         continue;
     }
@@ -276,31 +316,13 @@ for(i=0; i<5; i++){
 //Output: 0 1 3 4
 ```
 
-# Cicli infiniti
-* Sia *for* che *while* possono essere utilizzati anche per creare cicli infiniti
-* Spesso i cicli infiniti sono interrotti attraverso un'istruzione *break* che verifica una condizione all'interno del ciclo
-
-```c
-for (;;) {
-  // istruzioni
-}
-```
-
-```c
-#define TRUE 1
-
-while (TRUE) {
-  // istruzioni
-}
-```
 
 # Errori comuni (assegnamento e verifica di uguaglianza)
-
 * Confondere gli operatori di assegnamento (=) e di verifica di uguaglianza (==) può produrre innumerevoli errori
-* Considerata la facilità dell'errore (typo), fino a Python 3.8 l'assegnamento all'interno di una condizione *if* non era supportato
+* Considerata la facilità dell'errore (typo), fino a Python 3.8 l'assegnamento all'interno di una condizione *if* non era supportato. Ora è supportato attraverso un operatore dedicato (:=)
 
 ```c
-int main(){
+int main() {
     int a = 10;
     if (a == 0) { }
 }
@@ -338,7 +360,7 @@ int main() {
 ```
 # Istruzione goto
 
-* *goto* è un costrutto di salto incondizionato che rappresenta l'istruzione *jump* presente nei linguaggi di basso livello
+* *goto* è un costrutto di *salto incondizionato* che rappresenta l'istruzione assembly *jump* 
 * A volte si utilizza nella gestione degli errori, ma in generale è sconsigliato utilizzarlo se non si ha piena coscienza di ciò che si sta facendo
 * *Edsger W. Dijkstra - Go To statement considered harmful*
 

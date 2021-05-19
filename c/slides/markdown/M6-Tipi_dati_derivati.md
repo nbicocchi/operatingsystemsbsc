@@ -11,15 +11,17 @@ aspectratio: 169
 # Array multi-dimensionali
 * Si tratta di una generalizzazione del concetto di vettore
 * Sono permesse un numero arbitrario di dimensioni per la struttura dichiarata
-* Il caso tipico di array multi-dimensionale è quello di array a due dimensioni, le cosiddette *matrici*
 * La sintassi della dichiarazione di un array multi-dimensionale è la seguente:
 
 ```c
 nome-tipo identificatore [ card_1 ] [ card_2 ] ... [ card_n] ;
 ```
 
+* Il caso tipico di array multi-dimensionale è quello di array a due dimensioni, le cosiddette *matrici*
+
 # Le matrici
-* La matrice è tecnicamente un array a 2 dimensioni. Può essere vista come un vettore monodimensionale i cui singoli elementi sono vettori essi stessi. La sintassi della dichiarazione di una matrice è la seguente:
+* Una matrice è tecnicamente un array a 2 dimensioni. Può essere vista come un vettore monodimensionale i cui singoli elementi sono vettori essi stessi. 
+* La sintassi della dichiarazione di una matrice è la seguente:
 
 ```c
 nome-tipo identificatore [ card_1 ] [ card_2 ] ;
@@ -44,8 +46,8 @@ printf("%d\n", mat[2][6]);
 * L'elemento mat[2][6] (ultimo elemento della terza riga) è un valore di tipo intero che può essere utilizzato come un qualunque altro valore intero
 
 # Le matrici: allocazione in memoria
-* La matrice è una struttura **bidimensionale**. Va definito il modo in cui mapparla all'interno della memoria RAM, che è al contrario una struttura **monodimensionale**!
-* *Una matrice viene allocata in memoria per righe*. Si parte dall'indirizzo dell'elemento di indice mat[0][0] e si prosegue memorizzando in successione tutti i valori della matrice, riga dopo riga.
+* La matrice è una struttura *bidimensionale*. Va definito il modo in cui mapparla all'interno della memoria RAM, che è al contrario una struttura *monodimensionale*!
+* *Una matrice viene allocata in memoria per righe*. Si parte dall'indirizzo dell'elemento con indice [0][0] (&mat[0][0] oppure mat) e si prosegue memorizzando in successione tutti i valori della matrice, riga dopo riga.
 
 # Le matrici: allocazione in memoria
 ![Allocazione Matrici](./images/allocazione_matrice.jpg)
@@ -151,7 +153,7 @@ struct nome a, *p;
 # Esempio (struct punto)
 * Le variabili di nome pt e pt2 sono di tipo *struct punto*
 * L'identificatore pt è associato ad una porzione di memoria in grado di conservare due dati di tipo int (i campi x e y della struttura). Anche pt2 è associato ad una porzione di memoria dedicata
-* La variabile pt_ptr è invece di tipo puntatore, e una volta inizializzato, contiene l'indirizzo del primo byte di una *struct punto* 
+* La variabile pt_ptr è invece di tipo puntatore, e una volta inizializzato, contiene l'indirizzo del primo byte di *struct punto pt*. 
 
 ```c
 struct punto {
@@ -178,10 +180,10 @@ pt.x = 5;
 pt.y = -7
 ```
 
-* Le strutture si possono anche assegnare direttamente (i valori vengono **copiati** fra le due aree di memoria come nel caso delle normali variabili)
+* Le strutture si possono anche assegnare direttamente (i valori vengono *copiati* fra le due aree di memoria come nel caso delle normali variabili)
 
 ```c
-pt1 = pt;
+pt2 = pt;
 ```
 
 # Assegnamento diretto
@@ -209,7 +211,7 @@ int main(void) {
 # Puntatori a struttura
 
 * *pt_ptr* è un puntatore a struttura e memorizza l'indirizzo di una struttura (*struct punto*)
-* La sua dichiarazione, non alloca memoria per una struttura ma soltanto per un puntatore ad essa
+* La sua dichiarazione, non alloca memoria per una struttura ma soltanto per un puntatore
 * La due istruzioni seguenti, ottengono il medesimo scopo, ed assegnano a *pt_ptr* l'indirizzo del primo byte della struttura *pt*
 
 ```c
@@ -218,11 +220,10 @@ pt_ptr = &pt;
 ```
 
 # Inizializzazione dei campi di strutture
-
 * La prima forma è poco leggibile e legata all'ordine dei parametri (scomodo)
-* La seconda forma non è standard (warning)
+* La seconda forma non è standard (warning del compilatore)
 * *La terza forma è quella consigliata*
-* Tutti i campi non specificati vengono impostati al valore 0
+* Tutti i campi non specificati (e.g., privato) vengono impostati a 0
 
 ```c
 struct info {
@@ -238,11 +239,14 @@ struct info el3 = {.id=3, .nome="aldo", .valore=45};
 ```
 
 # Strutture come parametri di funzioni
-* Il passaggio dei parametri per valore richiede l'allocazione di una copia locale delle variabili dichiarate nella lista dei parametri. Oltre all'allocazione, tali variabili devono anche essere inizializzate per riflettere il valore della espressione del chiamante. Questo comporta la copia esplicita di una porzione di memoria dalla variabile utilizzata per la chiamata alla variabile locale (perdita di efficienza proporzionale alla dimensione della variabile)
+* Il passaggio dei parametri per valore richiede l'allocazione di una copia locale delle variabili dichiarate nella lista dei parametri. Oltre all'allocazione, tali variabili devono anche essere inizializzate per riflettere il valore della espressione del chiamante. Questo comporta la copia esplicita di una porzione di memoria dalla variabile utilizzata per la chiamata alla variabile locale della funzione (perdita di efficienza proporzionale alla dimensione della variabile)
 * *Il passaggio per riferimento elimina il tempo necessario per effettuare la copia*. Viene copiato soltanto l'indirizzo della variabile che ha dimensione limitata e fissa (32/64bit). Questo approccio migliora in modo sensibile l'efficienza dei programmi
 
 ```c
+/* Copia di due struct punto */
 double distanza_v1(struct punto p1, struct punto p2);
+
+/* Copia di due puntatori */
 double distanza_v2(struct punto *p1, struct punto *p2);
 ```
 
@@ -272,8 +276,7 @@ double distanza(struct punto *p1, struct punto *p2) {
 
 
 
-# Confronto fra strutture
-
+# Esempio (confronto fra strutture)
 ```c
 struct data {
     int g; int m; int a;
@@ -298,7 +301,7 @@ int main(void) {
 
 * In C è possibile assegnare dei nomi simbolici ai tipi di dati esistenti
 * Migliora la chiarezza di programmi lunghi e complessi
-* La definizione di un nuovo tipo si realizza per mezzo della parola chiave **typedef** utilizzando la seguente sintassi:
+* La definizione di un nuovo tipo si realizza per mezzo della parola chiave *typedef* utilizzando la seguente sintassi:
 
 ```c
 typedef tipo nuovo-tipo;

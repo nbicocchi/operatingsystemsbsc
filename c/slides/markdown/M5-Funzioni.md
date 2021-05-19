@@ -19,28 +19,28 @@ aspectratio: 169
     
 * Svantaggi:
   * Determinazione dell’indirizzo di rientro al codice chiamante 
-  * Scambio di informazioni fra sottoprogramma e codice chiamante (passaggio dei parametri)
+  * Scambio di informazioni fra funzioni e codice chiamante (passaggio di parametri)
 
 # Dichiarazione di funzioni
 * Serve per segnalare al compilatore l'esistenza di una determinata funzione (e come invocarla) ma non specifica le istruzioni che compongono la funzione
-* La dichiarazione di una funzione deve sempre precedere nel sorgente la prima invocazione della stessa. La definizione, invece, può essere presente in un qualunque punto del sorgente o in una libreria esterna
+* La *dichiarazione* di una funzione deve sempre precedere nel sorgente la prima invocazione della stessa. La *definizione*, invece, può essere presente in un qualunque punto del sorgente o in una libreria esterna
 * La dichiarazione specifica il *prototipo* della funzione:
   * il tipo ritornato
   * il nome della funzione
-  * l'elenco degli argomenti (o parametri)
-* In fase di dichiarazione si può omettere il nome dei parametri
+  * l'elenco dei parametri (argomenti)
+* In fase di dichiarazione è consentito omettere il nome dei parametri
 
 ```c
 int secondi(int h, int m, int s);
-// oppure
+/* oppure */
 int secondi(int, int, int);
 ```
 
 # Definizione di funzioni
 Una definizione è costituita da due parti:
   
-* la dichiarazione della funzione
-* il corpo della funzione, racchiuso tra parentesi graffe e comprendente zero o più di queste componenti:
+* la *dichiarazione della funzione*
+* il *corpo della funzione*, racchiuso tra parentesi graffe e comprendente zero o più di queste componenti:
   * dichiarazioni e definizioni di variabili
   * istruzioni
   * istruzione return
@@ -52,11 +52,11 @@ int secondi(int h, int m, int s) {
 }
 ```
 
-# Definizione e invocazione
-* L'invocazione di una funzione è l'operazione con la quale si richiama l'esecuzione della funzione
-* Per richiamare una funzione si deve utilizzare il nome della funzione seguita dagli argomenti passati alla funzione racchiusi da parentesi tonde e separati da virgole
+# Invocazione di funzioni
+* L'*invocazione* di una funzione è l'operazione con la quale si richiama l'esecuzione della funzione
+* Per richiamare una funzione si deve utilizzare il nome della funzione seguita dagli argomenti racchiusi da parentesi tonde e separati da virgole
 * Un'invocazione di funzione trasferisce il controllo alla prima istruzione della funzione stessa
-* Una funzione termina quando (a) si incontra l'istruzione return, oppure (b) si esegue la sua ultima istruzione
+* Una funzione termina quando: (a) viene eseguita l'istruzione *return*, oppure (b) viene eseguita l'ultima istruzione
 
 ```c
 int secondi(int h, int m, int s) {
@@ -71,7 +71,7 @@ int main() {
 ```
 
 # Tipo void
-* L’uso del tipo **void** nelle funzioni identifica *tipi nulli*
+* L’uso del tipo *void* nelle funzioni identifica *tipi nulli*
 * Se usato come tipo di ritorno, la funziona non restituisce alcun valore
 * Se usato come parametro di input, la funzione non accetta nessun parametro
 
@@ -87,10 +87,10 @@ int main() {
 ```
 
 # Parametri di input
-* È obbligatorio indicare il tipo delle variabili. Se non ci sono variabili, si usa il tipo speciale void
+* È obbligatorio indicare il tipo delle variabili. Se non ci sono variabili, si usa il tipo speciale *void*
 * Non è possibile indicare parametri facoltativi
-* È possibile indicare funzioni con numero di parametri variabile, in stile printf
-* Il passaggio dei parametri avviene *per copia*
+* È possibile indicare funzioni con numero di parametri variabile, (vedi *printf*)
+* Il passaggio dei parametri avviene *sempre per copia (per valore)*
 
 ```c
 void try_modification(int value) {
@@ -107,71 +107,59 @@ int main(){
 ```
 
 # Visibilità e tempo di vita delle variabili locali
-* Le variabili che abbiamo utilizzato fin’ora sono **variabili locali**, visibili solo all’interno della funzione
-* Le funzioni invocate **non hanno accesso** alle variabili di livello superiore!
-* La gestione della memoria delle variabili locali è **automatica**
-  * Vengono allocate al momento dell’invocazione della funzione
-  * Vengono de-allocate al momento del ritorno della funzione
-* Ad ogni invocazione le variabili e i parametri della funzione non dipendono dalle esecuzioni precedenti!
+* Le variabili che abbiamo utilizzato fin’ora sono *variabili locali*, visibili solo all’interno della funzione
+* Le funzioni invocate *non hanno accesso* alle variabili di livello superiore!
+* La gestione della memoria delle variabili locali è *automatica*
+  * Le variabili vengono allocate al momento dell’invocazione della funzione
+  * Le variabili vengono de-allocate al momento del ritorno della funzione
+* Ad ogni invocazione, le variabili della funzione non dipendono dalle esecuzioni precedenti!
 
 
 # Variabili globali
 
-* Il C supporta anche **variabili globali**, visibili da tutte le funzioni
+* Il C supporta anche *variabili globali*, visibili sempre e da tutte le funzioni
 * *Preferibile limitare utilizzo di variabili globali, oppure utilizzarle come costanti*
 
 ```c
 #include<stdio.h>
 
 int a;
-// const int a produce invece un errore!
+/* const int a; -> errore! */
 
-void test_visibilita(void){
+void try_modification(void){
     a = 10;
 }
 
 int main(){
     a=5;
-    test_visibilita();
+    try_modification();
     printf("a=%d\n", a);
 }
 ```
 
 # Variabili locali static
-* Una variabile locale è detta **static** se il suo tempo di vita corrisponde a quelllo del processo
+* Una variabile locale è detta *static* se il suo tempo di vita corrisponde a quelllo del processo
 * E' possibile utilizzare variabili static per avere funzioni che mantengono uno stato fra diverse invocazioni
 
 ```c
 void counter() {
     static int count=0;
+    
     count++;
-    printf("Il valore di count è %d\n", count);
+    printf("count=%d\n", count);
 }
 
 int main(){
     counter();
     counter();
+    
     return 0;
 }
 ```
 
-# Funzioni matematiche
-| **Funzione** | **Descrizione** | 
-| ---------- | -------------------- | 
-| abs(x)     | Restituisce il valore assoluto |
-| fabs(x)    | Restituisce il valore assoluto  |
-| ceil(x)    | Restituisce l’intero più piccolo maggiore o uguale a x |
-| floor(x)   | Restituisce l’intero più grande minore o uguale a x    |
-| round(x)   | Restituisce l’intero più vicino a x |
-| sqrt(x)    | Restituisce la radice quadrata      |
-| pow(a, b)  | Operazione di elevamento a potenza a^b    |
-| exp(x)     | Funzione esponenziale     |
-| log(x)     | Restituisce il logaritmo naturale (in base e)     |
-
-
 # Passaggio per valore (copia)
-* Secondo la modalità del passaggio per valore **ogni funzione ha una propria zona di memoria per memorizzare i dati** (messa a disposizione solo al momento dell’effettivo utilizzo e rilasciata quando non è più necessaria)
-* Al momento dell’uso della funzione **i parametri sono copiati**, quindi non vi è un accesso diretto ai valori del codice chiamante
+* Secondo la modalità del passaggio per valore *ogni funzione ha una propria zona di memoria per memorizzare i dati* (messa a disposizione solo al momento dell’effettivo utilizzo e rilasciata quando non è più necessaria)
+* Al momento dell’uso della funzione *i parametri sono copiati*, quindi non vi è un accesso diretto ai valori del codice chiamante
 
 ```c
 void scambia(int a, int b) {
@@ -195,7 +183,7 @@ int main() {
 * Permette alla funzione chiamata di modificare il valore della variabile passata dal chiamante
 * Evita la copia di variabili voluminose
 * Contente alla funzione chiamata di ritornare più di un valore di ritorno
-* Il passaggio per riferimento **implica il passaggio per valore di un puntatore alla variabile**
+* Il passaggio per riferimento *implica il passaggio per valore di un puntatore alla variabile*
 
 ```c
 void scambia(int *a, int *b) {
@@ -234,10 +222,11 @@ int main() {
 }
 ```
 
-# Vettori di puntatori
+# Vettori di puntatori (a carattere)
 * Gli elementi di un vettore possono essere di qualunque tipo:
-  * anche puntatori
-  * ad esempio char **\*vet[10]** è un vettore che memorizza 10 puntatori a carattere (in genere utilizzato per gestire stringhe di caratteri)
+  * numeri interi, virgola mobile, caratteri, ma anche *puntatori*
+  * ad esempio char *\*settimana[]* è un vettore che memorizza 7 puntatori a carattere
+  * tipo in genere utilizzato per gestire gruppi di stringhe di caratteri
 
 ```c
 char *settimana[] = {
@@ -250,10 +239,10 @@ char *settimana[] = {
     "domenica" 
 };
 
-printf("%s\n", settimana[0]); // lunedi
+printf("%s\n", settimana[0]); /* Output: lunedi */
 ```
 
-# Vettori di puntatori
+# Vettori di puntatori (a carattere)
 ![Puntatore a puntatore a carattere](./images/puntatore_puntatore_char.png)
 
 # Passaggio di parametri al programma principale
@@ -285,9 +274,9 @@ int main(int argc, char *argv[]) {
 ```
 
 ```shell
-$ ./a.out ciao, nicola bicocchi
+$ ./a.out ciao nicola bicocchi
 [0] ./a.out
-[1] ciao,
+[1] ciao
 [2] nicola
 [3] bicocchi
 ```

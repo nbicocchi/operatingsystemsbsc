@@ -108,6 +108,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Costrutto iterativo *do-while*
 * Costrutto di selezione *switch-case*
 * Istruzioni *break, continue*
+* Operatori
 
 [M4] Tipi di dati
 * Organizzazione in memoria
@@ -117,7 +118,8 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Array
 * Stringhe 
 * Conversione di tipo (casting implicito, esplicito)
-* Operatori
+* Funzioni matematiche
+* Funzioni I/O console
 
 [M5] Funzioni
 * Dichiarazione, definizione, chiamata a funzione
