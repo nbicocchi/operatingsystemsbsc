@@ -135,18 +135,18 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Enumerazioni
 * *typedef*
 
-[M7] File
+[M7] Puntatori 
+* Puntatori a void
+* Puntatori e array
+* Aritmetica dei puntatori
+* Allocazione dinamica della memoria
+
+[M8] File
 * File binari e file di testo
 * Apertura, chiusura, posizione corrente
 * Lettura e scrittura
 * I flussi standard (stdin, stdout, stderr)
 * Utilizzo di buffer e *buffer overflow*
-
-[M8] Puntatori 
-* Puntatori a void
-* Puntatori e array
-* Aritmetica dei puntatori
-* Allocazione dinamica della memoria
 
 
 ## Esame
