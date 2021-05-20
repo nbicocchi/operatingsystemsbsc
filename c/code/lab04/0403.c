@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+ * 1. La funzione main dichiara la variabile int *dst.
+ *
+ * 2. La funzione merge deve scrivere all'interno di quella variabile l'indirizzo
+ * del buffer allocato dinamicamente al suo interno.
+ *
+ * 3. Se la funzione merge ricevesse una COPIA di dst non potrebbe modificarne il
+ * contenuto, ma modificherebbe solo il contenuto della COPIA ricevuta.
+ *
+ * 4. Di conseguenza, merge deve ricevere non una copia di dst, ma una copia
+ * del suo INDIRIZZO. La variabile adatta a contenere l'indirizzo di un puntatore
+ * è un puntatore a puntatore (int **).
+ */
+
 void merge(int **dst, const int *a1, unsigned s1, const int *a2, unsigned s2) {
     int index_a1 = 0, index_a2 = 0, index_dst;
 
