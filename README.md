@@ -118,8 +118,7 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Array
 * Stringhe 
 * Conversione di tipo (casting implicito, esplicito)
-* Funzioni matematiche
-* Funzioni I/O console
+* Funzioni (matematiche, numeri pseudo-casuali, stringhe, I/O console)
 
 [M5] Funzioni
 * Dichiarazione, definizione, chiamata a funzione
