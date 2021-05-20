@@ -69,7 +69,7 @@ dove:
 
 ---
 
-Esercizio 5. Implementare una funzione *split* che, data una stringa contenente una sequenza di parole separate da spazio, crei una lista di stringhe in cui l’ultimo elemento della lista è seguito da un valore NULL (ad esempio, in presenza di una stringa C di N parole, se la variabile char **list punta alla lista, list[N] == NULL). E' consigliabile l'utilizzo delle funzioni di libreria strdup, strcpy, strlen, strtok. La funzione deve rispettare il seguente prototipo:
+Esercizio 5. Implementare una funzione *split* che, data una stringa contenente una sequenza di parole separate da spazio, crei una lista di stringhe in cui l’ultimo elemento della lista è seguito da un valore NULL (ad esempio, in presenza di una stringa C di N parole, se la variabile char **list punta alla lista, list[N] == NULL). E' consigliabile l'utilizzo delle funzioni di libreria *strdup*, *strcpy*, *strlen*, *strtok*. La funzione deve rispettare il seguente prototipo:
 
 ```c
 char **split(const char *s);
