@@ -186,4 +186,4 @@ dove:
 
 * **arr** è il vettore da ordinare;
 * **l** è l'indice di sinistra del blocco da ordinare, tipicamente l = 0;
-* **r** è l'indice di destra del blocco da ordinare, tipicamente l = size - 1.
+* **r** è l'indice di destra del blocco da ordinare, tipicamente r = sizeof(arr) - 1.
