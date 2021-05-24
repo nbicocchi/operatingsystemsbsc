@@ -208,7 +208,7 @@ dove:
 
 ---
 
-Esercizio 14. Implementare un gruppo di funzioni per gestire un array ri-dimensionabile di elementi di tipo *double* simile ad lista Java o Python. Le funzioni devono rispettare i seguenti prototipi:
+Esercizio 14. Implementare un gruppo di funzioni per gestire un array ri-dimensionabile di elementi di tipo *double* simile ad una lista Java o Python. Le funzioni devono rispettare i seguenti prototipi:
 
 ```c
 struct arraylist {
