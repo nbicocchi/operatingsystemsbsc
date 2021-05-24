@@ -161,3 +161,15 @@ void show_addresses(int rows, int cols, int m[][cols]);
 dove:
 
 * **m** è la matrice di input, con **rows** righe e **cols** colonne;
+
+---
+
+Esercizio 10. Implementare una funzione *bubble_sort* che ordini un vettore di interi in modo crescente utilizzando l'algoritmo Bubble Sort (https://en.wikipedia.org/wiki/Bubble_sort). La funzione deve rispettare il seguente prototipo.
+
+```c
+void bubble_sort(int arr[], int n) {
+```
+
+dove:
+
+* **arr** è il vettore da ordinare, composto da **n** elementi.

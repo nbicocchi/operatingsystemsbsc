@@ -93,7 +93,7 @@ int main(void) {
     }
 
     /* modify existing elements */
-    set(l, 0, 7.0);
+    set(l, 0, 77.0);
 
     /* delete existing elements */
     for (index = 30; index > 0; index--) {
