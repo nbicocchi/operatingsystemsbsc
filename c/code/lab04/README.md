@@ -227,16 +227,16 @@ struct arraylist *allocate_list();
 void free_list(struct arraylist *l);
 
 /* ritorna l'elemento di indice index. in caso, ingrandisce l'array l->data */
-double get(struct arraylist *l, int index);
+double get(struct arraylist *l, unsigned index);
 
 /* ritorna ed elimina l'elemento di indice index. in caso, riduce l'array l->data */
-double delete(struct arraylist *l, int index);
+double delete(struct arraylist *l, unsigned index);
 
 /* aggiunge alla lista (in fondo) un elemento di valore value */ 
 void add(struct arraylist *l, double value);
 
 /* modifica l'elemento di indice index con il valore value */
-void set(struct arraylist *l, int index, double value);
+void set(struct arraylist *l, unsigned index, double value);
 
 /* ritorna il numero di elementi memorizzati */
 unsigned elements(struct arraylist *l);

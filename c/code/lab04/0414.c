@@ -19,7 +19,7 @@ struct arraylist {
 struct arraylist *allocate_list() {
     struct arraylist *a;
 
-    a = malloc(sizeof(*a));
+    a = calloc(1, sizeof(*a));
     if (a == NULL) return NULL;
 
     a->elements = 0;
@@ -35,11 +35,11 @@ void free_list(struct arraylist *l) {
     free(l);
 }
 
-double get(struct arraylist *l, int index) {
+double get(struct arraylist *l, unsigned index) {
     return l->data[index];
 }
 
-double delete(struct arraylist *l, int index) {
+double delete(struct arraylist *l, unsigned index) {
     double element = l->data[index];
     unsigned i;
 
@@ -68,7 +68,7 @@ void add(struct arraylist *l, double value) {
     l->elements++;
 }
 
-void set(struct arraylist *l, int index, double value) {
+void set(struct arraylist *l, unsigned index, double value) {
     l->data[index] = value;
 }
 
