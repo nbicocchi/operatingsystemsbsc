@@ -207,3 +207,42 @@ dove:
 * la funzione ritorna una nuova lista di stringhe (allocata dinamicamente) in cui sia l'ordine delle stringhe che dei caratteri all'interno di ogni stringa è invertito.
 
 ---
+
+Esercizio 14. Implementare un gruppo di funzioni per gestire un array ri-dimensionabile di elementi di tipo *double* simile ad lista Java o Python. Le funzioni devono rispettare i seguenti prototipi:
+
+```c
+struct arraylist {
+    /* number of actual elements contained */
+    unsigned elements;
+    
+    /* size of the underlying array */
+    unsigned size;
+    
+    /* actual data */
+    double *data;
+};
+
+/* Allocazione dinamica della lista */
+struct arraylist *allocate_list();
+void free_list(struct arraylist *l);
+
+/* ritorna l'elemento di indice index. in caso, ingrandisce l'array l->data */
+double get(struct arraylist *l, int index);
+
+/* ritorna ed elimina l'elemento di indice index. in caso, riduce l'array l->data */
+double delete(struct arraylist *l, int index);
+
+/* aggiunge alla lista (in fondo) un elemento di valore value */ 
+void add(struct arraylist *l, double value);
+
+/* modifica l'elemento di indice index con il valore value */
+void set(struct arraylist *l, int index, double value);
+
+/* ritorna il numero di elementi memorizzati */
+unsigned elements(struct arraylist *l);
+
+/* ritorna la dimensione dell'array */
+unsigned size(struct arraylist *l);
+```
+
+---

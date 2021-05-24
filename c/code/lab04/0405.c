@@ -14,6 +14,7 @@ unsigned word_count(const char *s){
     return count + 1;
 }
 
+/* splits the string s into an array of strings (dinamically allocated) */
 char **split(const char *s) {
     int index=0;
     char *str, *ptr, **list;
@@ -48,7 +49,19 @@ int main(void) {
     int i;
 
     list = split(str);
+
+    /* show the result */
     for (i = 0; list[i] != NULL; i++) {
         printf("%s\n", list[i]);
     }
+
+    /* free actual strings */
+    for (i = 0; list[i] != NULL; i++) {
+        free(list[i]);
+    }
+    /* free NULL string (the last one) */
+    free(list[i]);
+
+    /* free array of char pointers */
+    free(list);
 }

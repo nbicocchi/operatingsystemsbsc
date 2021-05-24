@@ -6,10 +6,9 @@ set(CMAKE_C_STANDARD 99)
 
 # Examples
 add_executable(example examples/example.c)
-add_executable(matrix_single examples/dynamic_matrix_single.c)
-add_executable(matrix_double examples/dynamic_matrix_double.c)
-add_executable(static_array examples/static_array.c)
-add_executable(static_matrix examples/static_matrix.c)
+#add_executable(matrix_single examples/dynamic_matrix_single.c)
+#add_executable(matrix_double examples/dynamic_matrix_double.c)
+#add_executable(printf_types examples/printf_types.c)
 
 # Basic Programming lab01
 #add_executable(0101 lab01/0101.c)
@@ -51,15 +50,15 @@ add_executable(static_matrix examples/static_matrix.c)
 #add_executable(0215 lab02/0215.c)
 
 # Basic Programming lab03
-add_executable(0301 lab03/0301.c)
-add_executable(0302 lab03/0302.c)
-add_executable(0303 lab03/0303.c)
-add_executable(0304 lab03/0304.c)
-add_executable(0305 lab03/0305.c)
-add_executable(0306 lab03/0306.c)
-add_executable(0307 lab03/0307.c)
-add_executable(0308 lab03/0308.c)
-add_executable(0309 lab03/0309.c)
+#add_executable(0301 lab03/0301.c)
+#add_executable(0302 lab03/0302.c)
+#add_executable(0303 lab03/0303.c)
+#add_executable(0304 lab03/0304.c)
+#add_executable(0305 lab03/0305.c)
+#add_executable(0306 lab03/0306.c)
+#add_executable(0307 lab03/0307.c)
+#add_executable(0308 lab03/0308.c)
+#add_executable(0309 lab03/0309.c)
 
 # Basic Programming lab04
 add_executable(0401 lab04/0401.c)
@@ -75,6 +74,7 @@ add_executable(0410 lab04/0410.c)
 add_executable(0411 lab04/0411.c)
 add_executable(0412 lab04/0412.c)
 add_executable(0413 lab04/0413.c)
+add_executable(0414 lab04/0414.c)
 
 # System Programming labs01
 #add_executable(s011 labs01/s011.c utils/utils.c)
