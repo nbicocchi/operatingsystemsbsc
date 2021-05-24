@@ -160,7 +160,7 @@ void show_addresses(int rows, int cols, int m[][cols]);
 
 dove:
 
-* **m** è la matrice di input, con **rows** righe e **cols** colonne;
+* **m** è la matrice di input, con **rows** righe e **cols** colonne.
 
 ---
 
