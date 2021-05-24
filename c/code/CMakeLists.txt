@@ -60,6 +60,7 @@ add_executable(example examples/example.c)
 #add_executable(0308 lab03/0308.c)
 #add_executable(0309 lab03/0309.c)
 #add_executable(0310 lab03/0310.c)
+#add_executable(0310 lab03/0311.c)
 
 # Basic Programming lab04
 add_executable(0401 lab04/0401.c)

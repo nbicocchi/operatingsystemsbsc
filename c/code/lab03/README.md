@@ -173,3 +173,17 @@ void bubble_sort(int arr[], int n) {
 dove:
 
 * **arr** è il vettore da ordinare, composto da **n** elementi.
+
+---
+
+Esercizio 11. Implementare una funzione *merge_sort* che ordini un vettore di interi in modo crescente utilizzando l'algoritmo Merge Sort (https://en.wikipedia.org/wiki/Merge_sort). La funzione deve rispettare il seguente prototipo.
+
+```c
+void merge_sort(int arr[], int l, int r);
+```
+
+dove:
+
+* **arr** è il vettore da ordinare;
+* **l** è l'indice di sinistra del blocco da ordinare, tipicamente l = 0;
+* **r** è l'indice di destra del blocco da ordinare, tipicamente l = size - 1.
