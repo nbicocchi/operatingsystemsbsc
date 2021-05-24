@@ -215,10 +215,10 @@ struct arraylist {
     /* number of actual elements contained */
     unsigned elements;
     
-    /* size of the underlying array */
+    /* size of the underlying array (l->data) */
     unsigned size;
     
-    /* actual data */
+    /* array containing the actual data */
     double *data;
 };
 
