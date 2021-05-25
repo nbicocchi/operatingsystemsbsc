@@ -246,3 +246,23 @@ unsigned size(struct arraylist *l);
 ```
 
 ---
+
+Esercizio 15. *(Approfondimento, non richiesto all'esame)*. Implementare un gruppo di funzioni analoghe a quelle dell'esercizio precedente ma che utilizzano come meccanismo di memorizzazione una linked list (https://en.wikipedia.org/wiki/Linked_list) al posto di un array ri-dimensionabile. Per rappresentare la linked list, utilizzare le due strutture indicate di seguito.
+
+```c
+struct node {
+    /* the actual data of the node */
+    double data;
+
+    /* pointer to the next node */
+    struct node *next;
+};
+
+struct linkedlist {
+    /* number of actual elements contained */
+    unsigned elements;
+
+    /* pointer to the head of the list */
+    struct node *head;
+};
+```

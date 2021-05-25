@@ -78,6 +78,7 @@ add_executable(0411 lab04/0411.c)
 add_executable(0412 lab04/0412.c)
 add_executable(0413 lab04/0413.c)
 add_executable(0414 lab04/0414.c)
+add_executable(0415 lab04/0415.c)
 
 # System Programming labs01
 #add_executable(s011 labs01/s011.c utils/utils.c)
