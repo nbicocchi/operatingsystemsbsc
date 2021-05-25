@@ -113,7 +113,7 @@ float compute_length(const point_t *p, unsigned n);
 dove:
 
 * **point_t** rappresenta un punto sul piano con coordinate x e y;
-* **compute_area** è la funzione per il calcolo della lunghezza:
+* **compute_length** è la funzione per il calcolo della lunghezza:
   * accetta il puntatore ad un vettore di point_t;
   * accetta il numero di point_t contenuti nel vettore;
   * restituisce la lunghezza della linea spezzata.
