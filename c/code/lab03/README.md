@@ -107,7 +107,7 @@ typedef struct point {
    float y;
 } point_t;
    
-float compute_area(const point_t *p, unsigned n);
+float compute_length(const point_t *p, unsigned n);
 ```
 
 dove:
