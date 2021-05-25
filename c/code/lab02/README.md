@@ -216,7 +216,7 @@ dove:
 Esercizio 16. Implementare una funzione *bubble_sort* che ordini un vettore di interi in modo crescente utilizzando l'algoritmo Bubble Sort (https://en.wikipedia.org/wiki/Bubble_sort). La funzione deve rispettare il seguente prototipo.
 
 ```c
-void bubble_sort(int arr[], int n) {
+void bubble_sort(int arr[], int n);
 ```
 
 dove:
