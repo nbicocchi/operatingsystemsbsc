@@ -1,31 +1,33 @@
 #include <stdio.h>
+#include <math.h>
 
-#define ROWS 10
-#define COLS 10
+#define TRUE 1
+#define FALSE 0
 
-void show_addresses(int rows, int cols, int v[][cols]) {
-    int i, j;
+typedef struct point {
+    float x;
+    float y;
+} point_t;
 
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
-            printf("%p -> %d\n", &v[i][j], v[i][j]);
-        }
-        printf("\n");
+typedef struct circle {
+    point_t center;
+    float radius;
+} circle_t;
+
+int isinside(const point_t *p, const circle_t *c) {
+    float distance = hypotf(p->x - c->center.x, p->y - c->center.y);
+    if (distance < c->radius) {
+        return TRUE;
     }
+    return FALSE;
 }
 
-#define ROWS 10
-#define COLS 10
+#define SIZE 3
 int main(void) {
-    int v[ROWS][COLS];
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            v[i][j] = (i + 1) * (j + 1);
-        }
-    }
-    show_addresses(ROWS, COLS, v);
+    point_t p = { .x=8, .y=8 };
+    circle_t c = {
+            .center = {.x=0, .y=0},
+            .radius = 10,
+    };
+    printf("isinside?=%d\n", isinside(&p, &c));
 }
-
-
-
-

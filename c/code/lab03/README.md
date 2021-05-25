@@ -99,7 +99,28 @@ dove:
 
 ---
 
-Esercizio 7. Implementare una funzione *compute_area* per il calcolo dell’area di un poligono irregolare date le coordinate dei suoi vertici (https://arachnoid.com/area_irregular_polygon/index.html). La funzione supporti il seguente prototipo:
+Esercizio 7. Implementare una funzione *compute_length* per il calcolo della lunghezza di una linea spezzata. La funzione supporti il seguente prototipo:
+
+```c
+typedef struct point {
+   float x;
+   float y;
+} point_t;
+   
+float compute_area(const point_t *p, unsigned n);
+```
+
+dove:
+
+* **point_t** rappresenta un punto sul piano con coordinate x e y;
+* **compute_area** è la funzione per il calcolo della lunghezza:
+  * accetta il puntatore ad un vettore di point_t;
+  * accetta il numero di point_t contenuti nel vettore;
+  * restituisce la lunghezza della linea spezzata.
+
+---
+
+Esercizio 8. Implementare una funzione *compute_area* per il calcolo dell’area di un poligono irregolare date le coordinate dei suoi vertici (https://arachnoid.com/area_irregular_polygon/index.html). La funzione supporti il seguente prototipo:
 
 ```c
 typedef struct point {
@@ -125,7 +146,7 @@ dove:
 
 ---
 
-Esercizio 8. Implementare una funzione *isinside* per che verifichi se un punto 2D si trova all'interno di un cerchio. La funzione supporti il seguente prototipo:
+Esercizio 9. Implementare una funzione *isinside* per che verifichi se un punto 2D si trova all'interno di un cerchio. La funzione supporti il seguente prototipo:
 
 ```c
 typedef struct point {
@@ -152,7 +173,7 @@ dove:
 
 ---
 
-Esercizio 9. Implementare una funzione *show_addresses* per che mostri all'utente che le celle di una matrice sono memorizzate in modo contiguo, riga dopo riga. 
+Esercizio 10. Implementare una funzione *show_addresses* per che mostri all'utente che le celle di una matrice sono memorizzate in modo contiguo, riga dopo riga. 
 
 ```c
 void show_addresses(int rows, int cols, int m[][cols]);

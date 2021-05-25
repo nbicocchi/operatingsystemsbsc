@@ -1,33 +1,33 @@
 #include <stdio.h>
-#include <math.h>
-
-#define TRUE 1
-#define FALSE 0
 
 typedef struct point {
     float x;
     float y;
 } point_t;
 
-typedef struct circle {
-    point_t center;
-    float radius;
-} circle_t;
+typedef struct polygon {
+    unsigned n;
+    point_t *vertices;
+} polygon_t;
 
-int isinside(const point_t *p, const circle_t *c) {
-    float distance = hypotf(p->x - c->center.x, p->y - c->center.y);
-    if (distance < c->radius) {
-        return TRUE;
+float compute_area(const polygon_t *p) {
+    unsigned i, next;
+    float sum = 0.0F;
+
+    for (i = 0; i < p->n; i++) {
+        next = (i + 1) % p->n;
+        sum += 0.5F * (p->vertices[i].x * p->vertices[next].y) - (p->vertices[i].y * p->vertices[next].x);
     }
-    return FALSE;
+    return sum;
 }
 
 #define SIZE 3
 int main(void) {
-    point_t p = { .x=8, .y=8 };
-    circle_t c = {
-            .center = {.x=0, .y=0},
-            .radius = 10,
+    point_t vertices[SIZE] = {
+            {.x=0.0F, .y=0.0F},
+            {.x=4.0F, .y=0.0F},
+            {.x=2.0F, .y=2.0F},
     };
-    printf("isinside?=%d\n", isinside(&p, &c));
+    polygon_t p = {.n=SIZE, .vertices=vertices};
+    printf("area=%.3f\n", compute_area(&p));
 }
