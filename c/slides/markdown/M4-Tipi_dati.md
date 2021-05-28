@@ -551,19 +551,6 @@ char str3[4] = "str3";
 }
 ```
 
-# Lettura di stringhe da tastiera
-* Per la lettura si possono usare sia la funzione *gets*, che la *scanf*
-
-```c
-char buffer[100];
-gets(buffer);
-scanf("%s", buffer);
-```
-
-* La funzione gets elimina il carattere di newline, ma aggiunge il carattere di fine stringa \0
-* Anche la scanf aggiunge il fine stringa, ma occorre prevedere abbastanza spazio per memorizzare i caratteri e il
-fine stringa. Nell'esempio se vengono immessi più di 100 caratteri l'esecuzione diventa imprevedibile (e potenzialmente pericolosa)
-  
 # Caratteri e Stringhe
 * Caratteri e stringhe sono diversi e non vanno confusi:
   * un carattere è in realtà un numero intero (per denotare una costante di tipo carattere: 'x')
@@ -574,11 +561,98 @@ fine stringa. Nell'esempio se vengono immessi più di 100 caratteri l'esecuzione
 char c = 'a';  // carattere
 char *s = "a"; // puntatore alla stringa costante "a"
 char v[] = "a"; // vettore di 2 caratteri inizializzato a {'a', '\0'}
+
 printf("%d %d %d\n", sizeof(c), sizeof(s), sizeof(v)); // Output: 1 4 2
 ```
 
-# Funzioni di libreria (caratteri)
+# printf
+
+* I un programma C, *printf()* è una delle funzioni centrali per gestire l'output su console.
+* *printf()* accetta una stringa che specifica il formato delle variabili e le variabili stesse (il numero degli specificatori deve corrispondere al numero delle variabili).
+
 ```c
+int main() {
+    /* interi con segno */
+    char c = 'a';
+    int d = 1;
+    long ld = 1;
+    long long lld = 1;
+    
+    printf("%c\n", c);
+    printf("%d\n", d);
+    printf("%ld\n", ld);
+    printf("%lld\n", lld);
+}
+```
+
+# printf
+* I un programma C, *printf()* è una delle funzioni centrali per gestire l'output su console.
+* *printf()* accetta una stringa che specifica il formato delle variabili e le variabili stesse (il numero degli specificatori deve corrispondere al numero delle variabili).
+
+```c
+int main() {
+    /* interi senza segno */
+    unsigned char cu = 'a';
+    unsigned int u = 1;
+    unsigned long lu = 1;
+    unsigned long long llu = 1;
+    
+    printf("%cu\n", cu);
+    printf("%u\n", u);
+    printf("%lu\n", lu);
+    printf("%llu\n", llu);
+}
+```
+
+# printf
+* In un programma C, *printf()* è una delle funzioni centrali per gestire l'output su console
+* *printf()* accetta una stringa che specifica il formato delle variabili e le variabili stesse (il numero degli specificatori deve corrispondere al numero delle variabili)
+
+```c
+int main() {
+    /* virgola mobile */
+    float f = 1.0;
+    double lf = 1.0;
+    long double Lf = 1.0;
+    
+    printf("%f\n", f);
+    printf("%lf\n", lf);
+    printf("%Lf\n", Lf);
+}
+```
+
+# scanf
+* In un programma C, *scanf()* è una delle funzioni centrali per gestire l'input da console
+* *scanf()* legge input formattato da tastiera
+
+```c
+#include <stdio.h>
+int main() {
+    char c;
+    int d;
+    float f;
+    double lf;
+    
+    /* ogni variabile richiede uno specificatore di tipo */
+    scanf("%c", &c);
+    scanf("%d", &d);
+    scanf("%f", &f);
+    scanf("%lf", &lf);
+}
+```
+
+
+# Casting implicito
+
+
+# Casting esplicito
+
+
+# Funzioni di libreria (caratteri)
+* La libreria standard del C (LibC) contiene un'ampia varietà di funzioni per manipolare tutti gli aspetti di un sistema operativo. Sotto sono riportare quelle principali che riguardano il trattatamento dei caratteri
+
+```c
+#include <stdio.h>
 #include <ctype.h>
 
 int toupper(int ch);
@@ -588,9 +662,13 @@ int islower(int ch);
 int isalpha(int ch);
 int isdigit(int ch);
 int isspace(int ch);
+
+int fgetc(FILE *stream);
 ```
 
 # Funzioni di libreria (stringhe)
+* Funzioni principali che riguardano il trattamento delle stringhe
+
 ```c
 #include <stdlib.h>
 #include <string.h>
@@ -604,6 +682,48 @@ int strcasecmp(const char *s1, const char *s2);
 char *strcpy(char *dest, const char *src);
 char *strcat(char *dest, const char *src);
 char *strdup(const char *s1);
-
 size_t strlen(const char *str);
+
+char *fgets(char *str, int n, FILE *stream);
+```
+
+# Funzioni di libreria (matematica)
+* Funzioni principali che riguardano le funzioni matematiche
+
+```c
+/* funzioni trigonometriche */
+double sin(double x)
+double cos(double x)
+double tan(double x)
+
+/* funzioni esponenziali */
+double log(double x)
+double sqrt(double x)
+double pow(double base, double power)
+
+/* funzioni arrotondamento */
+double trunc(double x)
+double ceil(double x)
+double floor(double x)
+double round(double x)
+```
+
+# Funzioni di libreria (numeri pseudo casuali)
+* Funzioni principali che riguardano i numeri pseudo-casuali
+* *srand()* inizializza il seme (seed) per la generazione
+* *rand()* ritorna un numero intero pseudo casuale compreso fra 0 e RAND_MAX
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+   int i;
+   
+   srand((unsigned) time(NULL));
+   for(i = 0; i < 5; i++) {
+      printf("%d\n", rand() % 50);              /* int numbers [0, 49] */
+      printf("%lf\n", rand()/(double)RAND_MAX); /* double numbers [0, 1]
+   }
+}
 ```

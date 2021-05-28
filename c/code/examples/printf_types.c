@@ -19,7 +19,7 @@ int main() {
     long double Lf = 1.0;
 
     printf("%c\n", c);
-    printf("%u\n", d);
+    printf("%d\n", d);
     printf("%ld\n", ld);
     printf("%lld\n", lld);
 
